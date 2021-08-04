@@ -22,3 +22,8 @@ export const Title = styled.header`
     font-size: 36px;
     margin: 8px 0 24px 0;
 `;
+
+export const Subtitle = styled.div`
+    font-size: 22px;
+    margin-bottom: 24px;
+`;
