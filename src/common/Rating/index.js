@@ -1,11 +1,11 @@
 import star from "../../assets/star.svg";
-import { Data, NumericalRating, Star, Wrapper } from "./styled";
+import { Data, NumericalRating, Scale, Star, Wrapper } from "./styled";
 
 export const Rating = ({ rating, votes }) => (
     <Wrapper>
         <Star src={star}></Star>
         <NumericalRating>{rating}</NumericalRating>
-        <Data>/ 10</Data>
+        <Scale>/ 10</Scale>
         {votes && (
             <Data>{votes} votes</Data>
         )}
