@@ -6,6 +6,9 @@ export const Rating = ({ rating, votes }) => (
         <Star src={star}></Star>
         <NumericalRating>{rating}</NumericalRating>
         <Data>/ 10</Data>
-        <Data>{votes} votes</Data>
+        {votes && (
+            <Data>{votes} votes</Data>
+        )}
+
     </Wrapper>
 );
