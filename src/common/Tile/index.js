@@ -28,6 +28,22 @@ export const Subtitle = styled.div`
     margin-bottom: 24px;
 `;
 
+export const AdditionalInfo = styled.div`
+    margin-bottom: 24px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-gap: 8px;
+`;
+
+export const InfoDetails = styled.span`
+    font-size: 18px;
+`;
+
+export const InfoTitle = styled(InfoDetails)`
+    color: ${({ theme }) => theme.colors.stormGray};
+    margin-right: 10px;
+`;
+
 export const Tags = styled.ul`
     list-style: none;
     padding-left: 0;
