@@ -12,6 +12,7 @@ export const Tile = styled.section`
 export const Image = styled.img`
     width: 312px;
     height: 464px;
+    border-radius: 5px;
 `;
 
 export const Content = styled.div``;
