@@ -60,3 +60,8 @@ export const Tag = styled.li`
     margin: 8px;
     border-radius: 5px;
 `;
+
+export const Description = styled.p`
+    font-size: 20px;
+    line-height: 32px;
+`;
