@@ -27,3 +27,20 @@ export const Subtitle = styled.div`
     font-size: 22px;
     margin-bottom: 24px;
 `;
+
+export const Tags = styled.ul`
+    list-style: none;
+    padding-left: 0;
+    margin: -8px;
+    display: flex;
+    flex-wrap: wrap;
+`;
+
+export const Tag = styled.li`
+    font-size: 14px;
+    color: ${({ theme }) => theme.colors.woodsmoke};
+    background-color: ${({ theme }) => theme.colors.mystic};
+    padding: 8px 16px;
+    margin: 8px;
+    border-radius: 5px;
+`;
