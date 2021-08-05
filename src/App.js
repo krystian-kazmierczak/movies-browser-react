@@ -1,4 +1,4 @@
-import { HashRouter, Switch, Route, Redirect } from "react-router-dom";
+import { HashRouter } from "react-router-dom";
 import { Navigation } from "./Navigation";
 import { MainContainer } from "./styled";
 
