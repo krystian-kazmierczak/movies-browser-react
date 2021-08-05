@@ -1,20 +1,39 @@
 import { Number, Arrow, PagerButton, Text, Wrapper, PageNumberContainer } from "./styled";
-import leftArrow from "../../assets/leftArrow.svg"
-import rightArrow from "../../assets/rightArrow.svg"
+import leftArrowBlue from "../../assets/leftArrowBlue.svg"
+import rightArrowBlue from "../../assets/rightArrowBlue.svg"
+import leftArrowGray from "../../assets/leftArrowGray.svg"
+import rightArrowGray from "../../assets/rightArrowGray.svg"
 
-const Pager = () => (
-    <Wrapper>
-        <PagerButton><Arrow src={leftArrow} alt="left arrow" />First</PagerButton>
-        <PagerButton><Arrow src={leftArrow} alt="left arrow" />Previous</PagerButton>
-        <PageNumberContainer>
-            <Text>Page</Text>
-            <Number>1</Number>
-            <Text>of</Text>
-            <Number>500</Number>
-        </PageNumberContainer>
-        <PagerButton>Next<Arrow src={rightArrow} alt="right arrow" /></PagerButton>
-        <PagerButton>Last<Arrow src={rightArrow} alt="right arrow" /></PagerButton>
-    </Wrapper>
-);
+const Pager = ({ numberOfPages, currentPageNumber }) => {
+    const isFirstPage = () => currentPageNumber === 1;
+    const isLastPage = () => currentPageNumber === numberOfPages;
+
+    return (
+        <Wrapper>
+            <PagerButton disabled={isFirstPage()}>
+                <Arrow src={isFirstPage() ? leftArrowGray : leftArrowBlue} alt="left arrow" />
+                First
+            </PagerButton>
+            <PagerButton disabled={isFirstPage()}>
+                <Arrow src={isFirstPage() ? leftArrowGray : leftArrowBlue} alt="left arrow" />
+                Previous
+            </PagerButton>
+            <PageNumberContainer>
+                <Text>Page</Text>
+                <Number>{currentPageNumber}</Number>
+                <Text>of</Text>
+                <Number>{numberOfPages}</Number>
+            </PageNumberContainer>
+            <PagerButton disabled={isLastPage()}>
+                Next
+                <Arrow src={isLastPage() ? rightArrowGray : rightArrowBlue} alt="right arrow" />
+            </PagerButton>
+            <PagerButton disabled={isLastPage()}>
+                Last
+                <Arrow src={isLastPage() ? rightArrowGray : rightArrowBlue} alt="right arrow" />
+            </PagerButton>
+        </Wrapper>
+    );
+};
 
 export default Pager;
