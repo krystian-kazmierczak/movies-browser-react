@@ -25,6 +25,7 @@ export const ImageWrapper = styled.div`
   align-items: center;
   justify-content: center;
   padding: 24px;
+  height: 100vh;
 `;
 
 export const StyledImage = styled(PlaneImage)`
