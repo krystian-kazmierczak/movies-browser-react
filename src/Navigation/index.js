@@ -1,9 +1,9 @@
 import {
-  Logo,
+  NavigationContainer,
   LogoWrapper,
-  Nav,
-  NavLeftWrapper,
-  NavRightWrapper,
+  Logo,
+  NavigationLeftWrapper,
+  NavigationRightWrapper,
   List,
   ListItem,
   StyledNavLink,
@@ -13,8 +13,8 @@ import { Search } from "../features/Search";
 
 export const Navigation = () => {
   return (
-    <Nav>
-      <NavLeftWrapper>
+    <NavigationContainer>
+      <NavigationLeftWrapper>
         <LogoWrapper>
           <Logo src={logo} />
         </LogoWrapper>
@@ -26,10 +26,10 @@ export const Navigation = () => {
             <StyledNavLink to="/people">PEOPLE</StyledNavLink>
           </ListItem>
         </List>
-      </NavLeftWrapper>
-      <NavRightWrapper>
+      </NavigationLeftWrapper>
+      <NavigationRightWrapper>
         <Search />
-      </NavRightWrapper>
-    </Nav>
+      </NavigationRightWrapper>
+    </NavigationContainer>
   );
 };
