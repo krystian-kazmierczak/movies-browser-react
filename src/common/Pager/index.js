@@ -1,4 +1,4 @@
-import { Number, Arrow, PagerButton, Text, Wrapper, PageNumberContainer } from "./PagerButton";
+import { Number, Arrow, PagerButton, Text, Wrapper, PageNumberContainer } from "./styled";
 import leftArrow from "../../assets/leftArrow.svg"
 import rightArrow from "../../assets/rightArrow.svg"
 
