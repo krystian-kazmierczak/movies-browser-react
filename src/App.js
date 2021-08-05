@@ -1,8 +1,10 @@
-function App() {
-  return (
-    <>
-    </>
-  );
-}
+import { HashRouter, Switch, Route, Redirect } from "react-router-dom";
+import { Navigation } from "./Navigation";
+import { MainContainer } from "./styled";
 
-export default App;
+export const App = () => (
+  <HashRouter>
+    <Navigation />
+    <MainContainer>{/* main content here */}</MainContainer>
+  </HashRouter>
+);
