@@ -10,6 +10,6 @@ export const Error = () => (
       Please, check your network connection <br />
       and try again
     </Paragraph>
-    <ButtonLink to="/movies">Back to Homepage</ButtonLink>
+    <ButtonLink to="/movies">Back to Home page</ButtonLink>
   </ErrorWrapper>
 );
