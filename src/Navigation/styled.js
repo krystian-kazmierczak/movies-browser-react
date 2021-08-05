@@ -3,61 +3,33 @@ import { Link, NavLink } from "react-router-dom";
 
 const activeClassName = "link-active";
 
-export const Nav = styled.nav`
+export const NavigationContainer = styled.nav`
   display: flex;
-  flex-basis: 50%;
+  justify-content: space-around;
   flex-wrap: wrap;
-  justify-content: center;
   align-items: center;
   min-height: 94px;
-  margin: 0 auto;
-  padding: 0 10px;
+  padding: 23px 10px 23px 20px;
   color: ${({ theme }) => theme.white};
   background: ${({ theme }) => theme.colors.black};
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.bigMobile}px) {
-    min-height: 80px;
-  }
-
-  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
-    min-height: 60px;
-  }
-`;
-
-export const NavLeftWrapper = styled(Nav)`
-  flex-wrap: nowrap;
-
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
-    flex-basis: 60vw;
-  }
-
-  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
-    flex-basis: 70%;
+    padding-bottom: 0;
   }
 `;
 
-export const NavRightWrapper = styled(Nav)`
-  justify-content: flex-end;
+export const NavigationLeftWrapper = styled.div`
+  display: flex;
+  align-items: center;
+`;
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.desktopSmall}px) {
-    flex-basis: 42%;
-    justify-content: center;
-    padding: 16px 0;
-  }
-
-  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
-    flex-basis: 100%;
-    justify-content: center;
-  }
+export const NavigationRightWrapper = styled.div`
+  padding: 23px;
 `;
 
 export const List = styled.ul`
   display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: space-around;
-  margin: 0 auto;
-  padding-left: 0;
+  margin: 0;
   list-style: none;
 `;
 
