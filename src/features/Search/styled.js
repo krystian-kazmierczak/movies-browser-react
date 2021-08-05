@@ -6,7 +6,7 @@ export const SearchWrapper = styled.form`
 `;
 
 export const Input = styled.input`
-  height: 48px;
+  min-height: 48px;
   width: 432px;
   max-width: 90vw;
   padding: 0 0 0 64px;
@@ -16,6 +16,10 @@ export const Input = styled.input`
 
   &:focus {
     outline: none;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
+    min-height: 44px;
   }
 `;
 
