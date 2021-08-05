@@ -9,7 +9,7 @@ export const NavigationContainer = styled.nav`
   flex-wrap: wrap;
   align-items: center;
   min-height: 94px;
-  padding: 23px 10px 23px 20px;
+  padding: 23px 10px 0 20px;
   color: ${({ theme }) => theme.colors.white};
   background: ${({ theme }) => theme.colors.black};
 
