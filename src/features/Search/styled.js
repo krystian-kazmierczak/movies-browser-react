@@ -1,21 +1,22 @@
 import styled from "styled-components";
 import searchIcon from "../../assets/search-icon.svg";
 
+export const SearchWrapper = styled.form`
+  position: relative;
+`;
+
 export const Input = styled.input`
   height: 48px;
   width: 432px;
+  max-width: 90vw;
+  padding: 0 0 0 64px;
   border: 1px solid ${({ theme }) => theme.colors.cornsilk};
   border-radius: 24px;
-  padding: 0 0 0 64px;
   background: ${({ theme }) => theme.colors.white};
 
   &:focus {
     outline: none;
   }
-`;
-
-export const SearchWrapper = styled.form`
-  position: relative;
 `;
 
 export const StyledButtonSearch = styled.button`
