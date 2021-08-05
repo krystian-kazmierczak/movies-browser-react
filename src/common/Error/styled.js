@@ -24,10 +24,10 @@ export const Header = styled.header`
 
 export const Paragraph = styled.p`
   margin: 0;
-  font-size: 15px;
+  font-size: 22px;
   line-height: 1.4;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
-    grid-gap: 16px;
+    font-size: 18px;
   }
 `;
