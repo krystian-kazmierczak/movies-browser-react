@@ -6,11 +6,11 @@ export const Tile = styled.section`
     box-shadow: 0px 4px 12px rgba(186, 199, 213, 0.5);
     display: grid;
     grid-template-columns: auto 1fr;
-    grid-gap: 40px;
+    grid-column-gap: 40px;
 
     @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
         padding: 16px;
-        grid-gap: 16px;
+        grid-column-gap: 16px;
     }
 `;
 
@@ -113,10 +113,10 @@ export const Tag = styled.li`
 export const Description = styled.p`
     font-size: 20px;
     line-height: 32px;
-    grid-column: 2;
 
     @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
         font-size: 14px;
         line-height: 22px;
+        margin: 16px 0;
     }
 `;
