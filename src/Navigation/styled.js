@@ -10,7 +10,7 @@ export const NavigationContainer = styled.nav`
   align-items: center;
   min-height: 94px;
   padding: 23px 10px 23px 20px;
-  color: ${({ theme }) => theme.white};
+  color: ${({ theme }) => theme.colors.white};
   background: ${({ theme }) => theme.colors.black};
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
