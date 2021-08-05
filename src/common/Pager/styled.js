@@ -10,6 +10,7 @@ export const PagerButton = styled.button`
     padding: 8px 16px;
     margin-right: 12px;
     background-color: ${({ theme }) => theme.colors.pattensBlue};
+    color: ${({ theme }) => theme.colors.woodsmoke};
     border-radius: 5px;
     font-size: 14px;
     line-height: 20px;
@@ -21,6 +22,7 @@ export const PagerButton = styled.button`
     
     &:disabled {
         background-color: ${({ theme }) => theme.colors.cornsilk};
+        color: ${({ theme }) => theme.colors.woodsmoke};
     }
 `;
 
