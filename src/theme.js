@@ -1,9 +1,11 @@
 export const theme = {
   colors: {
+    anakiwa: "#8CC2FF",
     black: "#000000",
     cornsilk: "#E4E6F0",
     darkWoodsmoke: "#111113",
     frenchGray: "#B9BBC1",
+    ironTransparent: "rgba(209, 213, 218, 0.3)",
     mineShaft: "#333333",
     pattensBlue: "#d6e4ff",
     scienceBlue: "#0044CC",
@@ -12,6 +14,7 @@ export const theme = {
     waterloo: "#7E839A",
     whisper: "#F5F5FA",
     white: "#FFFFFF",
+    whiteLilac: "#FBFBFE",
     woodsmoke: "#18181B",
   },
   breakpoints: {
