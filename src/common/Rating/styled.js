@@ -6,7 +6,7 @@ export const Wrapper = styled.div`
     margin: 24px 0;
 
     @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
-        margin: 12px 0;
+        margin: 12px 0 0 0;
     }
 `;
 
