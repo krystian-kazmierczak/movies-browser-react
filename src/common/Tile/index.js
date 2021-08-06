@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const Tile = styled.section`
     background-color: ${({ theme }) => theme.colors.white};
@@ -12,17 +12,31 @@ export const Tile = styled.section`
         padding: 16px;
         grid-column-gap: 16px;
     }
+
+    ${({ columnTile }) => columnTile && css`
+        display: flex;
+        flex-direction: column;
+        padding: 16px;
+        width: 324px;
+        height: 650px;
+    `}
 `;
 
 export const Image = styled.img`
     width: 312px;
     height: 464px;
     border-radius: 5px;
+    margin-bottom: 16px;
 
     @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
         width: 114px;
         height: 169px;
     }
+
+    ${({ columnTile }) => columnTile && css`
+        width: 292px;
+        height: 434px;
+    `}
 `;
 
 export const Content = styled.div``;
@@ -39,6 +53,13 @@ export const Title = styled.header`
         color: ${({ theme }) => theme.colors.woodsmoke};
         margin: 0 0 4px 0;
     }
+
+    ${({ columnTile }) => columnTile && css`
+        font-weight: 500;
+        font-size: 22px;
+        line-height: 29px;
+        margin: 0 0 8px 0;
+    `}
 `;
 
 export const Subtitle = styled.div`
@@ -51,6 +72,13 @@ export const Subtitle = styled.div`
         color: ${({ theme }) => theme.colors.waterloo};
         margin-bottom: 8px;
     }
+
+    ${({ columnTile }) => columnTile && css`
+        font-size: 16px;
+        line-height: 24px;
+        color: ${({ theme }) => theme.colors.waterloo};
+        margin-bottom: 8px;
+    `}
 `;
 
 export const AdditionalInfo = styled.div`
@@ -108,6 +136,10 @@ export const Tag = styled.li`
         padding: 4px 8px;
         margin: 4px;
     }
+
+    ${({ columnTile }) => columnTile && css`
+        margin: 4px;
+    `}
 `;
 
 export const Description = styled.p`

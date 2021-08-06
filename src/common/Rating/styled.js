@@ -1,4 +1,4 @@
-import styled from "styled-components";
+import styled, { css } from "styled-components";
 
 export const Wrapper = styled.div`
     display: flex;
@@ -31,6 +31,13 @@ export const NumericalRating = styled.span`
         font-size: 13px;
         line-height: 17px;
     }
+
+    ${({ columnTile }) => columnTile && css`
+        font-weight: 600;
+        font-size: 16px;
+        line-height: 24px;
+        margin: 0 12px;
+    `}
 `;
 
 export const Data = styled.span`
@@ -42,6 +49,12 @@ export const Data = styled.span`
         line-height: 17px;
         color: ${({ theme }) => theme.colors.waterloo};
     }
+
+    ${({ columnTile }) => columnTile && css`
+        font-size: 16px;
+        line-height: 24px;
+        color: ${({ theme }) => theme.colors.waterloo};
+    `}
 `;
 
 export const Scale = styled(Data)`
