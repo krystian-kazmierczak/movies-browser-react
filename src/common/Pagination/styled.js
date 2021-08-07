@@ -7,7 +7,7 @@ export const Wrapper = styled.div`
     margin: 16px;
 `;
 
-export const PagerButton = styled.button`
+export const PaginationButton = styled.button`
     padding: 8px 16px;
     margin-right: 12px;
     background-color: ${({ theme }) => theme.colors.pattensBlue};

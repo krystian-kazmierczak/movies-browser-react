@@ -1,8 +1,8 @@
-import Pager from "./common/Pager";
+import Pagination from "./common/Pagination";
 
 function App() {
   return (
-      <Pager
+      <Pagination
         currentPageNumber={1}
         numberOfPages={100}
       />
