@@ -12,7 +12,7 @@ export const Tile = styled.section`
         padding: 16px;
         grid-column-gap: 16px;
     }
-
+    
     ${({ medium }) => medium && css`
         display: flex;
         flex-direction: column;
@@ -26,6 +26,20 @@ export const Tile = styled.section`
             width: 100%;
             height: 201px;
             display: grid;
+        }
+    `}
+
+    ${({ small }) => small && css`
+        width: 208px;
+        height: 339px;
+        padding: 16px;
+        text-align: center;
+        grid-template-columns: auto;
+
+        @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
+            width: 136px;
+            height: 245px;
+            padding: 8px;
         }
     `}
 `;
@@ -44,6 +58,12 @@ export const Image = styled.img`
     ${({ medium }) => medium && css`
         width: 292px;
         height: 434px;
+    `}
+
+    ${({ small }) => small && css`
+        width: 176px;
+        height: 231px;
+        margin-bottom: 0;
     `}
 `;
 
@@ -68,6 +88,19 @@ export const Title = styled.header`
         line-height: 29px;
         margin: 0 0 8px 0;
     `}
+
+    ${({ small }) => small && css`
+        font-weight: 500;
+        font-size: 22px;
+        line-height: 29px;
+        margin: 12px 0 8px 0;
+
+        @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
+            font-size: 14px;
+            line-height: 18px;
+            margin: 8px 0;
+        }
+    `}
 `;
 
 export const Subtitle = styled.div`
@@ -86,6 +119,17 @@ export const Subtitle = styled.div`
         line-height: 24px;
         color: ${({ theme }) => theme.colors.waterloo};
         margin-bottom: 8px;
+    `}
+
+    ${({ small }) => small && css`
+        font-size: 18px;
+        line-height: 27px;
+        color: ${({ theme }) => theme.colors.waterloo};
+        margin-bottom: 0;
+
+        @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
+            margin: 0;
+        }
     `}
 `;
 
