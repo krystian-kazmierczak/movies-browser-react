@@ -20,6 +20,13 @@ export const Tile = styled.section`
         padding: 16px;
         width: 324px;
         height: 650px;
+
+        @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
+            min-width: 288px;
+            width: 100%;
+            height: 201px;
+            display: grid;
+        }
     `}
 `;
 
