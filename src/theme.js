@@ -1,5 +1,6 @@
 export const theme = {
     colors: {
+        black: "000000",
         white: "#FFFFFF",
         whisper: "#F5F5FA",
         mystic: "#E4E6F0",
