@@ -8,6 +8,10 @@ export const Wrapper = styled.div`
     @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
         margin: 12px 0 0 0;
     }
+
+    ${({ medium }) => medium && css`
+        margin: 8px 0 0 0;
+    `}
 `;
 
 export const Star = styled.img`
@@ -32,7 +36,7 @@ export const NumericalRating = styled.span`
         line-height: 17px;
     }
 
-    ${({ columnTile }) => columnTile && css`
+    ${({ medium }) => medium && css`
         font-weight: 600;
         font-size: 16px;
         line-height: 24px;
@@ -50,7 +54,7 @@ export const Data = styled.span`
         color: ${({ theme }) => theme.colors.waterloo};
     }
 
-    ${({ columnTile }) => columnTile && css`
+    ${({ medium }) => medium && css`
         font-size: 16px;
         line-height: 24px;
         color: ${({ theme }) => theme.colors.waterloo};
