@@ -6,11 +6,11 @@ import noPoster from "../../assets/noPoster.svg";
 const MoviePage = () => {
     if (isMobileOnly) {
         return (
-            <Tile>
+            <Tile big>
                 <Image src={noPoster} />
                 <Content>
-                    <Title>Mulan</Title>
-                    <Subtitle>2020</Subtitle>
+                    <Title big>Mulan</Title>
+                    <Subtitle big>2020</Subtitle>
                     <AdditionalInfo>
                         <InfoDetails>
                             <InfoTitle>Production:</InfoTitle>
@@ -39,11 +39,11 @@ const MoviePage = () => {
         );
     }
     return (
-        <Tile>
+        <Tile big>
             <Image src={noPoster} />
             <Content>
-                <Title>Mulan</Title>
-                <Subtitle>2020</Subtitle>
+                <Title big>Mulan</Title>
+                <Subtitle big>2020</Subtitle>
                 <AdditionalInfo>
                     <InfoDetails>
                         <InfoTitle>Production:</InfoTitle>
