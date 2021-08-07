@@ -2,22 +2,24 @@ import styled, { css } from "styled-components";
 
 export const Tile = styled.section`
     background-color: ${({ theme }) => theme.colors.white};
-    padding: 40px;
     box-shadow: 0px 4px 12px rgba(186, 199, 213, 0.5);
+    padding: 16px;
     display: grid;
     grid-template-columns: auto 1fr;
-    grid-column-gap: 40px;
 
     @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
-        padding: 16px;
         grid-column-gap: 16px;
     }
+
+    ${({ big }) => big && css`
+        padding: 40px;
+        grid-column-gap: 40px;
+    `}
     
     ${({ medium }) => medium && css`
         display: flex;
         flex-direction: column;
         justify-content: space-between;
-        padding: 16px;
         width: 324px;
         height: 650px;
 
@@ -32,7 +34,6 @@ export const Tile = styled.section`
     ${({ small }) => small && css`
         width: 208px;
         height: 339px;
-        padding: 16px;
         text-align: center;
         grid-template-columns: auto;
 
@@ -70,27 +71,28 @@ export const Image = styled.img`
 export const Content = styled.div``;
 
 export const Title = styled.header`
-    font-weight: 600;
+    font-weight: 500;
     font-size: 36px;
     margin: 8px 0 24px 0;
 
     @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
-        font-weight: 500;
         font-size: 16px;
         line-height: 21px;
         color: ${({ theme }) => theme.colors.woodsmoke};
         margin: 0 0 4px 0;
     }
 
+    ${({ big }) => big && css`
+        font-weight: 600;
+    `}
+
     ${({ medium }) => medium && css`
-        font-weight: 500;
         font-size: 22px;
         line-height: 29px;
         margin: 0 0 8px 0;
     `}
 
     ${({ small }) => small && css`
-        font-weight: 500;
         font-size: 22px;
         line-height: 29px;
         margin: 12px 0 8px 0;
@@ -106,25 +108,27 @@ export const Title = styled.header`
 export const Subtitle = styled.div`
     font-size: 22px;
     margin-bottom: 24px;
+    color: ${({ theme }) => theme.colors.waterloo};
 
     @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
         font-size: 13px;
         line-height: 17px;
-        color: ${({ theme }) => theme.colors.waterloo};
         margin-bottom: 8px;
     }
+
+    ${({ big }) => big && css`
+        color: ${({ theme }) => theme.colors.black};
+    `}
 
     ${({ medium }) => medium && css`
         font-size: 16px;
         line-height: 24px;
-        color: ${({ theme }) => theme.colors.waterloo};
         margin-bottom: 8px;
     `}
 
     ${({ small }) => small && css`
         font-size: 18px;
         line-height: 27px;
-        color: ${({ theme }) => theme.colors.waterloo};
         margin-bottom: 0;
 
         @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
