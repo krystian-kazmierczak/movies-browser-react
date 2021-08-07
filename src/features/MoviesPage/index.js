@@ -2,21 +2,21 @@ import { Rating } from "../../common/Rating";
 import { Content, Image, Subtitle, Tag, Tags, Tile, Title } from "../../common/Tile";
 import noPoster from "../../assets/noPoster.svg";
 
-const MoviePage = () => {
+const MoviesPage = () => {
     return (
-        <Tile columnTile>
-            <Image columnTile src={noPoster} />
+        <Tile medium>
             <Content>
-                <Title columnTile>Mulan long title long title long long</Title>
-                <Subtitle columnTile>2020</Subtitle>
-                <Tags columnTile>
-                    <Tag columnTile>Action</Tag>
-                    <Tag columnTile>Adventure</Tag>
-                    <Tag columnTile>Drama</Tag>
+                <Image medium src={noPoster} />
+                <Title medium>Mulan long title long title long long</Title>
+                <Subtitle medium>2020</Subtitle>
+                <Tags medium>
+                    <Tag medium>Action</Tag>
+                    <Tag medium>Adventure</Tag>
+                    <Tag medium>Drama</Tag>
                 </Tags>
             </Content>
             <Rating
-                columnTile={true}
+                medium={true}
                 rating="7,8"
                 votes="335"
             />
@@ -24,4 +24,4 @@ const MoviePage = () => {
     );
 };
 
-export default MoviePage;
+export default MoviesPage;
