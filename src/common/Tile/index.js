@@ -13,9 +13,10 @@ export const Tile = styled.section`
         grid-column-gap: 16px;
     }
 
-    ${({ columnTile }) => columnTile && css`
+    ${({ medium }) => medium && css`
         display: flex;
         flex-direction: column;
+        justify-content: space-between;
         padding: 16px;
         width: 324px;
         height: 650px;
@@ -33,7 +34,7 @@ export const Image = styled.img`
         height: 169px;
     }
 
-    ${({ columnTile }) => columnTile && css`
+    ${({ medium }) => medium && css`
         width: 292px;
         height: 434px;
     `}
@@ -54,7 +55,7 @@ export const Title = styled.header`
         margin: 0 0 4px 0;
     }
 
-    ${({ columnTile }) => columnTile && css`
+    ${({ medium }) => medium && css`
         font-weight: 500;
         font-size: 22px;
         line-height: 29px;
@@ -73,7 +74,7 @@ export const Subtitle = styled.div`
         margin-bottom: 8px;
     }
 
-    ${({ columnTile }) => columnTile && css`
+    ${({ medium }) => medium && css`
         font-size: 16px;
         line-height: 24px;
         color: ${({ theme }) => theme.colors.waterloo};
@@ -137,7 +138,7 @@ export const Tag = styled.li`
         margin: 4px;
     }
 
-    ${({ columnTile }) => columnTile && css`
+    ${({ medium }) => medium && css`
         margin: 4px;
     `}
 `;
