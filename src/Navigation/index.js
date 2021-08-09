@@ -2,12 +2,13 @@ import {
   NavigationContainer,
   LogoWrapper,
   Logo,
-  NavigationLeftWrapper,
-  NavigationRightWrapper,
+  SearchWrapper,
   List,
   Item,
   StyledNavLink,
   NavigationWrapper,
+  HeaderWrapper,
+  Title,
 } from "./styled";
 import logo from "../assets/logo.svg";
 import { Search } from "../features/Search";
@@ -16,10 +17,10 @@ export const Navigation = () => {
   return (
     <NavigationContainer>
       <NavigationWrapper>
-        <NavigationLeftWrapper>
+        <HeaderWrapper>
           <LogoWrapper>
             <Logo src={logo} alt="" />
-            movies&nbsp;browser
+            <Title>movies&nbsp;browser</Title>
           </LogoWrapper>
           <List>
             <Item>
@@ -29,10 +30,10 @@ export const Navigation = () => {
               <StyledNavLink to="/people">people</StyledNavLink>
             </Item>
           </List>
-        </NavigationLeftWrapper>
-        <NavigationRightWrapper>
+        </HeaderWrapper>
+        <SearchWrapper>
           <Search />
-        </NavigationRightWrapper>
+        </SearchWrapper>
       </NavigationWrapper>
     </NavigationContainer>
   );
