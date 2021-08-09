@@ -1,6 +1,6 @@
-import { BrowserView, MobileOnlyView } from "react-device-detect";
+import { BrowserView, MobileOnlyView, TabletView } from "react-device-detect";
 import star from "../../assets/star.svg";
-import { Data, NumericalRating, Scale, Star, Wrapper, RatingContainer } from "./styled";
+import { Data, NumericalRating, Scale, Star, Wrapper} from "./styled";
 
 export const Rating = ({ rating, votes, medium, cover }) => {
     if (cover) {
@@ -20,6 +20,20 @@ export const Rating = ({ rating, votes, medium, cover }) => {
                         )}
                     </Wrapper>
                 </BrowserView>
+                <TabletView>
+                    <Wrapper cover={cover}>
+                        <div>
+                            <Star src={star} cover={cover}></Star>
+                            <NumericalRating cover={cover}>{rating}</NumericalRating>
+                            {!medium && (
+                                <Scale cover={cover}>/ 10</Scale>
+                            )}
+                        </div>
+                        {votes && (
+                            <Data cover={cover}>{votes} votes</Data>
+                        )}
+                    </Wrapper>
+                </TabletView>
                 <MobileOnlyView>
                     <Wrapper cover={cover}>
                         <Star src={star} cover={cover}></Star>
