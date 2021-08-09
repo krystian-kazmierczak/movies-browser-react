@@ -5,7 +5,7 @@ export const Wrapper = styled.div`
     align-items: center;
     margin: 24px 0;
 
-    @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
+    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
         margin: 12px 0 0 0;
     }
 
@@ -19,7 +19,7 @@ export const Wrapper = styled.div`
         grid-template-columns: 1fr;
         grid-gap: 16px;
 
-        @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
+        @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
             display: flex;
             align-items: center;
             grid-gap: 0;
@@ -35,7 +35,7 @@ export const Star = styled.img`
     width: 24px;
     height: 22.87px;
 
-    @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
+    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
         width: 16px;
         height: 15.25px;
     }
@@ -51,7 +51,7 @@ export const NumericalRating = styled.span`
     font-size: 22px;
     margin: 0 8px;
 
-    @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
+    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
         margin: 0 7px 0 8px;
         font-weight: 600;
         font-size: 13px;
@@ -71,7 +71,7 @@ export const NumericalRating = styled.span`
         color: ${({ theme }) => theme.colors.white};
         margin: 0 7px 0 8px;
 
-        @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
+        @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
             margin: 0 2px 0 4px;
         }
     `}
@@ -81,7 +81,7 @@ export const Data = styled.span`
     font-size: 14px;
     margin-right: 12px;
 
-    @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
+    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
         font-size: 13px;
         line-height: 17px;
         color: ${({ theme }) => theme.colors.waterloo};
@@ -98,7 +98,7 @@ export const Data = styled.span`
         line-height: 19px;
         color: ${({ theme }) => theme.colors.white};
 
-        @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
+        @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
             font-size: 10px;
             line-height: 12px;
             color: ${({ theme }) => theme.colors.white};
@@ -110,12 +110,12 @@ export const Data = styled.span`
 `;
 
 export const Scale = styled(Data)`
-    @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
+    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
         display: none;
     }
 
     ${({ cover }) => cover && css`
-        @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
+        @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
             display: unset;
         }
     `}
