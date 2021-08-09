@@ -9,7 +9,9 @@ export const theme = {
         woodsmoke: "#18181B",
     },
     breakpoints: {
-        mobile: "480",
+        mobile: "577",
         tablet: "767",
+        tabletLandscape: "991",
+        desktopSmall: "1368",
     }
 };
