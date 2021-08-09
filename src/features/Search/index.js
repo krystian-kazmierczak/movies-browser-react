@@ -13,21 +13,22 @@ export const Search = () => {
 
   useEffect(() => {
     dispatch(setQuery(""));
-}, [location, dispatch])
+  }, [location, dispatch]);
 
-const onChange = (value) => {
-  dispatch(setQuery(value));
-  dispatch(setOpen(true));
-};
-
+  const onChange = (value) => {
+    dispatch(setQuery(value));
+    dispatch(setOpen(true));
+  };
 
   return (
     <SearchWrapper>
       <StyledButtonSearch />
-      <Input placeholder={`Search for ... ${searchText}`} 
-      value={query}
-      open={isOpen}
-      onChange={({ target }) => onChange(target.value)}/>
+      <Input
+        placeholder={`Search for ... ${searchText}`}
+        value={query}
+        open={isOpen}
+        onChange={({ target }) => onChange(target.value)}
+      />
     </SearchWrapper>
   );
 };
