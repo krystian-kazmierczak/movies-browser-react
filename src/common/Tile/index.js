@@ -15,6 +15,10 @@ export const Tile = styled.section`
     ${({ big }) => big && css`
         padding: 40px;
         grid-column-gap: 40px;
+
+        @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
+            padding: 16px;
+        }
     `}
     
     ${({ medium }) => medium && css`
