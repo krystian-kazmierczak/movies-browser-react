@@ -20,10 +20,21 @@ export const PaginationButton = styled.button`
     grid-auto-flow: column;
     grid-gap: 8px;
     align-items: center;
+    cursor: pointer;
+    transition: 0.3s;
     
     &:disabled {
         background-color: ${({ theme }) => theme.colors.cornsilk};
         color: ${({ theme }) => theme.colors.woodsmoke};
+        cursor: not-allowed;
+    }
+
+    &:hover {
+        filter: brightness(80%);
+    }
+
+    &:active {
+        filter: brightness(90%);
     }
 
     @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
