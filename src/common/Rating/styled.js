@@ -26,10 +26,7 @@ export const Wrapper = styled.div`
             margin: 0 0 8px 0;
         }
     `}
-
 `;
-
-export const RatingContainer = styled.div``;
 
 export const Star = styled.img`
     width: 24px;
