@@ -9,9 +9,9 @@ export const StyledCover = styled.header`
     background-position: center;
     min-height: 770px;
 
-    display: grid;
-    justify-content: center;
-    align-items: end;
+    display: flex;
+    justify-content: flex-start;
+    align-items: flex-end;
 
     @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
         min-height: 148px;
@@ -26,9 +26,6 @@ export const StyledCover = styled.header`
 export const Wrapper = styled.div`
     width: 100%;
     padding-left: 16px;
-
-    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
-    }
 `;
 
 export const MainTitle = styled.h1`
