@@ -9,6 +9,7 @@ import {
   selectLoading,
 } from "./../SearchSlice";
 import { Wrapper } from "./styled";
+import { Tile } from "./../../../common/Tile/index";
 import { NoResult } from "./../../../common/NoResult/index";
 import noPoster from "./../../../assets/noPoster.svg";
 import noProfile from "./../../../assets/noProfile.svg";
@@ -36,7 +37,7 @@ export const DynamicBox = ({ query }) => {
         <NoResult urlQuery={query} />
       ) : (
         results.map((result) => (
-          <div
+          <Tile small
             key={result.id}
             pathText={pathText}
             {...(pathText === "movie"
