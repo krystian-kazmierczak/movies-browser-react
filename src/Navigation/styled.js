@@ -1,116 +1,59 @@
 import styled from "styled-components";
-import { Link, NavLink } from "react-router-dom";
 
-const activeClassName = "link-active";
-
-export const NavigationContainer = styled.nav`
-  display: flex;
-  justify-content: space-around;
-  flex-wrap: wrap;
-  align-items: center;
-  min-height: 94px;
-  padding: 23px 10px 0 20px;
+export const NavigationContainer = styled.div`
   color: ${({ theme }) => theme.colors.white};
   background: ${({ theme }) => theme.colors.black};
+  margin: 0;
+  padding: 23px 16px;
+  min-height: 94px;
+`;
+
+export const NavigationWrapper = styled.nav`
+  max-width: 1368px;
+  margin: 0 auto;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  flex-basis: 50%;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
-    padding-bottom: 0;
+    gap: 16px;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
+    gap: 12px;
   }
 `;
 
-export const NavigationLeftWrapper = styled.div`
+export const HeaderWrapper = styled.div`
+  display: flex;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: flex-start;
+  flex-basis: 50%;
+  gap: 16px;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
+    flex-basis: 90vw;
+    justify-content: center;
+    gap: 12px;
+  }
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
+    flex-basis: 70%;
+    gap: 8px;
+  }
+`;
+
+export const SearchWrapper = styled.div`
   display: flex;
   align-items: center;
-`;
-
-export const NavigationRightWrapper = styled.div`
-  padding: 23px;
-`;
-
-export const List = styled.ul`
-  display: flex;
-  margin: 0;
-  list-style: none;
-`;
-
-export const ListItem = styled.li`
-  text-decoration: none;
-`;
-
-export const StyledNavLink = styled(NavLink).attrs(() => ({
-  activeClassName,
-}))`
-  margin: 0 10px;
-  padding: 13px 24px;
-  font-size: 14px;
-  font-weight: 600;
-  color: ${({ theme }) => theme.colors.white};
-  text-decoration: none;
-  border-radius: 33px;
-  transition: 0.5s;
-
-  &:hover {
-    color: ${({ theme }) => theme.colors.black};
-    background: ${({ theme }) => theme.colors.white};
-  }
-
-  &.${activeClassName} {
-    border: 1px solid ${({ theme }) => theme.colors.white};
-    cursor: unset;
-
-    &:hover {
-      color: ${({ theme }) => theme.colors.white};
-      background: unset;
-    }
-  }
+  justify-content: flex-end;
+  padding: 0;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
-    margin: 0 3px;
-    padding: 10px 17px;
-    font-size: 13px;
+    justify-content: center;
   }
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
-    margin: 0 8px;
-    padding: 8px 12px;
-    font-size: 12px;
-  }
-`;
-
-export const LogoWrapper = styled(Link)`
-  display: flex;
-  margin: 0;
-  padding-left: 16px;
-  color: ${({ theme }) => theme.colors.white};
-  font-size: 24px;
-  font-weight: 500;
-  text-decoration: none;
-
-  @media (max-width: ${({ theme }) => theme.breakpoints.desktopSmall}px) {
-    margin-right: 30px;
-  }
-
-  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
-    margin-right: 22px;
-    padding: 10px;
-    font-size: 18px;
-  }
-
-  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
-    margin-right: 19px;
-    padding: 0;
-    font-size: 13px;
-  }
-`;
-
-export const Logo = styled.img`
-  height: 40px;
-
-  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
-    height: 30px;
-  }
-
-  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
-    height: 20px;
-  }
 `;

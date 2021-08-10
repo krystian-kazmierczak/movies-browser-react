@@ -1,35 +1,25 @@
 import {
   NavigationContainer,
-  LogoWrapper,
-  Logo,
-  NavigationLeftWrapper,
-  NavigationRightWrapper,
-  List,
-  ListItem,
-  StyledNavLink,
+  SearchWrapper,
+  NavigationWrapper,
+  HeaderWrapper,
 } from "./styled";
-import logo from "../assets/logo.svg";
 import { Search } from "../features/Search";
+import { Header } from "./Header";
+import { Link } from "./Link";
 
 export const Navigation = () => {
   return (
     <NavigationContainer>
-      <NavigationLeftWrapper>
-        <LogoWrapper>
-          <Logo src={logo} />
-        </LogoWrapper>
-        <List>
-          <ListItem>
-            <StyledNavLink to="/movies">MOVIES</StyledNavLink>
-          </ListItem>
-          <ListItem>
-            <StyledNavLink to="/people">PEOPLE</StyledNavLink>
-          </ListItem>
-        </List>
-      </NavigationLeftWrapper>
-      <NavigationRightWrapper>
-        <Search />
-      </NavigationRightWrapper>
+      <NavigationWrapper>
+        <HeaderWrapper>
+          <Header />
+          <Link />
+        </HeaderWrapper>
+        <SearchWrapper>
+          <Search />
+        </SearchWrapper>
+      </NavigationWrapper>
     </NavigationContainer>
   );
 };

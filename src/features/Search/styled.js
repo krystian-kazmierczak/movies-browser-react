@@ -7,8 +7,8 @@ export const SearchWrapper = styled.form`
 
 export const Input = styled.input`
   min-height: 48px;
-  width: 432px;
-  max-width: 90vw;
+  width: 90vw;
+  max-width: 432px;
   padding: 0 0 0 64px;
   border: 1px solid ${({ theme }) => theme.colors.cornsilk};
   border-radius: 24px;
