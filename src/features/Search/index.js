@@ -47,7 +47,7 @@ export const Search = () => {
         open={isOpen}
         onChange={({ target }) => onChange(target.value)}
       />
-      {query && isOpen && <DynamicBox query={query} />}
+      {(query && isOpen ) && <DynamicBox query={query} />}
     </SearchWrapper>
   );
 };
