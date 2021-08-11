@@ -13,7 +13,7 @@ export const MediumTile = ({ imageSrc, title, subtitle, tags, rating, votes }) =
                         <Subtitle medium>{subtitle}</Subtitle>
                         <Tags medium>
                             {tags.map(tag => (
-                                <Tag medium>{tag}</Tag>
+                                <Tag key={Math.random()} medium>{tag}</Tag>
                             ))}
                         </Tags>
                     </Content>
@@ -32,7 +32,7 @@ export const MediumTile = ({ imageSrc, title, subtitle, tags, rating, votes }) =
                         <Subtitle medium>{subtitle}</Subtitle>
                         <Tags medium>
                             {tags.map(tag => (
-                                <Tag medium>{tag}</Tag>
+                                <Tag key={Math.random()} medium>{tag}</Tag>
                             ))}
                         </Tags>
                         <Rating

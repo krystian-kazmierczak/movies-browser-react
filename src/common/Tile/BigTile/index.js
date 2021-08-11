@@ -13,7 +13,7 @@ export const BigTile = ({ imageSrc, title, subtitle, info, tags, rating, votes, 
                         <Subtitle big>{subtitle}</Subtitle>
                         <AdditionalInfo>
                             {info.map(info => (
-                                <InfoDetails>
+                                <InfoDetails key={Math.random()}>
                                     <InfoTitle>{info.title}</InfoTitle>
                                     {info.details}
                                 </InfoDetails>
@@ -21,7 +21,7 @@ export const BigTile = ({ imageSrc, title, subtitle, info, tags, rating, votes, 
                         </AdditionalInfo>
                         <Tags medium>
                             {tags.map(tag => (
-                                <Tag medium>{tag}</Tag>
+                                <Tag key={Math.random()} medium>{tag}</Tag>
                             ))}
                         </Tags>
                         <Rating
@@ -42,7 +42,7 @@ export const BigTile = ({ imageSrc, title, subtitle, info, tags, rating, votes, 
                         <Subtitle big>{subtitle}</Subtitle>
                         <AdditionalInfo>
                             {info.map(info => (
-                                <InfoDetails>
+                                <InfoDetails key={Math.random()}>
                                     <InfoTitle>{info.title}</InfoTitle>
                                     {info.details}
                                 </InfoDetails>
@@ -50,7 +50,7 @@ export const BigTile = ({ imageSrc, title, subtitle, info, tags, rating, votes, 
                         </AdditionalInfo>
                         <Tags medium>
                             {tags.map(tag => (
-                                <Tag medium>{tag}</Tag>
+                                <Tag key={Math.random()} medium>{tag}</Tag>
                             ))}
                         </Tags>
                         <Rating
