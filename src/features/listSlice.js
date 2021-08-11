@@ -45,5 +45,6 @@ export const selectList = (state) => state.list;
 export const selectLoading = (state) => state.list.loading;
 export const selectError = (state) => state.list.error;
 export const selectNumberOfPages = (state) => state.list.numberOfPages;
+export const selectTotalResults = (state) => state.list.totalResults;
 
 export default listSlice.reducer;
