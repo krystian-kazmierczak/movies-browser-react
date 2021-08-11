@@ -5,15 +5,15 @@ export const MiniWrapper = styled(Link)`
   display: flex;
   flex-shrink: 0;
   padding: 16px;
-  border-bottom: 1px solid ${({ theme }) => theme.colors.typeBox};
+  border-bottom: 1px solid ${({ theme }) => theme.colors.cornsilk};
   font-weight: 500;
   font-size: 22px;
   line-height: 130%;
   text-decoration: none;
-  color: ${({ theme }) => theme.colors.text};
+  color: ${({ theme }) => theme.colors.woodsmoke};
   align-items: center;
   :hover {
-    background-color: ${({ theme }) => theme.colors.background};
+    background-color: ${({ theme }) => theme.colors.whisper};
   }
 `;
 
