@@ -9,7 +9,7 @@ import { NoResult } from "./../../common/NoResult";
 import { pageState } from "./../../common/pageState";
 import { selectGenerateList } from "./../../common/commonSlice";
 import { usePageParameter } from "./../usePageParameters";
-import { Header } from "./styled";
+import { Header, TilesWrapper } from "./styled";
 
 import {
   selectList,
@@ -49,15 +49,16 @@ const MoviesPage = () => {
                 ? `Search results for "${urlQuery}" (${totalResults})`
                 : "Popular Movies"}
             </Header>
-
-            <MediumTile
-              imageSrc={movieData.poster}
-              title={movieData.title}
-              subtitle={movieData.subtitle}
-              tags={movieData.tags}
-              rating={movieData.rating}
-              votes={movieData.votes}
-            />
+            <TilesWrapper>
+              <MediumTile
+                imageSrc={movieData.poster}
+                title={movieData.title}
+                subtitle={movieData.subtitle}
+                tags={movieData.tags}
+                rating={movieData.rating}
+                votes={movieData.votes}
+              />
+            </TilesWrapper>
             <Pagination />
           </>
         )}
