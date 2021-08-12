@@ -13,6 +13,7 @@ import { Header, TilesWrapper } from "./styled";
 import { apiImage, apiKey } from "../../common/commonValues";
 import noPoster from "../../assets/noPoster.svg";
 import { popularMovies } from "./popularMovies";
+import { genres } from "./genres";
 
 import {
   selectList,
@@ -68,7 +69,10 @@ const MoviesPage = () => {
                   }
                   title={movie.title}
                   subtitle={movie.release_date}
-                  // tags={movie.tags}
+                  tags=
+                  {movie.genre_ids.map(genre => (
+                    genre.id
+                  ))}
                   rating={movie.vote_average}
                   votes={movie.vote_count}
                 />
