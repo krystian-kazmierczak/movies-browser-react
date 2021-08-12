@@ -1,15 +1,13 @@
-import { Content, Image, Subtitle, Tile, Title } from "../../common/Tile"
-import noProfile from "../../assets/noProfile.svg";
+import { SmallTile } from "../../common/Tile/SmallTile";
+import { personData } from "../../personData";
 
 const PeoplePage = () => {
     return (
-        <Tile small>
-            <Content>
-                <Image small src={noProfile} />
-                <Title small>Liu Yifei</Title>
-                <Subtitle small>Mulan</Subtitle>
-            </Content>
-        </Tile>
+        <SmallTile
+            imageSrc={personData.poster}
+            title={personData.title}
+            subtitle={personData.subtitle}
+        />
     );
 };
 
