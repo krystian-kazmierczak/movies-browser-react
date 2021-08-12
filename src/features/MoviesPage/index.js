@@ -41,6 +41,10 @@ const MoviesPage = () => {
     return () => resetState();
   }, [urlQuery, dispatch, generateList, page]);
 
+  const getGenreName = (genreId) => {
+    return genres.filter(({ id }) => id === genreId)[0].name;
+  };
+
   return (
     <Container>
       <StatusChecker isError={isError} isLoading={isLoading}>
@@ -68,9 +72,7 @@ const MoviesPage = () => {
                   title={movie.title}
                   subtitle={movie.release_date}
                   tags=
-                  {movie.genre_ids.map(genre => (
-                    genre.id
-                  ))}
+                  {movie.genre_ids.map(genre => genre.id)}
                   rating={movie.vote_average}
                   votes={movie.vote_count}
                 />
