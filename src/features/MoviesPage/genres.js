@@ -1,5 +1,5 @@
-export const genres = {
-    "genres": [
+export const genres =
+    [
         {
             "id": 28,
             "name": "Action"
@@ -76,5 +76,4 @@ export const genres = {
             "id": 37,
             "name": "Western"
         }
-    ]
-}
+    ];
