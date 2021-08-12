@@ -11,7 +11,7 @@ function* fetchGeneralHandler() {
   try {
     const genres = yield call(
       getApiData,
-      `${apiBase}genre/movie/list${apiKey}${language}`
+      `${apiBase}genre/movie/list?api_key=${apiKey}${language}`
     );
     yield put(fetchCommonSuccess(genres));
   } catch (error) {

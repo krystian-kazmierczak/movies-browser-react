@@ -10,11 +10,11 @@ function* fetchListHandler({ payload: { page, urlQuery, type } }) {
   const activePath =
     type === "movies"
       ? urlQuery
-        ? `${apiBase}search/movie${apiKey}${language}&query=${urlQuery}&page=${page}`
-        : `${apiBase}discover/movie${apiKey}${language}&sort_by=popularity.desc&page=${page}&with_genres=${enabledGenerate}`
+        ? `${apiBase}search/movie?api_key=${apiKey}${language}&query=${urlQuery}&page=${page}`
+        : `${apiBase}discover/movie?api_key=${apiKey}${language}&sort_by=popularity.desc&page=${page}&with_genres=${enabledGenerate}`
       : urlQuery
-      ? `${apiBase}search/person${apiKey}${language}&query=${urlQuery}&page=${page}`
-      : `${apiBase}person/popular${apiKey}${language}&page=${page}`;
+      ? `${apiBase}search/person?api_key=${apiKey}${language}&query=${urlQuery}&page=${page}`
+      : `${apiBase}person/popular?api_key=${apiKey}${language}&page=${page}`;
 
   try {
     yield delay(1000);
