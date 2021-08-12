@@ -7,3 +7,9 @@ export const Header = styled.h1`
   line-height: 1.2;
   color: ${({ theme }) => theme.colors.woodsmoke};
 `;
+
+export const TilesWrapper = styled.div`
+  display: grid;
+  grid-template-columns: repeat(4,auto);
+  grid-gap: 24px;
+`;
