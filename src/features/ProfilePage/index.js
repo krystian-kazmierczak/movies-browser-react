@@ -88,18 +88,19 @@ const ProfilePage = ({
             {movie.genre_ids && (
               <Tags medium>
                 {movie.genre_ids.map((id) => (
-                  <Tag>{genres.id}</Tag>
+                  <Tag key={id}>{genres[id.toString()]}</Tag>
                 ))}
               </Tags>
             )}
-            <Rating
-              medium={true}
-              rating={movie.vote_average}
-              votes={movie.vote_count}
-            />
+            {movie.vote_average && (
+              <Rating
+                medium={true}
+                rating={movie.vote_average}
+                votes={movie.vote_count}
+              />
+            )}
           </Tile>
         ))}
-        {console.log(genres)}
       </Section>
     </>
   );
