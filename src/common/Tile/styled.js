@@ -1,6 +1,7 @@
 import styled, { css } from "styled-components";
 
 export const Tile = styled.section`
+    margin: 0 auto;
     background-color: ${({ theme }) => theme.colors.white};
     box-shadow: 0px 4px 12px rgba(186, 199, 213, 0.5);
     padding: 16px;
