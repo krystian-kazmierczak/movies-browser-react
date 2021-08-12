@@ -4,7 +4,7 @@ export const Wrapper = styled.div`
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 16px;
+    margin: 40px 16px 16px 16px;
 `;
 
 export const PaginationButton = styled.button`
