@@ -1,8 +1,9 @@
 import styled from "styled-components";
 
 export const Section = styled.section`
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr 1fr;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
   width: 100%;
   max-width: 1368px;
 `;
