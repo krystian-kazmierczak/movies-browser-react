@@ -41,8 +41,6 @@ const MoviesPage = () => {
     return () => resetState();
   }, [urlQuery, dispatch, generateList, page]);
 
-
-  console.log(popularMovies);
   return (
     <Container>
       <StatusChecker isError={isError} isLoading={isLoading}>
