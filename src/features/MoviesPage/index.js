@@ -10,6 +10,9 @@ import { pageState } from "./../../common/pageState";
 import { selectGenerateList } from "./../../common/commonSlice";
 import { usePageParameter } from "./../usePageParameters";
 import { Header, TilesWrapper } from "./styled";
+import { apiImage, apiKey } from "../../common/commonValues";
+import noPoster from "../../assets/noPoster.svg";
+import { popularMovies } from "./popularMovies";
 
 import {
   selectList,
@@ -37,6 +40,8 @@ const MoviesPage = () => {
     return () => resetState();
   }, [urlQuery, dispatch, generateList, page]);
 
+
+  console.log(popularMovies);
   return (
     <Container>
       <StatusChecker isError={isError} isLoading={isLoading}>
@@ -50,6 +55,25 @@ const MoviesPage = () => {
                 : "Popular Movies"}
             </Header>
             <TilesWrapper>
+              {popularMovies.results.map((movie) => (
+                <MediumTile
+                  imageSrc={
+                    movie.poster_path
+                      ? apiImage +
+                      "/w200" +
+                      movie.poster_path +
+                      "?api_key=" +
+                      apiKey
+                      : noPoster
+                  }
+                  title={movie.title}
+                  subtitle={movie.release_date}
+                  // tags={movie.tags}
+                  rating={movie.vote_average}
+                  votes={movie.vote_count}
+                />
+              ))}
+
               <MediumTile
                 imageSrc={movieData.poster}
                 title={movieData.title}
