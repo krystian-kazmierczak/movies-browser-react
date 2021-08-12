@@ -18,7 +18,7 @@ const listSlice = createSlice({
       state.loading = false;
       state.error = false;
       state.totalResults = list.totalResults;
-      state.numberOfPages = list.totalPage;
+      state.numberOfPages = list.totalPages;
     },
     fetchListError: (state) => {
       state.loading = false;
@@ -41,7 +41,7 @@ export const {
   resetState,
 } = listSlice.actions;
 
-export const selectList = (state) => state.list;
+export const selectList = (state) => state.list.list;
 export const selectLoading = (state) => state.list.loading;
 export const selectError = (state) => state.list.error;
 export const selectNumberOfPages = (state) => state.list.numberOfPages;
