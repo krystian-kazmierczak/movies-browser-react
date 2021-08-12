@@ -24,6 +24,7 @@ import {
   fetchList,
   resetState,
 } from "../listSlice";
+import { getYearFromDate } from "./getYearFromDate";
 
 const MoviesPage = () => {
   const dispatch = useDispatch();
@@ -67,7 +68,7 @@ const MoviesPage = () => {
                       : noPoster
                   }
                   title={movie.title}
-                  subtitle={movie.release_date}
+                  subtitle={getYearFromDate(movie.release_date)}
                   tags={(getGenreNames(movie.genre_ids, genres))}
                   rating={movie.vote_average}
                   votes={movie.vote_count}
