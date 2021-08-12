@@ -71,8 +71,7 @@ const MoviesPage = () => {
                   }
                   title={movie.title}
                   subtitle={movie.release_date}
-                  tags=
-                  {movie.genre_ids.map(genre => genre.id)}
+                  tags={movie.genre_ids}
                   rating={movie.vote_average}
                   votes={movie.vote_count}
                 />
