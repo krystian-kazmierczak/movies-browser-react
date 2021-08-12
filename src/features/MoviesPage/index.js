@@ -14,6 +14,7 @@ import { apiImage, apiKey } from "../../common/commonValues";
 import noPoster from "../../assets/noPoster.svg";
 import { popularMovies } from "./popularMovies";
 import { genres } from "./genres";
+import { getGenreNames } from "./getGenresNames";
 
 import {
   selectList,
@@ -41,10 +42,6 @@ const MoviesPage = () => {
     return () => resetState();
   }, [urlQuery, dispatch, generateList, page]);
 
-  const getGenreName = (genreId) => {
-    return genres.filter(({ id }) => id === genreId)[0].name;
-  };
-
   return (
     <Container>
       <StatusChecker isError={isError} isLoading={isLoading}>
@@ -71,7 +68,7 @@ const MoviesPage = () => {
                   }
                   title={movie.title}
                   subtitle={movie.release_date}
-                  tags={movie.genre_ids}
+                  tags={(getGenreNames(movie.genre_ids, genres))}
                   rating={movie.vote_average}
                   votes={movie.vote_count}
                 />
