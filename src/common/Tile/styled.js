@@ -25,12 +25,13 @@ export const Tile = styled.section`
         flex-direction: column;
         justify-content: space-between;
         width: 324px;
-        height: 650px;
+        min-height: 650px;
 
         @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
-            width: 100%;
+            min-height: 200px;
             height: 201px;
             display: grid;
+            width: 100%;
         }
     `}
 
@@ -72,7 +73,8 @@ export const Image = styled.img`
     `}
 `;
 
-export const Content = styled.div``;
+export const Content = styled.div`
+`;
 
 export const Title = styled.header`
     font-weight: 500;
