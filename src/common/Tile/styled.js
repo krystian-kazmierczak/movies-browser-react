@@ -1,7 +1,7 @@
 import styled, { css } from "styled-components";
 
 export const Tile = styled.section`
-    margin: 8px;
+    margin: 0 auto;
     background-color: ${({ theme }) => theme.colors.white};
     box-shadow: 0px 4px 12px rgba(186, 199, 213, 0.5);
     padding: 16px;
@@ -29,7 +29,6 @@ export const Tile = styled.section`
         height: 650px;
 
         @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
-            min-width: 288px;
             width: 100%;
             height: 201px;
             display: grid;
@@ -43,7 +42,8 @@ export const Tile = styled.section`
         grid-template-columns: auto;
 
         @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
-            width: 136px;
+            width: 100%;
+            max-width: 136px;
             height: 245px;
             padding: 8px;
         }

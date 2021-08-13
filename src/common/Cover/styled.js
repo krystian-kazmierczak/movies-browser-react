@@ -17,15 +17,17 @@ export const StyledCover = styled.header`
         min-height: 148px;
         width: 100%;
     }
-    @media (max-width: ${({ theme }) => theme.breakpoints.tabletLandscape}px) {
-        background-size: contain;
+
+    @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
+        min-height: 200px;
         width: 100%;
     }
 `;
 
 export const Wrapper = styled.div`
-    width: 100%;
+    width: 80%;
     padding-left: 16px;
+    margin: 0 auto;
 `;
 
 export const MainTitle = styled.h1`

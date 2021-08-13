@@ -76,7 +76,6 @@ export const NumericalRating = styled.span`
 
 export const Data = styled.span`
     font-size: 14px;
-    margin-right: 12px;
 
     @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
         font-size: 13px;
@@ -102,11 +101,11 @@ export const Data = styled.span`
             margin-right: 8px;
         }
     `}
-
-
 `;
 
 export const Scale = styled(Data)`
+    margin-right: 12px;
+
     @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
         display: none;
     }
