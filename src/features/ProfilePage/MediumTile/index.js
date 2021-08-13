@@ -36,7 +36,7 @@ export const MediumTile = ({
             ))}
           </Tags>
         </Content>
-        <Rating medium={true} rating={rating} votes={votes} />
+        {!!rating && <Rating medium={true} rating={rating} votes={votes} />}
       </Tile>
     </BrowserView>
     <TabletView>
@@ -53,7 +53,8 @@ export const MediumTile = ({
             ))}
           </Tags>
         </Content>
-        <Rating medium={true} rating={rating} votes={votes} />
+
+        {!!rating && <Rating medium={true} rating={rating} votes={votes} />}
       </Tile>
     </TabletView>
     <MobileOnlyView>
@@ -69,7 +70,7 @@ export const MediumTile = ({
               </Tag>
             ))}
           </Tags>
-          <Rating medium={true} rating={rating} votes={votes} />
+          {!!rating && <Rating medium={true} rating={rating} votes={votes} />}
         </Content>
       </Tile>
     </MobileOnlyView>
