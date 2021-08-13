@@ -28,7 +28,7 @@ const ProfilePage = ({
           <MediumTile
             src={
               movie.poster_path
-                ? apiImage + "/w200" + movie.poster_path + "?api_key=" + apiKey
+                ? `${apiImage}/w200${movie.poster_path}?api_key=${apiKey}`
                 : noPoster
             }
             title={movie.title}
