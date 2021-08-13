@@ -1,74 +1,18 @@
-import { isMobileOnly } from 'react-device-detect';
-import { Rating } from "../../common/Rating";
-import { AdditionalInfo, Content, Description, Image, InfoDetails, InfoTitle, Subtitle, Tag, Tags, Tile, Title } from "../../common/Tile";
-import noPoster from "../../assets/noPoster.svg";
+import { BigTile } from "../../common/Tile/BigTile";
+import { movieData } from "../../movieData";
 
 const MoviePage = () => {
-    if (isMobileOnly) {
-        return (
-            <Tile big>
-                <Image src={noPoster} />
-                <Content>
-                    <Title big>Mulan</Title>
-                    <Subtitle big>2020</Subtitle>
-                    <AdditionalInfo>
-                        <InfoDetails>
-                            <InfoTitle>Production:</InfoTitle>
-                            China, USA
-                        </InfoDetails>
-                        <InfoDetails>
-                            <InfoTitle>Release date:</InfoTitle>
-                            24.10.2020
-                        </InfoDetails>
-                    </AdditionalInfo>
-                    <Tags>
-                        <Tag>Action</Tag>
-                        <Tag>Adventure</Tag>
-                        <Tag>Drama</Tag>
-                    </Tags>
-                    <Rating
-                        rating="7,8"
-                        votes="335"
-                    />
-                </Content>
-                <Description>
-                    A young Chinese maiden disguises herself as a male warrior in order to save her father.
-                    Disguises herself as a male warrior in order to save her father.  A young Chinese maiden disguises herself as a male warrior in order to save her father.
-                </Description>
-            </Tile>
-        );
-    }
     return (
-        <Tile big>
-            <Image src={noPoster} />
-            <Content>
-                <Title big>Mulan</Title>
-                <Subtitle big>2020</Subtitle>
-                <AdditionalInfo>
-                    <InfoDetails>
-                        <InfoTitle>Production:</InfoTitle>
-                        China, USA
-                    </InfoDetails>
-                    <InfoDetails>
-                        <InfoTitle>Release date:</InfoTitle>
-                        24.10.2020
-                    </InfoDetails>
-                </AdditionalInfo>
-                <Tags>
-                    <Tag>Action</Tag>
-                    <Tag>Adventure</Tag>
-                    <Tag>Drama</Tag>
-                </Tags>
-                <Rating
-                    rating="7,8"
-                    votes="335"
-                />
-                <Description>
-                    A young Chinese maiden disguises herself as a male warrior in order to save her father.
-                    Disguises herself as a male warrior in order to save her father.  A young Chinese maiden disguises herself as a male warrior in order to save her father.
-                </Description>
-            </Content>
-        </Tile>
+        <BigTile
+            imageSrc={movieData.poster}
+            title={movieData.title}
+            subtitle={movieData.subtitle}
+            info={movieData.info}
+            tags={movieData.tags}
+            rating={movieData.rating}
+            votes={movieData.votes}
+            description={movieData.description}
+        />
     );
 };
 

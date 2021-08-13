@@ -1,51 +1,69 @@
-import { MobileView, BrowserView } from 'react-device-detect';
-import { Rating } from "../../common/Rating";
-import { Content, Image, Subtitle, Tag, Tags, Tile, Title } from "../../common/Tile";
-import noPoster from "../../assets/noPoster.svg";
+import { MediumTile } from "../../common/Tile/MediumTile";
+import React, { useEffect } from "react";
+import { movieData } from "../../movieData";
+import Pagination from "./../../common/Pagination/index";
+import { useSelector, useDispatch } from "react-redux";
+import { StatusChecker } from "./../../common/StatusChecker/index";
+import { Container } from "./../../common/Container/index";
+import { NoResult } from "./../../common/NoResult";
+import { pageState } from "./../../common/pageState";
+import { selectGenerateList } from "./../../common/commonSlice";
+import { usePageParameter } from "./../usePageParameters";
+import { Header } from "./styled";
+
+import {
+  selectList,
+  selectLoading,
+  selectError,
+  selectTotalResults,
+  fetchList,
+  resetState,
+} from "../listSlice";
 
 const MoviesPage = () => {
-    return (
-        <>
-            <BrowserView>
-                <Tile medium>
-                    <Content>
-                        <Image medium src={noPoster} />
-                        <Title medium>Mulan long title long title long long</Title>
-                        <Subtitle medium>2020</Subtitle>
-                        <Tags medium>
-                            <Tag medium>Action</Tag>
-                            <Tag medium>Adventure</Tag>
-                            <Tag medium>Drama</Tag>
-                        </Tags>
-                    </Content>
-                    <Rating
-                        medium={true}
-                        rating="7,8"
-                        votes="335"
-                    />
-                </Tile>
-            </BrowserView>
-            <MobileView>
-                <Tile medium>
-                    <Image medium src={noPoster} />
-                    <Content>
-                        <Title medium>Mulan long title long title long long</Title>
-                        <Subtitle medium>2020</Subtitle>
-                        <Tags medium>
-                            <Tag medium>Action</Tag>
-                            <Tag medium>Adventure</Tag>
-                            <Tag medium>Drama</Tag>
-                        </Tags>
-                        <Rating
-                            medium={true}
-                            rating="7,8"
-                            votes="335"
-                        />
-                    </Content>
-                </Tile>
-            </MobileView>
-        </>
-    );
+  const dispatch = useDispatch();
+  const pageNumber = +usePageParameter("page");
+  const urlQuery = usePageParameter("search");
+  const page = pageState(pageNumber);
+  const totalResults = useSelector(selectTotalResults);
+  const resultsPage = useSelector(selectList);
+  const isLoading = useSelector(selectLoading);
+  const isError = useSelector(selectError);
+  const generateList = useSelector(selectGenerateList);
+
+  useEffect(() => {
+    dispatch(fetchList({ page, urlQuery, type: "movies" }));
+
+    return () => resetState();
+  }, [urlQuery, dispatch, generateList, page]);
+
+  return (
+    <Container>
+      <StatusChecker isError={isError} isLoading={isLoading}>
+        {!resultsPage.length ? (
+          <NoResult urlQuery={urlQuery} />
+        ) : (
+          <>
+            <Header>
+              {urlQuery
+                ? `Search results for "${urlQuery}" (${totalResults})`
+                : "Popular Movies"}
+            </Header>
+
+            <MediumTile
+              imageSrc={movieData.poster}
+              title={movieData.title}
+              subtitle={movieData.subtitle}
+              tags={movieData.tags}
+              rating={movieData.rating}
+              votes={movieData.votes}
+            />
+            <Pagination />
+          </>
+        )}
+      </StatusChecker>
+    </Container>
+  );
 };
 
 export default MoviesPage;

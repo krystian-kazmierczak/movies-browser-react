@@ -9,7 +9,7 @@ import {
   selectLoading,
 } from "./../SearchSlice";
 import { Wrapper } from "./styled";
-import { Tile } from "./../../../common/Tile/index";
+import { MiniTile } from "./../../../common/Tile/MiniTile/index";
 import { NoResult } from "./../../../common/NoResult/index";
 import noPoster from "./../../../assets/noPoster.svg";
 import noProfile from "./../../../assets/noProfile.svg";
@@ -37,7 +37,7 @@ export const DynamicBox = ({ query }) => {
         <NoResult urlQuery={query} />
       ) : (
         results.map((result) => (
-          <Tile small
+          <MiniTile 
             key={result.id}
             pathText={pathText}
             {...(pathText === "movie"
