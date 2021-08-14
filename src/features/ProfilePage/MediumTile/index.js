@@ -14,7 +14,6 @@ export const MediumTile = ({
   src,
   title,
   subtitle,
-  subtitle2,
   tags,
   rating,
   votes,
@@ -27,7 +26,6 @@ export const MediumTile = ({
           <Image medium src={src} />
           <Title medium>{title}</Title>
           <Subtitle medium>{subtitle}</Subtitle>
-          <Subtitle medium>{subtitle2}</Subtitle>
           <Tags medium>
             {tags.map((tag) => (
               <Tag key={tag} medium>

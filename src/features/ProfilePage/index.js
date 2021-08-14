@@ -32,8 +32,7 @@ const ProfilePage = ({
                 : noPoster
             }
             title={movie.title}
-            subtitle={movie.release_date.substr(0, 4)}
-            subtitle2={movie.character}
+            subtitle={`${movie.character} (${movie.release_date.substr(0, 4)})`}
             tags={movie.genre_ids}
             rating={movie.vote_average}
             votes={movie.vote_count}
