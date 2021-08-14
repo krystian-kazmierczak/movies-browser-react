@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Header = styled.h1`
+export const Header = styled.h2`
   margin: 56px 0 24px;
   font-weight: 600;
   font-size: 36px;
@@ -13,13 +13,10 @@ export const Header = styled.h1`
   }
 `;
 
-export const TilesWrapper = styled.div`
-  display: grid;
-  grid-template-columns: repeat(4,auto);
-  grid-gap: 24px;
-
-  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
-    grid-template-columns: 1fr;
-    grid-gap: 16px;
-  }
+export const TilesWrapper = styled.section`
+display: flex;
+flex-wrap: wrap;
+gap: 12px;
+width: 100%;
+max-width: 1368px;
 `;
