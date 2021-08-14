@@ -1,6 +1,6 @@
 import styled, { css } from "styled-components";
 
-export const Tile = styled.section`
+export const Tile = styled.div`
     margin: 0 auto;
     background-color: ${({ theme }) => theme.colors.white};
     box-shadow: 0px 4px 12px rgba(186, 199, 213, 0.5);
@@ -77,12 +77,13 @@ export const Image = styled.img`
 export const Content = styled.div`
 `;
 
-export const Title = styled.header`
+export const Title = styled.h2`
     font-weight: 500;
     font-size: 36px;
     margin: 8px 0 24px 0;
 
     @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
+        font-style: normal;
         font-size: 16px;
         line-height: 21px;
         color: ${({ theme }) => theme.colors.woodsmoke};
@@ -112,8 +113,10 @@ export const Title = styled.header`
     `}
 `;
 
-export const Subtitle = styled.div`
+export const Subtitle = styled.h3`
     font-size: 22px;
+    font-style: normal;
+    font-weight: 400;
     margin-bottom: 24px;
     color: ${({ theme }) => theme.colors.waterloo};
 
@@ -124,6 +127,7 @@ export const Subtitle = styled.div`
     }
 
     ${({ big }) => big && css`
+    font-weight: 600;
         color: ${({ theme }) => theme.colors.black};
     `}
 
