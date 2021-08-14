@@ -1,4 +1,3 @@
-import { MobileOnlyView, TabletView, BrowserView } from "react-device-detect";
 import { Rating } from "../../../common/Rating";
 import {
   Content,
@@ -19,43 +18,6 @@ export const MediumTile = ({
   votes,
   genres,
 }) => (
-  <>
-    <BrowserView>
-      <Tile medium>
-        <Content>
-          <Image medium src={src} />
-          <Title medium>{title}</Title>
-          <Subtitle medium>{subtitle}</Subtitle>
-          <Tags medium>
-            {tags.map((tag) => (
-              <Tag key={tag} medium>
-                {genres[tag.toString()]}
-              </Tag>
-            ))}
-          </Tags>
-        </Content>
-        {!!rating && <Rating medium={true} rating={rating} votes={votes} />}
-      </Tile>
-    </BrowserView>
-    <TabletView>
-      <Tile medium>
-        <Content>
-          <Image medium src={src} />
-          <Title medium>{title}</Title>
-          <Subtitle medium>{subtitle}</Subtitle>
-          <Tags medium>
-            {tags.map((tag) => (
-              <Tag key={tag} medium>
-                {genres[tag.toString()]}
-              </Tag>
-            ))}
-          </Tags>
-        </Content>
-
-        {!!rating && <Rating medium={true} rating={rating} votes={votes} />}
-      </Tile>
-    </TabletView>
-    <MobileOnlyView>
       <Tile medium>
         <Image medium src={src} />
         <Content>
@@ -71,6 +33,4 @@ export const MediumTile = ({
           {!!rating && <Rating medium={true} rating={rating} votes={votes} />}
         </Content>
       </Tile>
-    </MobileOnlyView>
-  </>
 );
