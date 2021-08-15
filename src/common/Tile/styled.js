@@ -5,7 +5,7 @@ export const Tile = styled.div`
   box-shadow: 0px 4px 12px rgba(186, 199, 213, 0.5);
   margin: 0;
   display: grid;
-  grid-template-row: auto 1fr;
+  grid-template-rows: auto 1fr;
   grid-template-columns: min-content 1fr;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
@@ -24,8 +24,8 @@ export const Tile = styled.div`
       @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
         padding: 16px;
         grid-template-areas:
-        "image content"
-        "description description";
+          "image content"
+          "description description";
       }
     `}
 
@@ -37,15 +37,22 @@ export const Tile = styled.div`
       min-height: 650px;
       height: 100%;
       grid-template-columns: 1fr;
+      grid-template-rows: auto auto auto;
+
+      grid-template-areas:
+          "image"
+          "content"
+          "description";
 
       @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
-        grid-template-row: auto 1fr;
+        grid-template-rows: auto 1fr;
         grid-template-columns: min-content 1fr;
         grid-template-areas:
           "image content"
           "image description";
         min-height: 200px;
         width: 100%;
+        max-width: 566px;
       }
     `}
 
@@ -67,6 +74,7 @@ export const Tile = styled.div`
 `;
 
 export const Image = styled.img`
+  grid-area: image;
   width: 312px;
   height: 464px;
   border-radius: 5px;
@@ -93,7 +101,9 @@ export const Image = styled.img`
     `}
 `;
 
-export const Content = styled.div``;
+export const Content = styled.div`
+  grid-area: content;
+`;
 
 export const Title = styled.h2`
   font-weight: 500;
@@ -242,6 +252,7 @@ export const Tag = styled.li`
 `;
 
 export const Description = styled.p`
+  grid-area: description;
   font-size: 20px;
   line-height: 32px;
 
