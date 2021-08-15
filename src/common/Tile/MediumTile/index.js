@@ -1,29 +1,35 @@
 import { Rating } from "../../Rating";
-import { Content, Image, Subtitle, Tag, Tags, Tile, Title } from "../styled";
+import {
+  Content,
+  Image,
+  Subtitle,
+  Tag,
+  Tags,
+  Tile,
+  Title,
+} from "../styled";
 
 export const MediumTile = ({
-  imageSrc,
+  src,
   title,
   subtitle,
   tags,
   rating,
   votes,
-}) => {
-  return (
-    <Tile medium>
-      <Image medium src={imageSrc} />
-      <Content>
-        <Title medium>{title}</Title>
-        <Subtitle medium>{subtitle}</Subtitle>
-        <Tags medium>
-          {tags.map((tag) => (
-            <Tag key={Math.random()} medium>
-              {tag}
-            </Tag>
-          ))}
-        </Tags>
-        <Rating medium={true} rating={rating} votes={votes} />
-      </Content>
-    </Tile>
-  );
-};
+}) => (
+      <Tile medium>
+        <Image medium src={src} />
+        <Content>
+          <Title medium>{title}</Title>
+          <Subtitle medium>{subtitle}</Subtitle>
+          <Tags medium>
+            {tags.map((tag) => (
+              <Tag key={tag} medium>
+                {tag}
+              </Tag>
+            ))}
+          </Tags>
+          {!!rating && <Rating medium={true} rating={rating} votes={votes} />}
+        </Content>
+      </Tile>
+);
