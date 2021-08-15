@@ -1,8 +1,8 @@
+import { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
 import { MediumTile } from "../../common/Tile/MediumTile";
-import React, { useEffect } from "react";
 import { movieData } from "../../movieData";
 import Pagination from "./../../common/Pagination/index";
-import { useSelector, useDispatch } from "react-redux";
 import { StatusChecker } from "./../../common/StatusChecker/index";
 import { Container } from "./../../common/Container/index";
 import { NoResult } from "./../../common/NoResult";
@@ -13,9 +13,9 @@ import { Header, TilesWrapper } from "./styled";
 import { apiImage, apiKey } from "../../common/commonValues";
 import noPoster from "../../assets/noPoster.svg";
 import { popularMovies } from "./popularMovies";
-import { genres } from "./genres";
-import { getGenreNames } from "./getGenresNames";
-
+import { genres } from "../genres";
+import { getGenreNames } from "../getGenresNames";
+import { getYearFromDate } from "../getYearFromDate";
 import {
   selectList,
   selectLoading,
@@ -24,7 +24,7 @@ import {
   fetchList,
   resetState,
 } from "../listSlice";
-import { getYearFromDate } from "./getYearFromDate";
+
 
 const MoviesPage = () => {
   const dispatch = useDispatch();
@@ -58,7 +58,7 @@ const MoviesPage = () => {
             <TilesWrapper>
               {popularMovies.results.map((movie) => (
                 <MediumTile
-                  imageSrc={
+                  src={
                     movie.poster_path
                       ? apiImage +
                       "/w200" +
