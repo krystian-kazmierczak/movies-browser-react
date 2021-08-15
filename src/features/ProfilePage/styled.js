@@ -6,6 +6,7 @@ export const Section = styled.section`
   gap: 12px;
   width: 100%;
   max-width: 1368px;
+  justify-content: center;
 `;
 
 export const SectionTitle = styled.h2`

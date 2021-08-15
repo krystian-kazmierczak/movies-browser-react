@@ -19,4 +19,5 @@ flex-wrap: wrap;
 gap: 12px;
 width: 100%;
 max-width: 1368px;
+justify-content: center;
 `;
