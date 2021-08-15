@@ -14,8 +14,7 @@ export const NavigationWrapper = styled.nav`
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: center;
-  flex-basis: 50%;
+  justify-content: space-around;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     gap: 16px;
@@ -30,18 +29,14 @@ export const HeaderWrapper = styled.div`
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
-  justify-content: flex-start;
-  flex-basis: 50%;
+  justify-content: space-between;
   gap: 16px;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
-    flex-basis: 90vw;
-    justify-content: center;
     gap: 12px;
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
-    flex-basis: 70%;
     gap: 8px;
   }
 `;
@@ -55,5 +50,4 @@ export const SearchWrapper = styled.div`
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     justify-content: center;
   }
-
 `;
