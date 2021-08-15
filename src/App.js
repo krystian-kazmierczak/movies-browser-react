@@ -5,7 +5,7 @@ import ProfilePage from "./features/ProfilePage";
 import {
   examplePerson as data,
   exampleMovieCredits as movies,
-} from "./features/ProfilePage/exampleData";
+} from "./exampleData";
 import { apiImage, apiKey } from "./common/commonValues";
 import MoviesPage from "./features/MoviesPage";
 import { Error } from "./common/Error";
