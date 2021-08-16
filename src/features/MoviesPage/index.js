@@ -66,7 +66,7 @@ const MoviesPage = () => {
                       : noPoster
                   }
                   title={movie.title}
-                  subtitle={getYearFromDate(movie.release_date)}
+                  subtitle={movie.release_date ? getYearFromDate(movie.release_date) : "" }
                   tags={(getGenreNames(movie.genre_ids, genres))}
                   rating={movie.vote_average}
                   votes={movie.vote_count}
