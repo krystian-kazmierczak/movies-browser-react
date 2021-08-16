@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { MediumTile } from "../../common/Tile/MediumTile";
-import { movieData } from "../../movieData";
 import Pagination from "./../../common/Pagination/index";
 import { StatusChecker } from "./../../common/StatusChecker/index";
 import { Container } from "./../../common/Container/index";
@@ -12,7 +11,6 @@ import { usePageParameter } from "./../usePageParameters";
 import { Header, TilesWrapper } from "./styled";
 import { apiImage, apiKey } from "../../common/commonValues";
 import noPoster from "../../assets/noPoster.svg";
-import { popularMovies } from "./popularMovies";
 import { genres } from "../genres";
 import { getGenreNames } from "../getGenresNames";
 import { getYearFromDate } from "../getYearFromDate";
@@ -56,7 +54,7 @@ const MoviesPage = () => {
                 : "Popular Movies"}
             </Header>
             <TilesWrapper>
-              {popularMovies.results.map((movie) => (
+              {resultsPage.map((movie) => (
                 <MediumTile
                   src={
                     movie.poster_path
@@ -74,15 +72,6 @@ const MoviesPage = () => {
                   votes={movie.vote_count}
                 />
               ))}
-
-              <MediumTile
-                imageSrc={movieData.poster}
-                title={movieData.title}
-                subtitle={movieData.subtitle}
-                tags={movieData.tags}
-                rating={movieData.rating}
-                votes={movieData.votes}
-              />
             </TilesWrapper>
             <Pagination />
           </>
