@@ -7,13 +7,12 @@ import { Error } from "./common/Error";
 import { apiImage, apiKey } from "./common/commonValues";
 import {
   examplePerson as data,
-  exampleMovieCredits as movies,
   popularPerson as popular
 } from "./exampleData";
 
 const imageApi = `${apiImage}/w500${data.profile_path}?api_key=${apiKey}`;
 
-export const App = () => (<>
+export const App = () => (
   <HashRouter>
     <Navigation />
     <MainContainer>
@@ -22,7 +21,7 @@ export const App = () => (<>
           <MoviesPage />
         </Route>
         <Route path="/people">
-          <PeoplePage persons={popular.results}/>
+          <PeoplePage persons={popular.results} />
         </Route>
         <Route path="/error">
           <Error />
