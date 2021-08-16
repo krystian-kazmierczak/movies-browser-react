@@ -38,11 +38,10 @@ export const Tile = styled.div`
       height: 100%;
       grid-template-columns: 1fr;
       grid-template-rows: auto auto auto;
-
       grid-template-areas:
-          "image"
-          "content"
-          "description";
+        "image"
+        "content"
+        "description";
 
       @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
         grid-template-rows: auto 1fr;
@@ -59,15 +58,19 @@ export const Tile = styled.div`
     ${({ small }) =>
     small &&
     css`
+      padding: 16px;
       width: 208px;
-      height: 339px;
+      min-height: 339px;
       text-align: center;
       grid-template-columns: auto;
-
-      @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
+      grid-template-rows: auto auto;
+      grid-template-areas:
+        "image"
+        "content";
+        @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
         width: 100%;
         max-width: 136px;
-        height: 245px;
+        min-height: 245px;
         padding: 8px;
       }
     `}

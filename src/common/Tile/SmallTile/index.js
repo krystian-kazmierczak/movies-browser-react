@@ -1,10 +1,10 @@
 import { Content, Image, Subtitle, Tile, Title } from "../styled"
 
-export const SmallTile = ({ imageSrc, title, subtitle }) => {
+export const SmallTile = ({ src, title, subtitle }) => {
     return (
         <Tile small>
+            <Image small src={src} />
             <Content>
-                <Image small src={imageSrc} />
                 <Title small>{title}</Title>
                 <Subtitle small>{subtitle}</Subtitle>
             </Content>
