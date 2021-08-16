@@ -18,7 +18,7 @@ const listSlice = createSlice({
       state.loading = false;
       state.error = false;
       state.totalResults = list.totalResults;
-      state.numberOfPages = list.totalPages;
+      state.numberOfPages = list.total_pages;
     },
     fetchListError: (state) => {
       state.loading = false;
