@@ -55,6 +55,7 @@ const MoviesPage = () => {
             <Section>
               {resultsPage.map((movie) => (
                 <MediumTile
+                  key={movie.id}
                   src={
                     movie.poster_path
                       ? `${apiImage}/w200${movie.poster_path}?api_key=${apiKey}`
