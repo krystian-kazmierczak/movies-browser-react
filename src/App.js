@@ -1,7 +1,6 @@
 import { HashRouter, Redirect, Route, Switch } from "react-router-dom";
 import { Navigation } from "./Navigation";
 import { MainContainer } from "./styled";
-import ProfilePage from "./features/ProfilePage";
 import MoviesPage from "./features/MoviesPage";
 import PeoplePage from "./features/PeoplePage";
 import { Error } from "./common/Error";
@@ -34,13 +33,4 @@ export const App = () => (<>
       </Switch>
     </MainContainer>
   </HashRouter>
-  <ProfilePage
-  name={data.name}
-  birthDay={data.birthday}
-  placeOfBirth={data.place_of_birth}
-  description={data.biography}
-  poster={imageApi}
-  cast={movies.cast}
-  crew={movies.crew}/>
-  </>
 );
