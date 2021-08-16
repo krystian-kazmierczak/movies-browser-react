@@ -1,16 +1,13 @@
 import { Rating } from "../Rating";
-import { StyledCover, MainTitle, Wrapper } from "./styled";
+import { Header, Title, Wrapper } from "./styled";
 
 const Cover = () => (
-    <StyledCover>
-        <Wrapper>
-            <MainTitle>Mulan long title</MainTitle>
-            <Rating
-                cover={true}
-                rating="7,8"
-                votes="335" />
-        </Wrapper>
-    </StyledCover>
+  <Header>
+    <Wrapper>
+      <Title>Mulan long title</Title>
+      <Rating cover={true} rating="7,8" votes="335" />
+    </Wrapper>
+  </Header>
 );
 
 export default Cover;
