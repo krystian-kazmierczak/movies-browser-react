@@ -42,14 +42,14 @@ const Pagination = () => {
             disabled={page === 1}
             onClick={() => onButtonClick(1)}
           >
-            <Arrow src={leftArrowBlue} alt="left arrow" />
+            <Arrow src={page === 1 ? leftArrowGray : leftArrowBlue} alt="left arrow" />
             First
           </PaginationButton>
           <PaginationButton
             disabled={page === 1}
             onClick={() => onButtonClick(page - 1)}
           >
-            <Arrow src={leftArrowGray} alt="left arrow" />
+            <Arrow src={page === 1 ? leftArrowGray : leftArrowBlue} alt="left arrow" />
             Previous
           </PaginationButton>
           <PageNumberContainer>
@@ -63,14 +63,14 @@ const Pagination = () => {
             onClick={() => onButtonClick(page + 1)}
           >
             Next
-            <Arrow src={rightArrowBlue} alt="right arrow" />
+            <Arrow src={page === numberOfPages ? rightArrowGray : rightArrowBlue} alt="right arrow" />
           </PaginationButton>
           <PaginationButton
             disabled={page === numberOfPages}
             onClick={() => onButtonClick(numberOfPages)}
           >
             Last
-            <Arrow src={rightArrowGray} alt="right arrow" />
+            <Arrow src={page === numberOfPages ? rightArrowGray : rightArrowBlue} alt="right arrow" />
           </PaginationButton>
         </Wrapper>
       </BrowserView>
@@ -80,14 +80,14 @@ const Pagination = () => {
             disabled={page === 1}
             onClick={() => onButtonClick(1)}
           >
-            <Arrow src={leftArrowBlue} alt="left arrow" />
-            <Arrow src={leftArrowBlue} alt="left arrow" />
+            <Arrow src={page === 1 ? leftArrowGray : leftArrowBlue} alt="left arrow" />
+            <Arrow src={page === 1 ? leftArrowGray : leftArrowBlue} alt="left arrow" />
           </PaginationButton>
           <PaginationButton
             disabled={page === 1}
             onClick={() => onButtonClick(page - 1)}
           >
-            <Arrow src={leftArrowGray} alt="left arrow" />
+            <Arrow src={page === 1 ? leftArrowGray : leftArrowBlue} alt="left arrow" />
           </PaginationButton>
           <PageNumberContainer>
             <Text>Page</Text>
@@ -99,14 +99,14 @@ const Pagination = () => {
             disabled={page === numberOfPages}
             onClick={() => onButtonClick(page + 1)}
           >
-            <Arrow src={rightArrowBlue} alt="right arrow" />
+            <Arrow src={page === numberOfPages ? rightArrowGray : rightArrowBlue} alt="right arrow" />
           </PaginationButton>
           <PaginationButton
             disabled={page === numberOfPages}
             onClick={() => onButtonClick(numberOfPages)}
           >
-            <Arrow src={rightArrowBlue} alt="right arrow" />
-            <Arrow src={rightArrowGray} alt="right arrow" />
+            <Arrow src={page === numberOfPages ? rightArrowGray : rightArrowBlue} alt="right arrow" />
+            <Arrow src={page === numberOfPages ? rightArrowGray : rightArrowBlue} alt="right arrow" />
           </PaginationButton>
         </Wrapper>
       </MobileView>
