@@ -3,11 +3,10 @@ import {
   Content,
   Description,
   Image,
-  InfoDetails,
-  InfoTitle,
   Tile,
   Title,
 } from "../../../common/Tile/styled";
+import { InfoDetails, InfoTitle } from "./styled";
 
 export const BigTile = ({
   name,
@@ -22,10 +21,14 @@ export const BigTile = ({
       <Title big>{name}</Title>
       <AdditionalInfo>
         <InfoDetails>
-          <InfoTitle>Date of bird:</InfoTitle> {birthDay}
+          <InfoTitle>
+            {window.innerWidth > 766 ? "Date of bird:" : "Bird:"}
+          </InfoTitle>{" "}
+          {birthDay}
         </InfoDetails>
         <InfoDetails>
-          <InfoTitle>Place of bird</InfoTitle>{placeOfBirth}
+          <InfoTitle>{window.innerWidth > 766 ? "Place of bird:" : ""} </InfoTitle>
+          {placeOfBirth}
         </InfoDetails>
       </AdditionalInfo>
     </Content>

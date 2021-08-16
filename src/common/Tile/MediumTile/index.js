@@ -22,13 +22,13 @@ export const MediumTile = ({
         <Content>
           <Title medium>{title}</Title>
           <Subtitle medium>{subtitle}</Subtitle>
-          <Tags medium>
+          {!!tags && (<Tags medium>
             {tags.map((tag) => (
               <Tag key={tag} medium>
                 {tag}
               </Tag>
             ))}
-          </Tags>
+          </Tags>)}
           {!!rating && <Rating medium={true} rating={rating} votes={votes} />}
         </Content>
       </Tile>

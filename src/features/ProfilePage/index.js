@@ -1,4 +1,4 @@
-import { Section, SectionTitle } from "./styled";
+import { Container, Header, Section } from "../../common/Container";
 import { apiImage, apiKey } from "../../common/commonValues";
 import noPoster from "../../assets/noPoster.svg";
 import { genres } from "../genres";
@@ -14,9 +14,10 @@ const ProfilePage = ({
   description,
   poster,
   cast,
+  crew,
 }) => {
   return (
-    <>
+    <Container>
       <BigTile
         name={name}
         birthDay={birthDay}
@@ -24,7 +25,7 @@ const ProfilePage = ({
         description={description}
         poster={poster}
       />
-      <SectionTitle>Movies - Cast ({cast.length})</SectionTitle>
+      <Header>Movies - Cast ({cast.length})</Header>
       <Section>
         {cast.map((movie) => (
           <MediumTile
@@ -34,18 +35,51 @@ const ProfilePage = ({
                 : noPoster
             }
             title={movie.title}
-            subtitle={`${movie.character} ${
-              movie.release_date ? "(" : ""
-            }${getYearFromDate(movie.release_date)}${
-              movie.release_date ? ")" : ""
-            }`}
-            tags={(getGenreNames(movie.genre_ids, genres))}
+            subtitle={
+              !!movie.release_date &&
+              `
+            ${movie.character} 
+            ${movie.release_date ? "(" : ""}
+            ${getYearFromDate(movie.release_date)}
+            ${movie.release_date ? ")" : ""}
+            `
+            }
+            tags={
+              !!movie.genre_ids.length && getGenreNames(movie.genre_ids, genres)
+            }
             rating={movie.vote_average}
             votes={movie.vote_count}
           />
         ))}
       </Section>
-    </>
+      <Header>Movies - Crew ({crew.length})</Header>
+      <Section>
+        {crew.map((movie) => (
+          <MediumTile
+            src={
+              movie.poster_path
+                ? `${apiImage}/w200${movie.poster_path}?api_key=${apiKey}`
+                : noPoster
+            }
+            title={movie.title}
+            subtitle={
+              !!movie.release_date &&
+              `
+              ${movie.job} 
+              ${movie.release_date ? "(" : ""} 
+              ${getYearFromDate(movie.release_date)}
+              ${movie.release_date ? ")" : ""}
+              `
+            }
+            tags={
+              !!movie.genre_ids.length && getGenreNames(movie.genre_ids, genres)
+            }
+            rating={movie.vote_average}
+            votes={movie.vote_count}
+          />
+        ))}
+      </Section>
+    </Container>
   );
 };
 
