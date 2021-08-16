@@ -14,10 +14,11 @@ export const Header = styled.h2`
 `;
 
 export const TilesWrapper = styled.section`
-display: flex;
-flex-wrap: wrap;
-gap: 12px;
-width: 100%;
-max-width: 1368px;
-justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  width: 100%;
+  max-width: 1368px;
+  justify-content: center;
+  align-items: stretch;
 `;
