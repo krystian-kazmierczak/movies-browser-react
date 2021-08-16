@@ -37,10 +37,16 @@ export const PaginationButton = styled.button`
         filter: brightness(90%);
     }
 
-    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
+    @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
         grid-gap: 4px;
         padding: 8px 12px;
         margin-right: 8px;
+    }
+`;
+
+export const Label = styled.span`
+    @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
+        display: none;
     }
 `;
 
@@ -48,9 +54,17 @@ export const Arrow = styled.img`
     width: 7px;
     height: 11px;
 
-    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
+    @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
         width: 5px;
         height: 8px;
+    }
+`;
+
+export const SecondArrow = styled(Arrow)`
+    display: none;
+
+    @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
+        display: unset;
     }
 `;
 
@@ -60,7 +74,7 @@ export const PageNumberContainer = styled.div`
     grid-template-columns: repeat(4,auto);
     margin: 0 24px 0 12px;
 
-    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
+    @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
         grid-gap: 2px;
         margin: 0 8px 0 0;
     }
@@ -71,7 +85,7 @@ export const Text = styled.span`
     line-height: 24px;
     color: ${({ theme }) => theme.colors.waterloo};
 
-    @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
+    @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
         font-size: 10px;
     }
 `;

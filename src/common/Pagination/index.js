@@ -1,4 +1,3 @@
-import { BrowserView, MobileView } from "react-device-detect";
 import { useSelector } from "react-redux";
 import { pageState } from "./../pageState";
 import { selectNumberOfPages } from "../../features/listSlice";
@@ -9,10 +8,12 @@ import {
 import {
   Number,
   Arrow,
+  SecondArrow,
   PaginationButton,
   Text,
   Wrapper,
   PageNumberContainer,
+  Label,
 } from "./styled";
 import leftArrowBlue from "../../assets/leftArrowBlue.svg";
 import rightArrowBlue from "../../assets/rightArrowBlue.svg";
@@ -35,82 +36,44 @@ const Pagination = () => {
   };
 
   return (
-    <>
-      <BrowserView>
-        <Wrapper>
-          <PaginationButton
-            disabled={page === 1}
-            onClick={() => onButtonClick(1)}
-          >
-            <Arrow src={page === 1 ? leftArrowGray : leftArrowBlue} alt="left arrow" />
-            First
-          </PaginationButton>
-          <PaginationButton
-            disabled={page === 1}
-            onClick={() => onButtonClick(page - 1)}
-          >
-            <Arrow src={page === 1 ? leftArrowGray : leftArrowBlue} alt="left arrow" />
-            Previous
-          </PaginationButton>
-          <PageNumberContainer>
-            <Text>Page</Text>
-            <Number>{page}</Number>
-            <Text>of</Text>
-            <Number>{numberOfPages}</Number>
-          </PageNumberContainer>
-          <PaginationButton
-            disabled={page === numberOfPages}
-            onClick={() => onButtonClick(page + 1)}
-          >
-            Next
-            <Arrow src={page === numberOfPages ? rightArrowGray : rightArrowBlue} alt="right arrow" />
-          </PaginationButton>
-          <PaginationButton
-            disabled={page === numberOfPages}
-            onClick={() => onButtonClick(numberOfPages)}
-          >
-            Last
-            <Arrow src={page === numberOfPages ? rightArrowGray : rightArrowBlue} alt="right arrow" />
-          </PaginationButton>
-        </Wrapper>
-      </BrowserView>
-      <MobileView>
-        <Wrapper>
-          <PaginationButton
-            disabled={page === 1}
-            onClick={() => onButtonClick(1)}
-          >
-            <Arrow src={page === 1 ? leftArrowGray : leftArrowBlue} alt="left arrow" />
-            <Arrow src={page === 1 ? leftArrowGray : leftArrowBlue} alt="left arrow" />
-          </PaginationButton>
-          <PaginationButton
-            disabled={page === 1}
-            onClick={() => onButtonClick(page - 1)}
-          >
-            <Arrow src={page === 1 ? leftArrowGray : leftArrowBlue} alt="left arrow" />
-          </PaginationButton>
-          <PageNumberContainer>
-            <Text>Page</Text>
-            <Number>{page}</Number>
-            <Text>of</Text>
-            <Number>{numberOfPages}</Number>
-          </PageNumberContainer>
-          <PaginationButton
-            disabled={page === numberOfPages}
-            onClick={() => onButtonClick(page + 1)}
-          >
-            <Arrow src={page === numberOfPages ? rightArrowGray : rightArrowBlue} alt="right arrow" />
-          </PaginationButton>
-          <PaginationButton
-            disabled={page === numberOfPages}
-            onClick={() => onButtonClick(numberOfPages)}
-          >
-            <Arrow src={page === numberOfPages ? rightArrowGray : rightArrowBlue} alt="right arrow" />
-            <Arrow src={page === numberOfPages ? rightArrowGray : rightArrowBlue} alt="right arrow" />
-          </PaginationButton>
-        </Wrapper>
-      </MobileView>
-    </>
+    <Wrapper>
+      <PaginationButton
+        disabled={page === 1}
+        onClick={() => onButtonClick(1)}
+      >
+        <Arrow src={page === 1 ? leftArrowGray : leftArrowBlue} alt="left arrow" />
+        <SecondArrow src={page === 1 ? leftArrowGray : leftArrowBlue} alt="left arrow" />
+        <Label>First</Label>
+      </PaginationButton>
+      <PaginationButton
+        disabled={page === 1}
+        onClick={() => onButtonClick(page - 1)}
+      >
+        <Arrow src={page === 1 ? leftArrowGray : leftArrowBlue} alt="left arrow" />
+        <Label>Previous</Label>
+      </PaginationButton>
+      <PageNumberContainer>
+        <Text>Page</Text>
+        <Number>{page}</Number>
+        <Text>of</Text>
+        <Number>{numberOfPages}</Number>
+      </PageNumberContainer>
+      <PaginationButton
+        disabled={page === numberOfPages}
+        onClick={() => onButtonClick(page + 1)}
+      >
+        <Label>Next</Label>
+        <Arrow src={page === numberOfPages ? rightArrowGray : rightArrowBlue} alt="right arrow" />
+      </PaginationButton>
+      <PaginationButton
+        disabled={page === numberOfPages}
+        onClick={() => onButtonClick(numberOfPages)}
+      >
+        <Label>Last</Label>
+        <Arrow src={page === numberOfPages ? rightArrowGray : rightArrowBlue} alt="right arrow" />
+        <SecondArrow src={page === numberOfPages ? rightArrowGray : rightArrowBlue} alt="right arrow" />
+      </PaginationButton>
+    </Wrapper>
   );
 };
 
