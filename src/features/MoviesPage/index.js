@@ -53,12 +53,12 @@ const MoviesPage = () => {
                 : "Popular Movies"}
             </Header>
             <Section>
-              {popularMovies.results.map((movie) => (
+              {resultsPage.map((movie) => (
                 <MediumTile
                   src={
                     movie.poster_path
-                    ? `${apiImage}/w200${movie.poster_path}?api_key=${apiKey}`
-                    : noPoster
+                      ? `${apiImage}/w200${movie.poster_path}?api_key=${apiKey}`
+                      : noPoster
                   }
                   title={movie.title}
                   subtitle={getYearFromDate(movie.release_date)}
