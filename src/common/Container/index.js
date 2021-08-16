@@ -1,17 +1,17 @@
 import styled from "styled-components";
 
 export const Container = styled.div`
-    max-width: 1368px;
-    margin: auto;
+  max-width: 1368px;
+  margin: auto;
 `;
 
 export const Section = styled.section`
-display: flex;
-flex-wrap: wrap;
-gap: 12px;
-width: 100%;
-justify-content: center;
-align-items: stretch;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  width: 100%;
+  justify-content: center;
+  align-items: stretch;
 `;
 
 export const Header = styled.h2`
