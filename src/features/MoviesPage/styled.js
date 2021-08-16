@@ -1,5 +1,14 @@
 import styled from "styled-components";
 
+export const Section = styled.section`
+display: flex;
+flex-wrap: wrap;
+gap: 12px;
+width: 100%;
+max-width: 1368px;
+justify-content: center;
+`;
+
 export const Header = styled.h2`
   margin: 56px 0 24px;
   font-weight: 600;
@@ -11,13 +20,4 @@ export const Header = styled.h2`
     font-size: 18px;
     margin: 8px 0 12px 0;
   }
-`;
-
-export const TilesWrapper = styled.section`
-display: flex;
-flex-wrap: wrap;
-gap: 12px;
-width: 100%;
-max-width: 1368px;
-justify-content: center;
 `;

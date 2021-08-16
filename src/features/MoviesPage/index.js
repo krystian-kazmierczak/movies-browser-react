@@ -1,7 +1,6 @@
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { MediumTile } from "../../common/Tile/MediumTile";
-import { movieData } from "../../movieData";
 import Pagination from "./../../common/Pagination/index";
 import { StatusChecker } from "./../../common/StatusChecker/index";
 import { Container } from "./../../common/Container/index";
@@ -9,7 +8,7 @@ import { NoResult } from "./../../common/NoResult";
 import { pageState } from "./../../common/pageState";
 import { selectGenerateList } from "./../../common/commonSlice";
 import { usePageParameter } from "./../usePageParameters";
-import { Header, TilesWrapper } from "./styled";
+import { Header, Section } from "./styled";
 import { apiImage, apiKey } from "../../common/commonValues";
 import noPoster from "../../assets/noPoster.svg";
 import { popularMovies } from "./popularMovies";
@@ -55,35 +54,22 @@ const MoviesPage = () => {
                 ? `Search results for "${urlQuery}" (${totalResults})`
                 : "Popular Movies"}
             </Header>
-            <TilesWrapper>
+            <Section>
               {popularMovies.results.map((movie) => (
                 <MediumTile
                   src={
                     movie.poster_path
-                      ? apiImage +
-                      "/w200" +
-                      movie.poster_path +
-                      "?api_key=" +
-                      apiKey
-                      : noPoster
+                    ? `${apiImage}/w200${movie.poster_path}?api_key=${apiKey}`
+                    : noPoster
                   }
                   title={movie.title}
                   subtitle={getYearFromDate(movie.release_date)}
-                  tags={(getGenreNames(movie.genre_ids, genres))}
+                  tags={!!movie.genre_ids.length && getGenreNames(movie.genre_ids, genres)}
                   rating={movie.vote_average}
                   votes={movie.vote_count}
                 />
               ))}
-
-              <MediumTile
-                imageSrc={movieData.poster}
-                title={movieData.title}
-                subtitle={movieData.subtitle}
-                tags={movieData.tags}
-                rating={movieData.rating}
-                votes={movieData.votes}
-              />
-            </TilesWrapper>
+            </Section>
             <Pagination />
           </>
         )}

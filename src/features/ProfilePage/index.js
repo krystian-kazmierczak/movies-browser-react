@@ -1,4 +1,4 @@
-import { Section, SectionTitle } from "./styled";
+import { Header, Section } from "./styled";
 import { apiImage, apiKey } from "../../common/commonValues";
 import noPoster from "../../assets/noPoster.svg";
 import { genres } from "../genres";
@@ -24,7 +24,7 @@ const ProfilePage = ({
         description={description}
         poster={poster}
       />
-      <SectionTitle>Movies - Cast ({cast.length})</SectionTitle>
+      <Header>Movies - Cast ({cast.length})</Header>
       <Section>
         {cast.map((movie) => (
           <MediumTile
@@ -39,12 +39,13 @@ const ProfilePage = ({
             }${getYearFromDate(movie.release_date)}${
               movie.release_date ? ")" : ""
             }`}
-            tags={(getGenreNames(movie.genre_ids, genres))}
+            tags={!!movie.genre_ids.length && getGenreNames(movie.genre_ids, genres)}
             rating={movie.vote_average}
             votes={movie.vote_count}
           />
         ))}
       </Section>
+      
     </>
   );
 };

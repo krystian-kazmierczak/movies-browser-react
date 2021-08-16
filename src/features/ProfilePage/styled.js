@@ -9,7 +9,7 @@ export const Section = styled.section`
   justify-content: center;
 `;
 
-export const SectionTitle = styled.h2`
+export const Header = styled.h2`
   font-style: normal;
   font-weight: 600;
   font-size: 36px;
