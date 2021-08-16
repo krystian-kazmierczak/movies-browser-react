@@ -36,7 +36,6 @@ export const Tile = styled.div`
       width: 324px;
       min-height: 650px;
       grid-template-columns: 1fr;
-      grid-template-rows: auto auto auto;
       grid-template-areas:
         "image"
         "content"
@@ -106,6 +105,9 @@ export const Image = styled.img`
 
 export const Content = styled.div`
   grid-area: content;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 `;
 
 export const Title = styled.h2`

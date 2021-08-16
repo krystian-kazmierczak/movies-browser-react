@@ -17,19 +17,21 @@ export const MediumTile = ({
   rating,
   votes,
 }) => (
-      <Tile medium>
-        <Image medium src={src} />
-        <Content>
-          <Title medium>{title}</Title>
-          <Subtitle medium>{subtitle}</Subtitle>
-          {!!tags && (<Tags medium>
-            {tags.map((tag) => (
-              <Tag key={tag} medium>
-                {tag}
-              </Tag>
-            ))}
-          </Tags>)}
-          {!!rating && <Rating medium={true} rating={rating} votes={votes} />}
-        </Content>
-      </Tile>
+  <Tile medium>
+    <Image medium src={src} />
+    <Content>
+      <div>
+        <Title medium>{title}</Title>
+        <Subtitle medium>{subtitle}</Subtitle>
+        {!!tags && (<Tags medium>
+          {tags.map((tag) => (
+            <Tag key={tag} medium>
+              {tag}
+            </Tag>
+          ))}
+        </Tags>)}
+      </div>
+      {!!rating && <Rating medium={true} rating={rating} votes={votes} />}
+    </Content>
+  </Tile>
 );
