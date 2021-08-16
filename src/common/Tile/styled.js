@@ -81,6 +81,7 @@ export const Image = styled.img`
   margin-bottom: 16px;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
+    margin-bottom: 0;
     width: 114px;
     height: 169px;
   }
@@ -151,7 +152,7 @@ export const Subtitle = styled.h3`
   font-size: 22px;
   font-style: normal;
   font-weight: 400;
-  margin-bottom: 24px;
+  margin: 0 0 24px 0;
   color: ${({ theme }) => theme.colors.waterloo};
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
