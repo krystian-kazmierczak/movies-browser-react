@@ -29,7 +29,7 @@ export const MediumTile = ({
               </Tag>
             ))}
           </Tags>)}
-          {!!rating && <Rating medium={true} rating={rating} votes={votes} />}
+          {!!rating && <Rating rating={rating} votes={votes} />}
         </Content>
       </Tile>
 );
