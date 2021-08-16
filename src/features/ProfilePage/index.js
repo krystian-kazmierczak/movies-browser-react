@@ -1,4 +1,4 @@
-import { Header, Section } from "./styled";
+import { Container, Header, Section } from "../../common/Container";
 import { apiImage, apiKey } from "../../common/commonValues";
 import noPoster from "../../assets/noPoster.svg";
 import { genres } from "../genres";
@@ -17,7 +17,7 @@ const ProfilePage = ({
   crew,
 }) => {
   return (
-    <>
+    <Container>
       <BigTile
         name={name}
         birthDay={birthDay}
@@ -79,7 +79,7 @@ const ProfilePage = ({
           />
         ))}
       </Section>
-    </>
+    </Container>
   );
 };
 

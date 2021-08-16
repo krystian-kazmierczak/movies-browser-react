@@ -1,11 +1,12 @@
 import { apiImage, apiKey } from "../../common/commonValues";
 import { SmallTile } from "../../common/Tile/SmallTile";
 import noPoster from "../../assets/noPoster.svg";
-import { Header, Section } from "./styled";
+import { Container, Header, Section } from "../../common/Container";
+
 
 const PeoplePage = ({ persons }) => {
   return (
-    <>
+    <Container>
       <Header>Popular people</Header>
       <Section>
         {persons.map((person) => (
@@ -19,7 +20,7 @@ const PeoplePage = ({ persons }) => {
           />
         ))};
       </Section>
-    </>
+    </Container>
   );
 };
 
