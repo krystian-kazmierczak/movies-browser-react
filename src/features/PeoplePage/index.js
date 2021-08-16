@@ -1,25 +1,69 @@
-import { apiImage, apiKey } from "../../common/commonValues";
 import { SmallTile } from "../../common/Tile/SmallTile";
-import noPoster from "../../assets/noPoster.svg";
 import { Container, Header, Section } from "../../common/Container";
+import { useEffect } from "react";
+import { useSelector, useDispatch } from "react-redux";
+import Pagination from "./../../common/Pagination/index";
+import { StatusChecker } from "./../../common/StatusChecker/index";
+import { NoResult } from "./../../common/NoResult";
+import { pageState } from "./../../common/pageState";
+import { selectGenerateList } from "./../../common/commonSlice";
+import { usePageParameter } from "./../usePageParameters";
+import { apiImage, apiKey } from "../../common/commonValues";
+import noProfile from "../../assets/noProfile.svg";
+import {
+  selectList,
+  selectLoading,
+  selectError,
+  selectTotalResults,
+  fetchList,
+  resetState,
+} from "../listSlice";
 
+const PeoplePage = () => {
+  const dispatch = useDispatch();
+  const pageNumber = +usePageParameter("page");
+  const urlQuery = usePageParameter("search");
+  const page = pageState(pageNumber);
+  const totalResults = useSelector(selectTotalResults);
+  const resultsPage = useSelector(selectList);
+  const isLoading = useSelector(selectLoading);
+  const isError = useSelector(selectError);
+  const generateList = useSelector(selectGenerateList);
 
-const PeoplePage = ({ persons }) => {
+  useEffect(() => {
+    dispatch(fetchList({ page, urlQuery, type: "people" }));
+
+    return () => resetState();
+  }, [urlQuery, dispatch, generateList, page]);
+
   return (
     <Container>
-      <Header>Popular people</Header>
-      <Section>
-        {persons.map((person) => (
-          <SmallTile
-            src={
-              !!person.profile_path
-                ? `${apiImage}/w500${person.profile_path}?api_key=${apiKey}`
-                : noPoster
-            }
-            title={person.name}
-          />
-        ))};
-      </Section>
+      <StatusChecker isError={isError} isLoading={isLoading}>
+        {!resultsPage.length ? (
+          <NoResult urlQuery={urlQuery} />
+        ) : (
+          <>
+            <Header>
+              {urlQuery
+                ? `Search results for "${urlQuery}" (${totalResults})`
+                : "Popular people"}
+            </Header>
+            <Section>
+              {resultsPage.map((person) => (
+                <SmallTile
+                  src={
+                    !!person.profile_path
+                      ? `${apiImage}/w500${person.profile_path}?api_key=${apiKey}`
+                      : noProfile
+                  }
+                  title={person.name}
+                />
+              ))}
+            </Section>
+            <Pagination />
+          </>
+        )}
+      </StatusChecker>
     </Container>
   );
 };
