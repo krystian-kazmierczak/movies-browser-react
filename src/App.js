@@ -28,6 +28,7 @@ export const App = () => (
             description={data.biography}
             poster={imageApi}
             cast={movies.cast}
+            crew={movies.crew}
           />
         </Route>
         <Route path="/error">

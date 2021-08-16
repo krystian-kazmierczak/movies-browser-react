@@ -14,6 +14,7 @@ const ProfilePage = ({
   description,
   poster,
   cast,
+  crew,
 }) => {
   return (
     <>
@@ -45,7 +46,27 @@ const ProfilePage = ({
           />
         ))}
       </Section>
-      
+      <Header>Movies - Crew ({crew.length})</Header>
+      <Section>
+        {crew.map((movie) => (
+          <MediumTile
+            src={
+              movie.poster_path
+                ? `${apiImage}/w200${movie.poster_path}?api_key=${apiKey}`
+                : noPoster
+            }
+            title={movie.title}
+            subtitle={`${movie.job} ${
+              movie.release_date ? "(" : ""
+            }${getYearFromDate(movie.release_date)}${
+              movie.release_date ? ")" : ""
+            }`}
+            tags={!!movie.genre_ids.length && getGenreNames(movie.genre_ids, genres)}
+            rating={movie.vote_average}
+            votes={movie.vote_count}
+          />
+        ))}
+      </Section>
     </>
   );
 };
