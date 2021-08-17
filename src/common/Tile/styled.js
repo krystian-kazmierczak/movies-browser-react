@@ -168,7 +168,6 @@ export const Subtitle = styled.h3`
   ${({ big }) =>
     big &&
     css`
-      font-weight: 600;
       color: ${({ theme }) => theme.colors.black};
     `}
 
@@ -206,6 +205,7 @@ export const AdditionalInfo = styled.div`
 
 export const InfoDetails = styled.span`
   font-size: 18px;
+  line-height: 22px;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     font-size: 12px;
