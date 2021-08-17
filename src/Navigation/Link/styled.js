@@ -42,7 +42,6 @@ export const StyledNavLink = styled(NavLink).attrs(() => ({ activeClassName }))`
   padding: 14px 16px;
   border-radius: 24px;
   transition: 0.5s;
-  outline: none;
 
   &:hover {
     color: ${({ theme }) => theme.colors.black};
@@ -50,7 +49,7 @@ export const StyledNavLink = styled(NavLink).attrs(() => ({ activeClassName }))`
   }
 
   &.${activeClassName} {
-    border: 1px solid ${({ theme }) => theme.colors.white};
+    border: 2px solid ${({ theme }) => theme.colors.white};
     cursor: unset;
 
     &:hover {
