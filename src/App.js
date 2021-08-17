@@ -3,25 +3,29 @@ import { Navigation } from "./Navigation";
 import { MainContainer } from "./styled";
 import MoviesPage from "./features/MoviesPage";
 import PeoplePage from "./features/PeoplePage";
+import MoviePage from "./features/MoviePage";
 import { Error } from "./common/Error";
-import { popularPerson as popular } from "./exampleData";
+import { toError, toMovie, toMovies, toPeople } from "./common/routes";
 
 export const App = () => (
   <HashRouter>
     <Navigation />
     <MainContainer>
       <Switch>
-        <Route path="/movies">
+        <Route path={toMovie()}>
+          <MoviePage />
+        </Route>
+        <Route path={toMovies()}>
           <MoviesPage />
         </Route>
-        <Route path="/people">
-          <PeoplePage persons={popular.results} />
+        <Route path={toPeople()}>
+          <PeoplePage />
         </Route>
-        <Route path="/error">
+        <Route path={toError()}>
           <Error />
         </Route>
-        <Route path="/">
-          <Redirect to="/movies" />
+        <Route>
+          <Redirect to={toMovies()} />
         </Route>
       </Switch>
     </MainContainer>
