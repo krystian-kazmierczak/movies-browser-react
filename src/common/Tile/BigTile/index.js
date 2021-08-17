@@ -14,10 +14,11 @@ import {
 } from "../styled";
 
 export const BigTile = ({
-  imageSrc,
+  src,
   title,
   subtitle,
-  info,
+  production,
+  releaseDate,
   tags,
   rating,
   votes,
@@ -25,25 +26,27 @@ export const BigTile = ({
 }) => {
   return (
     <Tile big>
-      <Image src={imageSrc} />
+      <Image src={src} />
       <Content>
         <Title big>{title}</Title>
         <Subtitle big>{subtitle}</Subtitle>
         <AdditionalInfo>
-          {info.map((info) => (
-            <InfoDetails key={Math.random()}>
-              <InfoTitle>{info.title}</InfoTitle>
-              {info.details}
-            </InfoDetails>
-          ))}
+          <InfoDetails >
+            <InfoTitle>Production:</InfoTitle>
+            {production}
+          </InfoDetails>
+          <InfoDetails >
+            <InfoTitle>Release date:</InfoTitle>
+            {releaseDate}
+          </InfoDetails>
         </AdditionalInfo>
-        <Tags medium>
+        {!!tags && (<Tags medium>
           {tags.map((tag) => (
-            <Tag key={tag} medium>
-              {tag}
+            <Tag key={Math.random()} medium>
+              {tag.name}
             </Tag>
           ))}
-        </Tags>
+        </Tags>)}
         {!!rating && <Rating rating={rating} votes={votes} />}
       </Content>
       <Description>{description}</Description>
