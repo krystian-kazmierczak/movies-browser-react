@@ -4,13 +4,7 @@ import { MainContainer } from "./styled";
 import MoviesPage from "./features/MoviesPage";
 import PeoplePage from "./features/PeoplePage";
 import { Error } from "./common/Error";
-import { apiImage, apiKey } from "./common/commonValues";
-import {
-  examplePerson as data,
-  popularPerson as popular
-} from "./exampleData";
-
-const imageApi = `${apiImage}/w500${data.profile_path}?api_key=${apiKey}`;
+import { popularPerson as popular } from "./exampleData";
 
 export const App = () => (
   <HashRouter>
