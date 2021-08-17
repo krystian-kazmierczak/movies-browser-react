@@ -84,7 +84,7 @@ export const Image = styled.img`
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     margin-bottom: 0;
     width: 114px;
-    height: 169px;
+    height: auto;
   }
 
   ${({ medium }) =>
@@ -98,7 +98,7 @@ export const Image = styled.img`
     small &&
     css`
       width: 176px;
-      height: 231px;
+      height: auto;
       margin-bottom: 0;
     `}
 `;
