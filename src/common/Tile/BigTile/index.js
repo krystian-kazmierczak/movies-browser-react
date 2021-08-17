@@ -44,7 +44,7 @@ export const BigTile = ({
             </Tag>
           ))}
         </Tags>
-        <Rating rating={rating} votes={votes} />
+        {!!rating && <Rating rating={rating} votes={votes} />}
       </Content>
       <Description>{description}</Description>
     </Tile>
