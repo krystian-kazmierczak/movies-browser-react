@@ -7,6 +7,7 @@ export const Tile = styled.div`
   display: grid;
   grid-template-rows: auto 1fr;
   grid-template-columns: min-content 1fr;
+  height: 100%;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     grid-column-gap: 16px;
