@@ -18,13 +18,7 @@ const ProfilePage = ({
 }) => {
   return (
     <Container>
-      <BigTile
-        name={name}
-        birthDay={birthDay}
-        placeOfBirth={placeOfBirth}
-        description={description}
-        poster={poster}
-      />
+      <BigTile/>
       <Header>Movies - Cast ({cast.length})</Header>
       <Section>
         {cast.map((movie) => (
