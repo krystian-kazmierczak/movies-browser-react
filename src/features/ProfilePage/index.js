@@ -8,11 +8,6 @@ import { getGenreNames } from "../getGenresNames";
 import { getYearFromDate } from "../getYearFromDate";
 
 const ProfilePage = ({
-  name,
-  birthDay,
-  placeOfBirth,
-  description,
-  poster,
   cast,
   crew,
 }) => {
