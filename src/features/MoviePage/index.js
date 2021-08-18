@@ -2,6 +2,7 @@ import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
 import { useParams } from "react-router-dom";
 import { BigTile } from "../../common/Tile/BigTile";
+import Cover from "../../common/Cover";
 import { StatusChecker } from "../../common/StatusChecker";
 import { Container } from "./../../common/Container/index";
 import { apiImage, apiKey } from "../../common/commonValues";
@@ -22,7 +23,7 @@ const MoviePage = () => {
     const isLoading = useSelector(selectLoading);
     const isError = useSelector(selectError);
     const { id } = useParams();
-    
+
     useEffect(() => {
         dispatch(fetchItem({ id, type: "movie" }));
 
@@ -30,9 +31,15 @@ const MoviePage = () => {
     }, [id, dispatch]);
 
     return (
-        <Container>
-            <StatusChecker isError={isError} isLoading={isLoading}>
-                <>
+
+        <StatusChecker isError={isError} isLoading={isLoading}>
+            <>
+                <Cover
+                    title={movie.title}
+                    rating={movie.vote_average}
+                    votes={movie.vote_count}
+                />
+                <Container>
                     <BigTile
                         src={
                             movie.poster_path
@@ -49,9 +56,10 @@ const MoviePage = () => {
                         description={movie.overview}
                     />
                     <MovieDetails />
-                </>
-            </StatusChecker>
-        </Container>
+                </Container>
+            </>
+        </StatusChecker>
+
     );
 };
 
