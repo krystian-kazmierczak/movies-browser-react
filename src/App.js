@@ -1,6 +1,5 @@
 import { HashRouter, Redirect, Route, Switch } from "react-router-dom";
 import { Navigation } from "./Navigation";
-import { MainContainer } from "./styled";
 import MoviesPage from "./features/MoviesPage";
 import PeoplePage from "./features/PeoplePage";
 import MoviePage from "./features/MoviePage";
