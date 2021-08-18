@@ -1,5 +1,6 @@
 import { Container, Header, Section } from "../../common/Container";
 import { apiImage, apiKey } from "../../common/commonValues";
+import { nanoid } from "@reduxjs/toolkit";
 import noPoster from "../../assets/noPoster.svg";
 import { genres } from "../genres";
 import { BigTile } from "./BigTile";
@@ -18,6 +19,7 @@ const ProfilePage = ({
       <Section>
         {cast.map((movie) => (
           <MediumTile
+          key={nanoid()}
             src={
               movie.poster_path
                 ? `${apiImage}/w200${movie.poster_path}?api_key=${apiKey}`
