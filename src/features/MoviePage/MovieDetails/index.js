@@ -5,7 +5,7 @@ import { SmallTile } from "../../../common/Tile/SmallTile";
 import { Header, Section } from "../../../common/Container/index";
 import noProfile from "../../../assets/noProfile.svg";
 import { selectAdditionalData, selectItemData } from "../../itemSlice";
-import { toPerson } from "../../../common/routes";
+import { toProfile } from "../../../common/routes";
 import { StyledLink } from "../../../common/StyledLink";
 import { Container } from "../../../common/Container/index";
 import noPoster from "../../../assets/noPoster.svg";
@@ -16,7 +16,7 @@ import Cover from "../../../common/Cover";
 const MovieDetails = () => {
     const movie = useSelector(selectItemData);
     const movieAdditionalData = useSelector(selectAdditionalData);
-    
+
     return (
         <>
             {movie.backdrop_path && (
@@ -46,7 +46,7 @@ const MovieDetails = () => {
                 <Header>Cast</Header>
                 <Section>
                     {movieAdditionalData.cast.map((person) => (
-                        <StyledLink key={nanoid()} to={toPerson({ id: person.id })}>
+                        <StyledLink key={nanoid()} to={toProfile({ id: person.id })}>
                             <SmallTile
                                 key={nanoid()}
                                 src={
@@ -63,7 +63,7 @@ const MovieDetails = () => {
                 <Header>Crew</Header>
                 <Section>
                     {movieAdditionalData.crew.map((person) => (
-                        <StyledLink key={nanoid()} to={toPerson({ id: person.id })}>
+                        <StyledLink key={nanoid()} to={toProfile({ id: person.id })}>
                             <SmallTile
                                 key={nanoid()}
                                 src={
