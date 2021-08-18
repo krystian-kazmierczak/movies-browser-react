@@ -10,7 +10,6 @@ import { toError, toMovie, toMovies, toPeople } from "./common/routes";
 export const App = () => (
   <HashRouter>
     <Navigation />
-    <MainContainer>
       <Switch>
         <Route path={toMovie()}>
           <MoviePage />
@@ -28,6 +27,5 @@ export const App = () => (
           <Redirect to={toMovies()} />
         </Route>
       </Switch>
-    </MainContainer>
   </HashRouter>
 );
