@@ -1,5 +1,8 @@
 import { useEffect } from "react";
 import { useSelector, useDispatch } from "react-redux";
+import { nanoid } from "@reduxjs/toolkit";
+import { toMovie } from "../../common/routes";
+import { StyledLink } from "../../common/StyledLink";
 import { MediumTile } from "../../common/Tile/MediumTile";
 import Pagination from "./../../common/Pagination/index";
 import { StatusChecker } from "./../../common/StatusChecker/index";
@@ -54,19 +57,21 @@ const MoviesPage = () => {
             </Header>
             <Section>
               {resultsPage.map((movie) => (
-                <MediumTile
-                  key={movie.id}
-                  src={
-                    movie.poster_path
-                      ? `${apiImage}/w200${movie.poster_path}?api_key=${apiKey}`
-                      : noPoster
-                  }
-                  title={movie.title}
-                  subtitle={movie.release_date ? getYearFromDate(movie.release_date) : ""}
-                  tags={movie.genre_ids ? getGenreNames(movie.genre_ids, genres) : []}
-                  rating={movie.vote_average}
-                  votes={movie.vote_count}
-                />
+                <StyledLink key={nanoid()} to={toMovie({ id: movie.id })}>
+                  <MediumTile
+                    key={movie.id}
+                    src={
+                      movie.poster_path
+                        ? `${apiImage}/w200${movie.poster_path}?api_key=${apiKey}`
+                        : noPoster
+                    }
+                    title={movie.title}
+                    subtitle={movie.release_date ? getYearFromDate(movie.release_date) : ""}
+                    tags={movie.genre_ids ? getGenreNames(movie.genre_ids, genres) : []}
+                    rating={movie.vote_average}
+                    votes={movie.vote_count}
+                  />
+                </StyledLink>
               ))}
             </Section>
             <Pagination />

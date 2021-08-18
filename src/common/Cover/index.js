@@ -1,11 +1,11 @@
 import { Rating } from "../Rating";
 import { Header, Title, Wrapper } from "./styled";
 
-const Cover = () => (
-  <Header>
+const Cover = ({ src, title, rating, votes }) => (
+  <Header url={src}>
     <Wrapper>
-      <Title>Mulan long title</Title>
-      <Rating cover={true} rating="7,8" votes="335" />
+      <Title>{title}</Title>
+      {!!rating && <Rating cover={true} rating={rating} votes={votes} />}
     </Wrapper>
   </Header>
 );
