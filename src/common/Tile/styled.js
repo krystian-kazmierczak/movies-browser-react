@@ -77,7 +77,7 @@ export const Tile = styled.div`
 export const Image = styled.img`
   grid-area: image;
   width: 312px;
-  height: 464px;
+  height: auto;
   border-radius: 5px;
   margin-bottom: 16px;
 
@@ -91,7 +91,7 @@ export const Image = styled.img`
     medium &&
     css`
       width: 292px;
-      height: 434px;
+      height: auto;
     `}
 
   ${({ small }) =>
