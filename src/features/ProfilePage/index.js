@@ -1,5 +1,7 @@
 import { Container, Header, Section } from "../../common/Container";
 import { apiImage, apiKey } from "../../common/commonValues";
+import { selectAdditionalData, selectItemData } from "../../features/itemSlice";
+import { useSelector } from "react-redux";
 import { nanoid } from "@reduxjs/toolkit";
 import noPoster from "../../assets/noPoster.svg";
 import { genres } from "../genres";
@@ -8,16 +10,24 @@ import { MediumTile } from "../../common/Tile/MediumTile";
 import { getGenreNames } from "../getGenresNames";
 import { getYearFromDate } from "../getYearFromDate";
 
-const ProfilePage = ({
-  cast,
-  crew,
-}) => {
+const ProfilePage = () => {
+  const movieAdditionalData = useSelector(selectAdditionalData);
+  const personData = useSelector(selectItemData);
+
   return (
     <Container>
-      <BigTile/>
-      <Header>Movies - Cast ({cast.length})</Header>
+      <BigTile
+      profile_path={personData.profile_path}
+      name={personData.name}
+      birthday={personData.birthday}
+      place_of_birth={personData.place_of_birth}
+      biography={personData.biography}/>
+
+      {movieAdditionalData.cast && movieAdditionalData.cast.length > 0 && (
+        <>
+     <Header>Movies - Cast{`(${movieAdditionalData.cast.length})`}</Header>
       <Section>
-        {cast.map((movie) => (
+        { movieAdditionalData.cast.map((movie) => (
           <MediumTile
           key={nanoid()}
             src={
@@ -43,9 +53,13 @@ const ProfilePage = ({
           />
         ))}
       </Section>
-      <Header>Movies - Crew ({crew.length})</Header>
+      </>
+      )}
+      {movieAdditionalData.crew && movieAdditionalData.crew.length > 0 && (
+        <>
+      <Header>Movies - Crew {`(${movieAdditionalData.crew.length})`} </Header>
       <Section>
-        {crew.map((movie) => (
+        {movieAdditionalData.crew.map((movie) => (
           <MediumTile
             src={
               movie.poster_path
@@ -70,6 +84,7 @@ const ProfilePage = ({
           />
         ))}
       </Section>
+      </>)}
     </Container>
   );
 };
