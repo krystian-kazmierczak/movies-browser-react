@@ -1,8 +1,9 @@
 import { HashRouter, Redirect, Route, Switch } from "react-router-dom";
 import { Navigation } from "./Navigation";
 import MoviesPage from "./features/MoviesPage";
-import PeoplePage from "./features/PeoplePage";
 import MoviePage from "./features/MoviePage";
+import PeoplePage from "./features/PeoplePage";
+import ProfilePage from "./features/ProfilePage";
 import { Error } from "./common/Error";
 import { toError, toMovie, toMovies, toPeople, toProfile } from "./common/routes";
 
