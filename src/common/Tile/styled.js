@@ -49,7 +49,6 @@ export const Tile = styled.div`
           "image content"
           "image description";
         min-height: 200px;
-        width: 100%;
         max-width: 566px;
       }
     `}
