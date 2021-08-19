@@ -89,7 +89,7 @@ const ProfileDetails = () => {
                                         `
                                     }
                                     tags={
-                                        !!movie.genre_ids.length &&
+                                        !!movie.genre_ids &&
                                         getGenreNames(movie.genre_ids, genres)
                                     }
                                     rating={movie.vote_average}
