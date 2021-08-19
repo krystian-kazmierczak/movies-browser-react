@@ -109,6 +109,12 @@ export const Content = styled.div`
   display: flex;
   flex-direction: column;
   justify-content: space-between;
+
+  ${({ profile }) =>
+    profile &&
+    css`
+      justify-content: flex-start;
+    `}
 `;
 
 export const Title = styled.h2`
@@ -190,6 +196,12 @@ export const Subtitle = styled.h3`
       @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
         margin: 0;
       }
+    `}
+
+    ${({ profile }) =>
+    profile &&
+    css`
+      display: none;
     `}
 `;
 
