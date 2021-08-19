@@ -219,6 +219,12 @@ export const InfoTitle = styled(InfoDetails)`
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     display: none;
+
+    ${({ profile }) =>
+    profile &&
+    css`
+      display: unset;
+    `}
   }
 `;
 
