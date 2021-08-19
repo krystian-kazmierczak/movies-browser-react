@@ -34,24 +34,28 @@ export const BigTile = ({
         <Title big>{title}</Title>
         <Subtitle big profile={profile}>{subtitle}</Subtitle>
         <AdditionalInfo>
-          <InfoDetails>
-            <InfoTitle profile={profile}>
-              {profile
-                ? window.innerWidth > 766
-                  ? "Date of birth:"
-                  : "Birth:"
-                : "Production:"}
-            </InfoTitle>
-            {profile ? birthDay : production}
-          </InfoDetails>
-          <InfoDetails>
-            <InfoTitle profile={profile}>
-              {profile
-                ? "Place of birth:"
-                : "Release date:"}
-            </InfoTitle>
-            {profile ? placeOfBirth : releaseDate}
-          </InfoDetails>
+          {(production || birthDay) ?
+            <InfoDetails>
+              <InfoTitle profile={profile}>
+                {profile
+                  ? window.innerWidth > 766
+                    ? "Date of birth:"
+                    : "Birth:"
+                  : "Production:"}
+              </InfoTitle>
+              {profile ? birthDay : production}
+            </InfoDetails>
+            : ""}
+          {(releaseDate || placeOfBirth) ?
+            <InfoDetails>
+              <InfoTitle profile={profile}>
+                {profile
+                  ? "Place of birth:"
+                  : "Release date:"}
+              </InfoTitle>
+              {profile ? placeOfBirth : releaseDate}
+            </InfoDetails>
+            : ""}
         </AdditionalInfo>
         {profile ? (
           <></>
