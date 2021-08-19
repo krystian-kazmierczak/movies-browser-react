@@ -14,37 +14,63 @@ import {
 } from "../styled";
 
 export const BigTile = ({
-  imageSrc,
+  src,
   title,
   subtitle,
-  info,
+  production,
+  releaseDate,
   tags,
   rating,
   votes,
   description,
+  profile,
+  birthDay,
+  placeOfBirth,
 }) => {
   return (
     <Tile big>
-      <Image src={imageSrc} />
+      <Image src={src} />
       <Content>
         <Title big>{title}</Title>
         <Subtitle big>{subtitle}</Subtitle>
         <AdditionalInfo>
-          {info.map((info) => (
-            <InfoDetails key={Math.random()}>
-              <InfoTitle>{info.title}</InfoTitle>
-              {info.details}
-            </InfoDetails>
-          ))}
+          <InfoDetails>
+            <InfoTitle profile={profile}>
+              {profile
+                ? window.innerWidth > 766
+                  ? "Date of bird:"
+                  : "Bird:"
+                : "Production:"}
+            </InfoTitle>
+            {profile ? birthDay : production}
+          </InfoDetails>
+          <InfoDetails>
+            <InfoTitle profile={profile}>
+              {profile
+                ? window.innerWidth > 766
+                  ? "Place of bird:"
+                  : ""
+                : "Release date:"}
+            </InfoTitle>
+            {profile ? placeOfBirth : releaseDate}
+          </InfoDetails>
         </AdditionalInfo>
-        <Tags medium>
-          {tags.map((tag) => (
-            <Tag key={tag} medium>
-              {tag}
-            </Tag>
-          ))}
-        </Tags>
-        {!!rating && <Rating rating={rating} votes={votes} />}
+        {profile ? (
+          <></>
+        ) : (
+          <>
+            {!!tags && (
+              <Tags medium>
+                {tags.map((tag) => (
+                  <Tag key={Math.random()} medium>
+                    {tag.name}
+                  </Tag>
+                ))}
+              </Tags>
+            )}
+            {!!rating && <Rating rating={rating} votes={votes} />}
+          </>
+        )}
       </Content>
       <Description>{description}</Description>
     </Tile>

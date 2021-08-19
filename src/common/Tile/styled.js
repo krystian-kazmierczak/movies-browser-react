@@ -7,6 +7,7 @@ export const Tile = styled.div`
   display: grid;
   grid-template-rows: auto 1fr;
   grid-template-columns: min-content 1fr;
+  height: 100%;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     grid-column-gap: 16px;
@@ -15,6 +16,7 @@ export const Tile = styled.div`
   ${({ big }) =>
     big &&
     css`
+      margin-top: 56px;
       padding: 40px;
       grid-template-areas:
         "image content"
@@ -48,7 +50,6 @@ export const Tile = styled.div`
           "image content"
           "image description";
         min-height: 200px;
-        width: 100%;
         max-width: 566px;
       }
     `}
@@ -168,7 +169,6 @@ export const Subtitle = styled.h3`
   ${({ big }) =>
     big &&
     css`
-      font-weight: 600;
       color: ${({ theme }) => theme.colors.black};
     `}
 
@@ -206,6 +206,7 @@ export const AdditionalInfo = styled.div`
 
 export const InfoDetails = styled.span`
   font-size: 18px;
+  line-height: 22px;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     font-size: 12px;
@@ -219,6 +220,12 @@ export const InfoTitle = styled(InfoDetails)`
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     display: none;
+
+    ${({ profile }) =>
+    profile &&
+    css`
+      display: unset;
+    `}
   }
 `;
 

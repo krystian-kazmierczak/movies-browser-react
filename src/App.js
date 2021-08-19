@@ -1,29 +1,34 @@
 import { HashRouter, Redirect, Route, Switch } from "react-router-dom";
 import { Navigation } from "./Navigation";
-import { MainContainer } from "./styled";
 import MoviesPage from "./features/MoviesPage";
+import MoviePage from "./features/MoviePage";
 import PeoplePage from "./features/PeoplePage";
+import ProfilePage from "./features/ProfilePage";
 import { Error } from "./common/Error";
-import { popularPerson as popular } from "./exampleData";
+import { toError, toMovie, toMovies, toPeople, toProfile } from "./common/routes";
 
 export const App = () => (
   <HashRouter>
     <Navigation />
-    <MainContainer>
-      <Switch>
-        <Route path="/movies">
-          <MoviesPage />
-        </Route>
-        <Route path="/people">
-          <PeoplePage persons={popular.results} />
-        </Route>
-        <Route path="/error">
-          <Error />
-        </Route>
-        <Route path="/">
-          <Redirect to="/movies" />
-        </Route>
-      </Switch>
-    </MainContainer>
+    <Switch>
+      <Route path={toMovie()}>
+        <MoviePage />
+      </Route>
+      <Route path={toMovies()}>
+        <MoviesPage />
+      </Route>
+      <Route path={toProfile()}>
+        <ProfilePage />
+      </Route>
+      <Route path={toPeople()}>
+        <PeoplePage />
+      </Route>
+      <Route path={toError()}>
+        <Error />
+      </Route>
+      <Route>
+        <Redirect to={toMovies()} />
+      </Route>
+    </Switch>
   </HashRouter>
 );
