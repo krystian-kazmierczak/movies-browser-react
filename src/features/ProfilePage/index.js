@@ -41,7 +41,7 @@ const ProfilePage = () => {
         <>
           <BigTile
             profile={personData.profile_path}
-            name={personData.name}
+            title={personData.name}
             birthDay={personData.birthday}
             placeOfBirth={personData.place_of_birth}
             description={personData.biography}
