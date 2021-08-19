@@ -23,6 +23,9 @@ export const BigTile = ({
   rating,
   votes,
   description,
+  profile,
+  birthDay,
+  placeOfBirth,
 }) => {
   return (
     <Tile big>
@@ -31,23 +34,31 @@ export const BigTile = ({
         <Title big>{title}</Title>
         <Subtitle big>{subtitle}</Subtitle>
         <AdditionalInfo>
-          <InfoDetails >
-            <InfoTitle>Production:</InfoTitle>
-            {production}
+          <InfoDetails>
+            <InfoTitle profile={profile}>
+              {profile ? (window.innerWidth > 766 ? "Date of bird:" : "Bird:") : "Production:"}
+            </InfoTitle>
+            {profile ? birthDay : production}
           </InfoDetails>
-          <InfoDetails >
-            <InfoTitle>Release date:</InfoTitle>
-            {releaseDate}
+          <InfoDetails>
+            <InfoTitle profile={profile}>
+              {profile ? (window.innerWidth > 766 ? "Place of bird:" : "") : "Release date:"}
+            </InfoTitle>
+            {profile ? placeOfBirth : releaseDate}
           </InfoDetails>
         </AdditionalInfo>
-        {!!tags && (<Tags medium>
-          {tags.map((tag) => (
-            <Tag key={Math.random()} medium>
-              {tag.name}
-            </Tag>
-          ))}
-        </Tags>)}
-        {!!rating && <Rating rating={rating} votes={votes} />}
+        {profile ? (<>/</>) : (
+          <>
+            {!!tags && (<Tags medium>
+              {tags.map((tag) => (
+                <Tag key={Math.random()} medium>
+                  {tag.name}
+                </Tag>
+              ))}
+            </Tags>)}
+            {!!rating && <Rating rating={rating} votes={votes} />}
+            )
+          </>)}
       </Content>
       <Description>{description}</Description>
     </Tile>
