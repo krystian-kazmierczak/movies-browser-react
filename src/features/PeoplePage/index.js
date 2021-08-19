@@ -1,7 +1,10 @@
 import { SmallTile } from "../../common/Tile/SmallTile";
 import { Container, Header, Section } from "../../common/Container";
 import { useEffect } from "react";
+import { nanoid } from "@reduxjs/toolkit";
 import { useSelector, useDispatch } from "react-redux";
+import { toProfile } from "../../common/routes";
+import { StyledLink } from "../../common/StyledLink";
 import Pagination from "./../../common/Pagination/index";
 import { StatusChecker } from "./../../common/StatusChecker/index";
 import { NoResult } from "./../../common/NoResult";
@@ -50,6 +53,7 @@ const PeoplePage = () => {
             </Header>
             <Section>
               {resultsPage.map((person) => (
+                   <StyledLink key={nanoid()} to={toProfile({ id: person.id })}>
                 <SmallTile
                   key={person.id}
                   src={
@@ -59,6 +63,7 @@ const PeoplePage = () => {
                   }
                   title={person.name}
                 />
+                </StyledLink>
               ))}
             </Section>
             <Pagination />
