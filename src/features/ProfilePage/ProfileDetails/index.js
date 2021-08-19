@@ -26,12 +26,12 @@ const ProfileDetails = () => {
                 placeOfBirth={personData.place_of_birth}
                 description={personData.biography}
                 src={
-                    personData.profile_path
+                    !!personData.profile_path
                         ? `${apiImage}/w200${personData.profile_path}?api_key=${apiKey}`
                         : noProfile
                 }
             />
-            {movieAdditionalData.cast && movieAdditionalData.cast.length > 0 && (
+            {!!movieAdditionalData.cast && movieAdditionalData.cast.length > 0 && (
                 <>
                     <Header>
                         Movies - Cast{`(${movieAdditionalData.cast.length})`}
@@ -55,7 +55,7 @@ const ProfileDetails = () => {
                                         `
                                     }
                                     tags={
-                                        !!movie.genre_ids.length &&
+                                        !!movie.genre_ids &&
                                         getGenreNames(movie.genre_ids, genres)
                                     }
                                     rating={movie.vote_average}
@@ -66,7 +66,7 @@ const ProfileDetails = () => {
                     </Section>
                 </>
             )}
-            {movieAdditionalData.crew && movieAdditionalData.crew.length > 0 && (
+            {!!movieAdditionalData.crew && movieAdditionalData.crew.length > 0 && (
                 <>
                     <Header>
                         Movies - Crew {`(${movieAdditionalData.crew.length})`}{" "}
@@ -76,7 +76,7 @@ const ProfileDetails = () => {
                             <StyledLink key={nanoid()} to={toMovie({ id: movie.id })}>
                                 <MediumTile
                                     src={
-                                        movie.poster_path
+                                        !!movie.poster_path
                                             ? `${apiImage}/w200${movie.poster_path}?api_key=${apiKey}`
                                             : noPoster
                                     }
