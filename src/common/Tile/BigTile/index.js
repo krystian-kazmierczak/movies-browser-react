@@ -38,8 +38,8 @@ export const BigTile = ({
             <InfoTitle profile={profile}>
               {profile
                 ? window.innerWidth > 766
-                  ? "Date of bird:"
-                  : "Bird:"
+                  ? "Date of birth:"
+                  : "Birth:"
                 : "Production:"}
             </InfoTitle>
             {profile ? birthDay : production}
@@ -47,9 +47,7 @@ export const BigTile = ({
           <InfoDetails>
             <InfoTitle profile={profile}>
               {profile
-                ? window.innerWidth > 766
-                  ? "Place of bird:"
-                  : ""
+                ? "Place of birth:"
                 : "Release date:"}
             </InfoTitle>
             {profile ? placeOfBirth : releaseDate}
