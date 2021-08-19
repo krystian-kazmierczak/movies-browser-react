@@ -40,7 +40,7 @@ const ProfilePage = () => {
       <StatusChecker isLoading={isLoading} isError={isError}>
         <>
           <BigTile
-            profile={personData.profile_path}
+            profile="true"
             title={personData.name}
             birthDay={personData.birthday}
             placeOfBirth={personData.place_of_birth}
