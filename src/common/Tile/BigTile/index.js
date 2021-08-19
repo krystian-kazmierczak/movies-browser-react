@@ -36,29 +36,41 @@ export const BigTile = ({
         <AdditionalInfo>
           <InfoDetails>
             <InfoTitle profile={profile}>
-              {profile ? (window.innerWidth > 766 ? "Date of bird:" : "Bird:") : "Production:"}
+              {profile
+                ? window.innerWidth > 766
+                  ? "Date of bird:"
+                  : "Bird:"
+                : "Production:"}
             </InfoTitle>
             {profile ? birthDay : production}
           </InfoDetails>
           <InfoDetails>
             <InfoTitle profile={profile}>
-              {profile ? (window.innerWidth > 766 ? "Place of bird:" : "") : "Release date:"}
+              {profile
+                ? window.innerWidth > 766
+                  ? "Place of bird:"
+                  : ""
+                : "Release date:"}
             </InfoTitle>
             {profile ? placeOfBirth : releaseDate}
           </InfoDetails>
         </AdditionalInfo>
-        {profile ? (<>/</>) : (
+        {profile ? (
+          <></>
+        ) : (
           <>
-            {!!tags && (<Tags medium>
-              {tags.map((tag) => (
-                <Tag key={Math.random()} medium>
-                  {tag.name}
-                </Tag>
-              ))}
-            </Tags>)}
+            {!!tags && (
+              <Tags medium>
+                {tags.map((tag) => (
+                  <Tag key={Math.random()} medium>
+                    {tag.name}
+                  </Tag>
+                ))}
+              </Tags>
+            )}
             {!!rating && <Rating rating={rating} votes={votes} />}
-            )
-          </>)}
+          </>
+        )}
       </Content>
       <Description>{description}</Description>
     </Tile>
