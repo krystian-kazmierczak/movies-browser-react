@@ -24,6 +24,7 @@ export const Tile = styled.div`
       grid-column-gap: 40px;
 
       @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
+        margin-top: 24px;
         padding: 16px;
         grid-template-areas:
           "image content"
