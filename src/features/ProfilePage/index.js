@@ -1,27 +1,47 @@
 import { Container, Header, Section } from "../../common/Container";
 import { apiImage, apiKey } from "../../common/commonValues";
-import { selectAdditionalData, selectItemData } from "../../features/itemSlice";
-import { useSelector } from "react-redux";
+import { selectAdditionalData, selectItemData, selectLoading,selectError, resetState, fetchItem } from "../../features/itemSlice";
+import { useSelector , useDispatch} from "react-redux";
+import { useParams } from "react-router-dom";
+import { useEffect } from "react";
 import { nanoid } from "@reduxjs/toolkit";
 import noPoster from "../../assets/noPoster.svg";
 import { genres } from "../genres";
-import { BigTile } from "./BigTile";
+import { BigTile } from "../../common/Tile/BigTile";
 import { MediumTile } from "../../common/Tile/MediumTile";
 import { getGenreNames } from "../getGenresNames";
 import { getYearFromDate } from "../getYearFromDate";
+import { StatusChecker } from "./../../common/StatusChecker/index";
+import { noProfile } from "../../assets/noProfile.svg";
 
 const ProfilePage = () => {
   const movieAdditionalData = useSelector(selectAdditionalData);
   const personData = useSelector(selectItemData);
+  const isLoading = useSelector(selectLoading);
+  const isError = useSelector(selectError);
+  const dispatch = useDispatch();
+  const { id } = useParams();
+
+  useEffect(() => {
+    dispatch(fetchItem({ id, type: "person" }));
+
+    return () => resetState();
+}, [id, dispatch]);
+
 
   return (
     <Container>
+      <StatusChecker isLoading ={isLoading} isError={isError}>
+        <>
       <BigTile
-      profile_path={personData.profile_path}
+      profile={personData.profile_path}
       name={personData.name}
-      birthday={personData.birthday}
-      place_of_birth={personData.place_of_birth}
-      biography={personData.biography}/>
+      birthDay={personData.birthday}
+      placeOfBirth={personData.place_of_birth}
+      description={personData.biography}
+      src={personData.profile_path
+        ? `${apiImage}/w200${personData.profile_path}?api_key=${apiKey}`
+        : noProfile}/>
 
       {movieAdditionalData.cast && movieAdditionalData.cast.length > 0 && (
         <>
@@ -85,6 +105,8 @@ const ProfilePage = () => {
         ))}
       </Section>
       </>)}
+      </>
+      </StatusChecker>
     </Container>
   );
 };
