@@ -19,7 +19,7 @@ import { MediumTile } from "../../common/Tile/MediumTile";
 import { getGenreNames } from "../getGenresNames";
 import { getYearFromDate } from "../getYearFromDate";
 import { StatusChecker } from "./../../common/StatusChecker/index";
-import { noProfile } from "../../assets/noProfile.svg";
+import noProfile from "../../assets/noProfile.svg";
 
 const ProfilePage = () => {
   const movieAdditionalData = useSelector(selectAdditionalData);
