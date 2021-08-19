@@ -16,6 +16,7 @@ export const Tile = styled.div`
   ${({ big }) =>
     big &&
     css`
+      margin-top: 56px;
       padding: 40px;
       grid-template-areas:
         "image content"
