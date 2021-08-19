@@ -2,7 +2,7 @@ import { Container, Header, Section } from "../../common/Container";
 import { apiImage, apiKey } from "../../common/commonValues";
 import noPoster from "../../assets/noPoster.svg";
 import { genres } from "../genres";
-import { BigTile } from "./BigTile";
+import { BigTile } from "../../common/Tile/BigTile";
 import { MediumTile } from "../../common/Tile/MediumTile";
 import { getGenreNames } from "../getGenresNames";
 import { getYearFromDate } from "../getYearFromDate";
@@ -23,7 +23,8 @@ const ProfilePage = ({
         birthDay={birthDay}
         placeOfBirth={placeOfBirth}
         description={description}
-        poster={poster}
+        src={poster}
+        profile
       />
       <Header>Movies - Cast ({cast.length})</Header>
       <Section>
