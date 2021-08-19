@@ -29,7 +29,6 @@ const ProfileDetails = () => {
                         : noProfile
                 }
             />
-
             {movieAdditionalData.cast && movieAdditionalData.cast.length > 0 && (
                 <>
                     <Header>
@@ -48,10 +47,8 @@ const ProfileDetails = () => {
                                 subtitle={
                                     !!movie.release_date &&
                                     `
-                                        ${movie.character} 
-                                        ${movie.release_date ? "(" : ""}
-                                        ${getYearFromDate(movie.release_date)}
-                                        ${movie.release_date ? ")" : ""}
+                                        ${movie.character}
+                                        ${movie.release_date ? "(" : ""}${getYearFromDate(movie.release_date)}${movie.release_date ? ")" : ""}
                                     `
                                 }
                                 tags={
@@ -83,9 +80,7 @@ const ProfileDetails = () => {
                                     !!movie.release_date &&
                                     `
                                         ${movie.job} 
-                                        ${movie.release_date ? "(" : ""} 
-                                        ${getYearFromDate(movie.release_date)}
-                                        ${movie.release_date ? ")" : ""}
+                                        ${movie.release_date ? "(" : ""}${getYearFromDate(movie.release_date)}${movie.release_date ? ")" : ""}
                                     `
                                 }
                                 tags={
