@@ -30,9 +30,9 @@ export const BigTile = ({
   return (
     <Tile big>
       <Image src={src} />
-      <Content>
+      <Content profile={profile}>
         <Title big>{title}</Title>
-        <Subtitle big>{subtitle}</Subtitle>
+        <Subtitle big profile={profile}>{subtitle}</Subtitle>
         <AdditionalInfo>
           <InfoDetails>
             <InfoTitle profile={profile}>
