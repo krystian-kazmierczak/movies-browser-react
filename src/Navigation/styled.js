@@ -4,8 +4,15 @@ export const NavigationContainer = styled.div`
   color: ${({ theme }) => theme.colors.white};
   background: ${({ theme }) => theme.colors.black};
   margin: 0;
-  padding: 23px 16px;
+  padding: 24px 16px;
   min-height: 94px;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
+    padding: 18px 12px;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
+    padding: 12px 8px;;
+  }
 `;
 
 export const NavigationWrapper = styled.nav`
@@ -15,14 +22,6 @@ export const NavigationWrapper = styled.nav`
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-around;
-
-  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
-    gap: 16px;
-  }
-
-  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
-    gap: 12px;
-  }
 `;
 
 export const HeaderWrapper = styled.div`
@@ -30,14 +29,13 @@ export const HeaderWrapper = styled.div`
   flex-wrap: nowrap;
   align-items: center;
   justify-content: space-between;
-  gap: 16px;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
-    gap: 12px;
+    margin-bottom: 12px;
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
-    gap: 8px;
+    margin-bottom: 8px;
   }
 `;
 

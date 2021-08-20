@@ -13,9 +13,8 @@ export const Section = styled.section`
   margin-bottom: 16px;
   display: flex;
   flex-wrap: wrap;
-  gap: 12px;
   width: 100%;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: stretch;
 `;
 

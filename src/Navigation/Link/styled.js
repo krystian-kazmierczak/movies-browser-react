@@ -8,29 +8,29 @@ export const List = styled.ul`
   margin: 0;
   padding: 0;
   list-style: none;
-  gap: 16px;
+  margin: 32px 24px;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
-    gap: 12px;
+    margin: 24px 16px;
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
     padding: 0;
-    gap: 8px;
+    margin: 16px 8px;
   } 
 `;
 
 export const Item = styled.li`
   text-decoration: none;
   text-transform: uppercase;
-  gap: 16px;
+  margin: 0 16px;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
-    gap: 8px;
+    margin: 0 8px;
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
-    gap: 0;
+    margin: 0;
   }
 `;
 

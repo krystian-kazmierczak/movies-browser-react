@@ -2,6 +2,7 @@ import { Link } from "react-router-dom";
 import styled from "styled-components";
 
 export const StyledLink = styled(Link)`
-    text-decoration: none;
-    color: ${({ theme }) => theme.colors.black};
+  margin: 6px;
+  text-decoration: none;
+  color: ${({ theme }) => theme.colors.black};
 `;
