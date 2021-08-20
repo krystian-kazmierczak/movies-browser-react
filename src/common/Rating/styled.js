@@ -8,10 +8,10 @@ export const Wrapper = styled.div`
   justify-content: start;
   align-items: center;
   grid-gap: 8px;
-  margin: 12px 0;
+  margin: 12px 0 0 0;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
-    margin: 6px 0;
+    margin: 6px 0 0 0;
   }
 
   ${({ cover }) =>
