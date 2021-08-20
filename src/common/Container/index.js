@@ -10,6 +10,7 @@ export const Container = styled.div`
 `;
 
 export const Section = styled.section`
+  margin-bottom: 16px;
   display: flex;
   flex-wrap: wrap;
   gap: 12px;
