@@ -17,6 +17,7 @@ export const List = styled.ul`
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
     padding: 0;
     gap: 8px;
+  } 
 `;
 
 export const Item = styled.li`
@@ -41,8 +42,7 @@ export const StyledNavLink = styled(NavLink).attrs(() => ({ activeClassName }))`
   text-decoration: none;
   padding: 14px 16px;
   border-radius: 24px;
-  transition: 0.5s;
-  outline: none;
+  transition: background 0.5s;
 
   &:hover {
     color: ${({ theme }) => theme.colors.black};
@@ -50,7 +50,7 @@ export const StyledNavLink = styled(NavLink).attrs(() => ({ activeClassName }))`
   }
 
   &.${activeClassName} {
-    border: 1px solid ${({ theme }) => theme.colors.white};
+    border: 2px solid ${({ theme }) => theme.colors.white};
     cursor: unset;
 
     &:hover {

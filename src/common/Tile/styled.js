@@ -78,28 +78,25 @@ export const Tile = styled.div`
 export const Image = styled.img`
   grid-area: image;
   width: 312px;
-  height: 464px;
+  height: auto;
   border-radius: 5px;
   margin-bottom: 16px;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     margin-bottom: 0;
     width: 114px;
-    height: 169px;
   }
 
   ${({ medium }) =>
     medium &&
     css`
       width: 292px;
-      height: 434px;
     `}
 
   ${({ small }) =>
     small &&
     css`
       width: 176px;
-      height: 231px;
       margin-bottom: 0;
     `}
 `;

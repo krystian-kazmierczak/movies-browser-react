@@ -58,7 +58,7 @@ const PeoplePage = () => {
                   key={person.id}
                   src={
                     !!person.profile_path
-                      ? `${apiImage}/w500${person.profile_path}?api_key=${apiKey}`
+                      ? `${apiImage}/w200${person.profile_path}?api_key=${apiKey}`
                       : noProfile
                   }
                   title={person.name}
