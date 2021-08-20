@@ -61,13 +61,13 @@ const MoviesPage = () => {
                   <MediumTile
                     key={movie.id}
                     src={
-                      movie.poster_path
+                      !!movie.poster_path
                         ? `${apiImage}/w200${movie.poster_path}?api_key=${apiKey}`
                         : noPoster
                     }
                     title={movie.title}
-                    subtitle={movie.release_date ? getYearFromDate(movie.release_date) : ""}
-                    tags={movie.genre_ids ? getGenreNames(movie.genre_ids, genres) : []}
+                    subtitle={!!movie.release_date ? getYearFromDate(movie.release_date) : ""}
+                    tags={!!movie.genre_ids ? getGenreNames(movie.genre_ids, genres) : []}
                     rating={movie.vote_average}
                     votes={movie.vote_count}
                   />
