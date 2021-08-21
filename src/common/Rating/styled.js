@@ -22,12 +22,15 @@ export const Wrapper = styled.div`
       grid-template-areas:
         "star rate scale"
         "vote vote vote";
-      align-items: baseline;
+      align-items: center;
+      grid-row-gap: 16px;
+      margin-bottom: 56px;
 
       @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
         grid-template-columns: auto min-content auto auto;
         grid-template-rows: auto;
         grid-template-areas: "star rate scale vote";
+        margin-bottom: 8px;
       }
     `}
 `;
