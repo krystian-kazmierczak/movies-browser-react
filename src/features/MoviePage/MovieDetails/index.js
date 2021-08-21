@@ -40,11 +40,11 @@ const MovieDetails = () => {
         />
         <Header>Cast</Header>
         <Section
-          movieDetails={true}
+          type="movie"
         />
         <Header>Crew</Header>
         <Section
-          movieDetails={true}
+          type="movie"
           crew={true}
         />
       </Container>
