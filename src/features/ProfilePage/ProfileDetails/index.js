@@ -2,7 +2,7 @@ import { useSelector } from "react-redux";
 import { apiImage, apiKey } from "../../../common/commonValues";
 import { Header } from "../../../common/Container";
 import { BigTile } from "../../../common/Tile/BigTile";
-import { selectAdditionalData, selectItemData} from "../../../features/itemSlice";
+import { selectAdditionalData, selectItemData } from "../../../features/itemSlice";
 import Section from "../../../common/Section";
 import noProfile from "../../../assets/noProfile.svg";
 
@@ -30,7 +30,7 @@ const ProfileDetails = () => {
             Movies - Cast{`(${movieAdditionalData.cast.length})`}
           </Header>
           <Section
-            profileDetails={true}
+            type="profile"
           />
         </>
       )}
@@ -40,7 +40,7 @@ const ProfileDetails = () => {
             Movies - Crew {`(${movieAdditionalData.crew.length})`}{" "}
           </Header>
           <Section
-            profileDetails={true}
+            type="profile"
             crew={true}
           />
         </>
