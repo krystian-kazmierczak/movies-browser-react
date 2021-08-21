@@ -2,9 +2,9 @@ import { useSelector } from "react-redux";
 import { apiImage, apiKey } from "../../../common/commonValues";
 import { Header } from "../../../common/Container";
 import { BigTile } from "../../../common/Tile/BigTile";
-import { selectAdditionalData, selectItemData, toggleShowMore } from "../../../features/itemSlice";
-import noProfile from "../../../assets/noProfile.svg";
+import { selectAdditionalData, selectItemData} from "../../../features/itemSlice";
 import Section from "../../../common/Section";
+import noProfile from "../../../assets/noProfile.svg";
 
 const ProfileDetails = () => {
   const movieAdditionalData = useSelector(selectAdditionalData);
@@ -32,7 +32,6 @@ const ProfileDetails = () => {
           <Section
             profileDetails={true}
           />
-
         </>
       )}
       {!!movieAdditionalData.crew && movieAdditionalData.crew.length > 0 && (
@@ -44,7 +43,6 @@ const ProfileDetails = () => {
             profileDetails={true}
             crew={true}
           />
-
         </>
       )}
     </>
