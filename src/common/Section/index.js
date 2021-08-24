@@ -53,7 +53,7 @@ const Section = ({ type, crew }) => {
           </StyledLink>
         ))
       break;
-      
+
     case "people":
       component =
         resultsPage.map((person) => (
@@ -122,7 +122,7 @@ const Section = ({ type, crew }) => {
       <StyledSection>
         {component}
       </StyledSection>
-      {(data.length > (hideIndex + 1)) && (
+      {!!data && (data.length > (hideIndex + 1)) && (
         <Button onClick={() => setShowMore(!showMore)}>
           <Label>{showMore ? "Show less" : "Show more"}</Label>
           <Arrow src={showMore ? upArrowBlue : downArrowBlue} alt="arrow" />
