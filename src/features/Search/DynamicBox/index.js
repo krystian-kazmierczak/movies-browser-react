@@ -9,7 +9,7 @@ import {
   selectLoading,
 } from "./../SearchSlice";
 import { Wrapper } from "./styled";
-import { MediumTile } from "./../../../common/Tile/MediumTile";
+import { GenerateTile } from "./../generateTile/index";
 import { NoResult } from "./../../../common/NoResult/index";
 import noPoster from "./../../../assets/noPoster.svg";
 import noProfile from "./../../../assets/noProfile.svg";
@@ -24,7 +24,7 @@ export const DynamicBox = ({ query }) => {
   useEffect(() => {
     dispatch(
       setActiveSearchPath(
-        `${apiBase}search/${pathText}${apiKey}${language}&query=${query}`
+        `${apiBase}search/${pathText}?api_key=${apiKey}${language}&query=${query}`
       )
     );
   }, [query, dispatch, pathText]);
@@ -37,7 +37,7 @@ export const DynamicBox = ({ query }) => {
         <NoResult urlQuery={query} />
       ) : (
         results.map((result) => (
-          <MediumTile 
+          <GenerateTile
             key={result.id}
             pathText={pathText}
             {...(pathText === "movie"
