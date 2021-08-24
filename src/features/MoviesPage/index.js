@@ -9,11 +9,10 @@ import { StatusChecker } from "./../../common/StatusChecker/index";
 import { Container, Header, Section } from "./../../common/Container/index";
 import { NoResult } from "./../../common/NoResult";
 import { pageState } from "./../../common/pageState";
-import { selectGenerateList } from "./../../common/commonSlice";
+import { selectGenresList } from "./../../common/commonSlice";
 import { usePageParameter } from "./../usePageParameters";
 import { apiImage, apiKey } from "../../common/commonValues";
 import noPoster from "../../assets/noPoster.svg";
-import { genres } from "../genres";
 import { getGenreNames } from "../getGenresNames";
 import { getYearFromDate } from "../getYearFromDate";
 import {
@@ -25,7 +24,6 @@ import {
   resetState,
 } from "../listSlice";
 
-
 const MoviesPage = () => {
   const dispatch = useDispatch();
   const pageNumber = +usePageParameter("page");
@@ -35,13 +33,13 @@ const MoviesPage = () => {
   const resultsPage = useSelector(selectList);
   const isLoading = useSelector(selectLoading);
   const isError = useSelector(selectError);
-  const generateList = useSelector(selectGenerateList);
+  const genres = useSelector(selectGenresList);
 
   useEffect(() => {
     dispatch(fetchList({ page, urlQuery, type: "movies" }));
 
     return () => resetState();
-  }, [urlQuery, dispatch, generateList, page]);
+  }, [urlQuery, dispatch, page]);
 
   return (
     <Container>
@@ -66,8 +64,16 @@ const MoviesPage = () => {
                         : noPoster
                     }
                     title={movie.title}
-                    subtitle={!!movie.release_date ? getYearFromDate(movie.release_date) : ""}
-                    tags={!!movie.genre_ids ? getGenreNames(movie.genre_ids, genres) : []}
+                    subtitle={
+                      !!movie.release_date
+                        ? getYearFromDate(movie.release_date)
+                        : ""
+                    }
+                    tags={
+                      !!movie.genre_ids
+                        ? getGenreNames(movie.genre_ids, genres)
+                        : []
+                    }
                     rating={movie.vote_average}
                     votes={movie.vote_count}
                   />

@@ -1,6 +1,6 @@
 import { nanoid } from "@reduxjs/toolkit";
 import { useSelector } from "react-redux";
-import { genres } from "../../genres";
+import { selectGenresList } from "../../../common/commonSlice";
 import { apiImage, apiKey } from "../../../common/commonValues";
 import { Header, Section } from "../../../common/Container";
 import { BigTile } from "../../../common/Tile/BigTile";
@@ -16,6 +16,7 @@ import noPoster from "../../../assets/noPoster.svg";
 const ProfileDetails = () => {
     const movieAdditionalData = useSelector(selectAdditionalData);
     const personData = useSelector(selectItemData);
+    const genres = useSelector(selectGenresList);
 
     return (
         <>
