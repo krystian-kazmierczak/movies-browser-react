@@ -7,7 +7,7 @@ import { StyledLink } from "../StyledLink";
 import { MediumTile } from "../Tile/MediumTile";
 import { SmallTile } from "../Tile/SmallTile";
 import { Arrow, Button, Label } from "../Button";
-import { StyledSection } from "./styled";
+import { StyledSection, Wrapper } from "./styled";
 import { selectAdditionalData } from "../../features/itemSlice";
 import { selectList } from "../../features/listSlice";
 import { getYearFromDate } from "../../features/getYearFromDate";
@@ -74,9 +74,13 @@ const Section = ({ type, crew }) => {
     case "movie":
       component =
         data.map((person, index) => (
-          <StyledLink key={nanoid()} to={toProfile({ id: person.id })}>
+          <StyledLink
+            key={nanoid()}
+            to={toProfile({ id: person.id })}
+            hidden={index > hideIndex && !showMore}
+          >
             <SmallTile
-              key={nanoid()}
+              key={person.id}
               src={
                 !!person.profile_path
                   ? `${apiImage}/w500${person.profile_path}?api_key=${apiKey}`
@@ -93,8 +97,13 @@ const Section = ({ type, crew }) => {
     case "profile":
       component =
         data.map((movie, index) => (
-          <StyledLink key={nanoid()} to={toMovie({ id: movie.id })}>
+          <StyledLink
+            key={nanoid()}
+            to={toMovie({ id: movie.id })}
+            hidden={index > hideIndex && !showMore}
+          >
             <MediumTile
+              key={movie.id}
               src={
                 !!movie.poster_path
                   ? `${apiImage}/w200${movie.poster_path}?api_key=${apiKey}`
@@ -118,17 +127,19 @@ const Section = ({ type, crew }) => {
       break;
   }
   return (
-    <>
+    <Wrapper>
       <StyledSection>
         {component}
       </StyledSection>
-      {!!data && (data.length > (hideIndex + 1)) && (
-        <Button onClick={() => setShowMore(!showMore)}>
-          <Label>{showMore ? "Show less" : "Show more"}</Label>
-          <Arrow src={showMore ? upArrowBlue : downArrowBlue} alt="arrow" />
-        </Button>
+      {(type === "movie" || type === "profile") && (
+        !!data && (data.length > (hideIndex + 1)) && (
+          <Button onClick={() => setShowMore(!showMore)}>
+            <Label>{showMore ? "Show less" : "Show more"}</Label>
+            <Arrow src={showMore ? upArrowBlue : downArrowBlue} alt="arrow" />
+          </Button>
+        )
       )}
-    </>
+    </Wrapper>
   );
 };
 
