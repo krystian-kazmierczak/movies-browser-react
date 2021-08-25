@@ -1,6 +1,6 @@
 import { useSelector } from "react-redux";
 import { apiImage, apiKey } from "../../../common/commonValues";
-import { Header } from "../../../common/Container";
+import { Header } from "../../../common/Header";
 import { BigTile } from "../../../common/Tile/BigTile";
 import { selectAdditionalData, selectItemData } from "../../../features/itemSlice";
 import Section from "../../../common/Section";

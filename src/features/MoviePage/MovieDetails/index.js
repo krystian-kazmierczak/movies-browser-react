@@ -1,7 +1,7 @@
 import { useSelector } from "react-redux";
 import { apiImage, apiKey } from "../../../common/commonValues";
 import { Container } from "../../../common/Container/index";
-import { Header } from "../../../common/Container/index";
+import { Header } from "../../../common/Header/index";
 import { BigTile } from "../../../common/Tile/BigTile";
 import { selectItemData } from "../../itemSlice";
 import { getYearFromDate } from "../../getYearFromDate";
