@@ -9,16 +9,6 @@ export const Container = styled.div`
   }
 `;
 
-export const Section = styled.section`
-  margin-bottom: 16px;
-  display: flex;
-  flex-wrap: wrap;
-  gap: 12px;
-  width: 100%;
-  justify-content: center;
-  align-items: stretch;
-`;
-
 export const Header = styled.h2`
   margin: 64px 0 24px;
   font-weight: 600;

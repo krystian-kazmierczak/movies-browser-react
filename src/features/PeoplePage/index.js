@@ -1,18 +1,13 @@
-import { SmallTile } from "../../common/Tile/SmallTile";
-import { Container, Header, Section } from "../../common/Container";
 import { useEffect } from "react";
-import { nanoid } from "@reduxjs/toolkit";
 import { useSelector, useDispatch } from "react-redux";
-import { toProfile } from "../../common/routes";
-import { StyledLink } from "../../common/StyledLink";
+import { Container, Header } from "../../common/Container";
+import Section from "../../common/Section";
 import Pagination from "./../../common/Pagination/index";
 import { StatusChecker } from "./../../common/StatusChecker/index";
 import { NoResult } from "./../../common/NoResult";
 import { pageState } from "./../../common/pageState";
 import { selectGenerateList } from "./../../common/commonSlice";
 import { usePageParameter } from "./../usePageParameters";
-import { apiImage, apiKey } from "../../common/commonValues";
-import noProfile from "../../assets/noProfile.svg";
 import {
   selectList,
   selectLoading,
@@ -51,21 +46,7 @@ const PeoplePage = () => {
                 ? `Search results for "${urlQuery}" (${totalResults})`
                 : "Popular people"}
             </Header>
-            <Section>
-              {resultsPage.map((person) => (
-                   <StyledLink key={nanoid()} to={toProfile({ id: person.id })}>
-                <SmallTile
-                  key={person.id}
-                  src={
-                    !!person.profile_path
-                      ? `${apiImage}/w200${person.profile_path}?api_key=${apiKey}`
-                      : noProfile
-                  }
-                  title={person.name}
-                />
-                </StyledLink>
-              ))}
-            </Section>
+            <Section type="people" />
             <Pagination />
           </>
         )}

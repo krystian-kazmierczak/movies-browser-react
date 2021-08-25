@@ -74,6 +74,12 @@ export const Tile = styled.div`
         padding: 8px;
       }
     `}
+
+    ${({ hidden }) =>
+    hidden &&
+    css`
+      display: none;
+    `}
 `;
 
 export const Image = styled.img`
