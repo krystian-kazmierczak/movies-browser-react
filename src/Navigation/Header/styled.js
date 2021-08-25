@@ -8,7 +8,7 @@ export const LogoWrapper = styled.div`
   gap: 16px;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
-    gap: 8px
+    gap: 8px;
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {

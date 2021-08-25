@@ -8,7 +8,9 @@ export const List = styled.ul`
   margin: 0;
   padding: 0;
   list-style: none;
-  gap: 16px @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
+  gap: 16px;
+  
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     gap: 12px;
   }
 
