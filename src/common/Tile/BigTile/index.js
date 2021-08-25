@@ -32,9 +32,11 @@ export const BigTile = ({
       <Image src={src} />
       <Content profile={profile}>
         <Title big>{title}</Title>
-        <Subtitle big profile={profile}>{subtitle}</Subtitle>
+        <Subtitle big profile={profile}>
+          {subtitle}
+        </Subtitle>
         <AdditionalInfo>
-          {(production || birthDay) ?
+          {production || birthDay ? (
             <InfoDetails>
               <InfoTitle profile={profile}>
                 {profile
@@ -45,17 +47,23 @@ export const BigTile = ({
               </InfoTitle>
               {profile ? birthDay : production}
             </InfoDetails>
-            : ""}
-          {(releaseDate || placeOfBirth) ?
+          ) : (
+            ""
+          )}
+          {releaseDate || placeOfBirth ? (
             <InfoDetails>
               <InfoTitle profile={profile}>
                 {profile
-                  ? "Place of birth:"
+                  ? window.innerWidth > 766
+                    ? "Place of birth:"
+                    : ""
                   : "Release date:"}
               </InfoTitle>
               {profile ? placeOfBirth : releaseDate}
             </InfoDetails>
-            : ""}
+          ) : (
+            ""
+          )}
         </AdditionalInfo>
         {profile ? (
           <></>
