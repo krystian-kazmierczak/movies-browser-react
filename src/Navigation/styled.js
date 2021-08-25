@@ -22,6 +22,14 @@ export const NavigationWrapper = styled.nav`
   flex-wrap: wrap;
   align-items: center;
   justify-content: space-around;
+  gap: 8px;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
+    gap: 16px;
+  }
+  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
+    gap: 12px;
+  }
 `;
 
 export const HeaderWrapper = styled.div`
@@ -29,13 +37,14 @@ export const HeaderWrapper = styled.div`
   flex-wrap: nowrap;
   align-items: center;
   justify-content: space-between;
+  gap: 16px;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
-    margin-bottom: 12px;
+    gap: 12px;
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
-    margin-bottom: 8px;
+    gap: 8px;
   }
 `;
 

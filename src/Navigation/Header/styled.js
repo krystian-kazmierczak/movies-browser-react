@@ -5,14 +5,14 @@ export const LogoWrapper = styled.div`
   align-items: center;
   justify-content: space-around;
   flex-wrap: nowrap;
-  margin: 16px;
+  gap: 16px;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
-    margin: 8px;
+    gap: 8px
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
-    margin: 0;
+    gap: 8px;
   }
 `;
 
