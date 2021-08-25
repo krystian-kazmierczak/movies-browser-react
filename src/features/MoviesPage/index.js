@@ -13,7 +13,7 @@ import { selectGenresList } from "./../../common/commonSlice";
 import { usePageParameter } from "./../usePageParameters";
 import { apiImage, apiKey } from "../../common/commonValues";
 import noPoster from "../../assets/noPoster.svg";
-import { getGenreNames } from "../getGenresNames";
+import { getGenresNames } from "../getGenresNames";
 import { getYearFromDate } from "../getYearFromDate";
 import {
   selectList,
@@ -71,7 +71,7 @@ const MoviesPage = () => {
                     }
                     tags={
                       !!movie.genre_ids
-                        ? getGenreNames(movie.genre_ids, genres)
+                        ? getGenresNames(movie.genre_ids, genres)
                         : []
                     }
                     rating={movie.vote_average}

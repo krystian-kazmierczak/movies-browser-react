@@ -7,7 +7,7 @@ import { BigTile } from "../../../common/Tile/BigTile";
 import { MediumTile } from "../../../common/Tile/MediumTile";
 import { StyledLink } from "../../../common/StyledLink";
 import { toMovie } from "../../../common/routes";
-import { getGenreNames } from "../../getGenresNames";
+import { getGenresNames } from "../../getGenresNames";
 import { getYearFromDate } from "../../getYearFromDate";
 import { selectAdditionalData, selectItemData } from "../../../features/itemSlice";
 import noProfile from "../../../assets/noProfile.svg";
@@ -57,7 +57,7 @@ const ProfileDetails = () => {
                                     }
                                     tags={
                                         !!movie.genre_ids &&
-                                        getGenreNames(movie.genre_ids, genres)
+                                        getGenresNames(movie.genre_ids, genres)
                                     }
                                     rating={movie.vote_average}
                                     votes={movie.vote_count}
@@ -91,7 +91,7 @@ const ProfileDetails = () => {
                                     }
                                     tags={
                                         !!movie.genre_ids &&
-                                        getGenreNames(movie.genre_ids, genres)
+                                        getGenresNames(movie.genre_ids, genres)
                                     }
                                     rating={movie.vote_average}
                                     votes={movie.vote_count}
