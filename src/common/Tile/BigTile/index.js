@@ -52,13 +52,15 @@ export const BigTile = ({
           )}
           {releaseDate || placeOfBirth ? (
             <InfoDetails>
-              <InfoTitle profile={profile}>
-                {profile
-                  ? window.innerWidth > 766
-                    ? "Place of birth:"
-                    : ""
-                  : "Release date:"}
-              </InfoTitle>
+              {profile ? (
+                window.innerWidth > 766 ? (
+                  <InfoTitle profile={profile}>Place of birth:</InfoTitle>
+                ) : (
+                  <></>
+                )
+              ) : (
+                <InfoTitle>Release date:</InfoTitle>
+              )}
               {profile ? placeOfBirth : releaseDate}
             </InfoDetails>
           ) : (

@@ -226,7 +226,7 @@ export const InfoDetails = styled.span`
 
 export const InfoTitle = styled(InfoDetails)`
   color: ${({ theme }) => theme.colors.stormGray};
-  margin-right: 10px;
+  margin-right: 8px;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     display: none;
@@ -235,6 +235,7 @@ export const InfoTitle = styled(InfoDetails)`
     profile &&
     css`
       display: unset;
+      margin-right: 4px;
     `}
   }
 `;
