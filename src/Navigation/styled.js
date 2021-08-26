@@ -9,7 +9,8 @@ export const NavigationContainer = styled.div`
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     padding: 18px 12px;
-
+  }
+  
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
     padding: 12px 8px;;
   }
