@@ -36,10 +36,14 @@ export const HeaderWrapper = styled.div`
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
+  min-width: 432px;
   justify-content: space-between;
   gap: 16px;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
+    min-width: unset;
+    width: 100%;
+    max-width: 432px;
     gap: 12px;
   }
 
