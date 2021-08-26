@@ -11,134 +11,138 @@ import { StyledSection, Wrapper } from "./styled";
 import { selectAdditionalData } from "../../features/itemSlice";
 import { selectList } from "../../features/listSlice";
 import { getYearFromDate } from "../../features/getYearFromDate";
-import { getGenreNames } from "../../features/getGenresNames";
-import { genres } from "../../features/genres";
+import { getGenresNames } from "../../features/getGenresNames";
 import noProfile from "../../assets/noProfile.svg";
 import noPoster from "../../assets/noPoster.svg";
 import downArrowBlue from "../../assets/downArrowBlue.svg";
 import upArrowBlue from "../../assets/upArrowBlue.svg";
+import { selectGenresList } from "../commonSlice";
 
 const Section = ({ type, crew }) => {
   const [showMore, setShowMore] = useState(false);
   const resultsPage = useSelector(selectList);
   const additionalData = useSelector(selectAdditionalData);
   const hideIndex = type === "movie" ? 5 : 3;
+  const genres = useSelector(selectGenresList);
 
   let data;
   if (crew) {
-    data = additionalData.crew
+    data = additionalData.crew;
   } else {
-    data = additionalData.cast
+    data = additionalData.cast;
   }
 
   let component;
   switch (type) {
     case "movies":
-      component =
-        resultsPage.map((movie) => (
-          <StyledLink key={nanoid()} to={toMovie({ id: movie.id })}>
-            <MediumTile
-              key={movie.id}
-              src={
-                !!movie.poster_path
-                  ? `${apiImage}/w200${movie.poster_path}?api_key=${apiKey}`
-                  : noPoster
-              }
-              title={movie.title}
-              subtitle={!!movie.release_date ? getYearFromDate(movie.release_date) : ""}
-              tags={!!movie.genre_ids ? getGenreNames(movie.genre_ids, genres) : []}
-              rating={movie.vote_average}
-              votes={movie.vote_count}
-            />
-          </StyledLink>
-        ))
+      component = resultsPage.map((movie) => (
+        <StyledLink key={nanoid()} to={toMovie({ id: movie.id })}>
+          <MediumTile
+            key={movie.id}
+            src={
+              !!movie.poster_path
+                ? `${apiImage}/w200${movie.poster_path}?api_key=${apiKey}`
+                : noPoster
+            }
+            title={movie.title}
+            subtitle={
+              !!movie.release_date ? getYearFromDate(movie.release_date) : ""
+            }
+            tags={
+              !!movie.genre_ids ? getGenresNames(movie.genre_ids, genres) : []
+            }
+            rating={movie.vote_average}
+            votes={movie.vote_count}
+          />
+        </StyledLink>
+      ));
       break;
 
     case "people":
-      component =
-        resultsPage.map((person) => (
-          <StyledLink key={nanoid()} to={toProfile({ id: person.id })}>
-            <SmallTile
-              key={person.id}
-              src={
-                !!person.profile_path
-                  ? `${apiImage}/w200${person.profile_path}?api_key=${apiKey}`
-                  : noProfile
-              }
-              title={person.name}
-            />
-          </StyledLink>
-        ))
+      component = resultsPage.map((person) => (
+        <StyledLink key={nanoid()} to={toProfile({ id: person.id })}>
+          <SmallTile
+            key={person.id}
+            src={
+              !!person.profile_path
+                ? `${apiImage}/w200${person.profile_path}?api_key=${apiKey}`
+                : noProfile
+            }
+            title={person.name}
+          />
+        </StyledLink>
+      ));
       break;
 
     case "movie":
-      component =
-        data.map((person, index) => (
-          <StyledLink
-            key={nanoid()}
-            to={toProfile({ id: person.id })}
+      component = data.map((person, index) => (
+        <StyledLink
+          key={nanoid()}
+          to={toProfile({ id: person.id })}
+          hidden={index > hideIndex && !showMore}
+        >
+          <SmallTile
+            key={person.id}
+            src={
+              !!person.profile_path
+                ? `${apiImage}/w500${person.profile_path}?api_key=${apiKey}`
+                : noProfile
+            }
+            title={person.name}
+            subtitle={crew ? person.job : person.character}
             hidden={index > hideIndex && !showMore}
-          >
-            <SmallTile
-              key={person.id}
-              src={
-                !!person.profile_path
-                  ? `${apiImage}/w500${person.profile_path}?api_key=${apiKey}`
-                  : noProfile
-              }
-              title={person.name}
-              subtitle={crew ? person.job : person.character}
-              hidden={index > hideIndex && !showMore}
-            />
-          </StyledLink>
-        ))
+          />
+        </StyledLink>
+      ));
       break;
 
     case "profile":
-      component =
-        data.map((movie, index) => (
-          <StyledLink
-            key={nanoid()}
-            to={toMovie({ id: movie.id })}
-            hidden={index > hideIndex && !showMore}
-          >
-            <MediumTile
-              key={movie.id}
-              src={
-                !!movie.poster_path
-                  ? `${apiImage}/w200${movie.poster_path}?api_key=${apiKey}`
-                  : noPoster
-              }
-              title={movie.title}
-              subtitle={
-                !!movie.release_date &&
-                `
+      component = data.map((movie, index) => (
+        <StyledLink
+          key={nanoid()}
+          to={toMovie({ id: movie.id })}
+          hidden={index > hideIndex && !showMore}
+        >
+          <MediumTile
+            key={movie.id}
+            src={
+              !!movie.poster_path
+                ? `${apiImage}/w200${movie.poster_path}?api_key=${apiKey}`
+                : noPoster
+            }
+            title={movie.title}
+            subtitle={
+              !!movie.release_date &&
+              `
                 ${crew ? movie.job : movie.character} 
-                ${movie.release_date ? "(" : ""}${getYearFromDate(movie.release_date)}${movie.release_date ? ")" : ""}
+                ${movie.release_date ? "(" : ""}${getYearFromDate(
+                movie.release_date
+              )}${movie.release_date ? ")" : ""}
                 `
-              }
-              tags={!!movie.genre_ids && getGenreNames(movie.genre_ids, genres)}
-              rating={movie.vote_average}
-              votes={movie.vote_count}
-              hidden={index > hideIndex && !showMore}
-            />
-          </StyledLink>
-        ))
+            }
+            tags={!!movie.genre_ids && getGenresNames(movie.genre_ids, genres)}
+            rating={movie.vote_average}
+            votes={movie.vote_count}
+            hidden={index > hideIndex && !showMore}
+          />
+        </StyledLink>
+      ));
+      break;
+
+    default:
       break;
   }
   return (
     <Wrapper>
-      <StyledSection>
-        {component}
-      </StyledSection>
-      {(type === "movie" || type === "profile") && (
-        !!data && (data.length > (hideIndex + 1)) && (
+      <StyledSection>{component}</StyledSection>
+      {(type === "movie" || type === "profile") &&
+        !!data &&
+        data.length > hideIndex + 1 && (
           <Button onClick={() => setShowMore(!showMore)}>
             <Label>{showMore ? "Show less" : "Show more"}</Label>
             <Arrow src={showMore ? upArrowBlue : downArrowBlue} alt="arrow" />
           </Button>
-        )
-      )}
+        )}
     </Wrapper>
   );
 };
