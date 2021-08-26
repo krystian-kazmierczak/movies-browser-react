@@ -6,6 +6,10 @@ export const Wrapper = styled.div`
   align-items: center;
   justify-content: center;
   margin: 40px 16px 103px 16px;
+
+  @media(max-width: ${({theme}) => theme.breakpoints.tabletLandscape}px){
+    margin-bottom:31px;
+  }
 `;
 
 export const SecondArrow = styled(Arrow)`
@@ -13,6 +17,7 @@ export const SecondArrow = styled(Arrow)`
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     display: unset;
+
   }
 `;
 
