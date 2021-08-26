@@ -8,10 +8,10 @@ export const Wrapper = styled.div`
   justify-content: start;
   align-items: center;
   grid-gap: 8px;
-  margin: 12px 0 0 0;
+  margin: 23px 0 0 0;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
-    margin: 6px 0 0 0;
+    margin: 10px 0 0 0;
   }
 
   ${({ cover }) =>
@@ -22,18 +22,22 @@ export const Wrapper = styled.div`
       grid-template-areas:
         "star rate scale"
         "vote vote vote";
-      align-items: baseline;
+      align-items: center;
+      grid-row-gap: 16px;
+      margin-bottom: 56px;
 
       @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
         grid-template-columns: auto min-content auto auto;
         grid-template-rows: auto;
         grid-template-areas: "star rate scale vote";
+        margin-bottom: 8px;
       }
     `}
 `;
 
 export const Star = styled.img`
   grid-area: star;
+  margin-top:-5px;
   width: 24px;
   height: 24px;
 
@@ -55,11 +59,12 @@ export const Rate = styled.p`
   font-weight: 600;
   font-size: 16px;
   line-height: 1.5;
-  margin: 0;
+  margin:0;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
     font-size: 13px;
     line-height: 1.3;
+    margin-top:4px;
   }
 
   ${({ cover }) =>

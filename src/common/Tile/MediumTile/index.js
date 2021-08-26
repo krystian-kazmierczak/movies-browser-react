@@ -16,8 +16,9 @@ export const MediumTile = ({
   tags,
   rating,
   votes,
+  hidden,
 }) => (
-  <Tile medium>
+  <Tile medium hidden={hidden}>
     <Image medium src={src} />
     <Content>
       <div>

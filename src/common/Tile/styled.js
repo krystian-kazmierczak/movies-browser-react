@@ -74,6 +74,12 @@ export const Tile = styled.div`
         padding: 8px;
       }
     `}
+
+    ${({ hidden }) =>
+    hidden &&
+    css`
+      display: none;
+    `}
 `;
 
 export const Image = styled.img`
@@ -242,7 +248,7 @@ export const InfoTitle = styled(InfoDetails)`
 export const Tags = styled.ul`
   list-style: none;
   padding-left: 0;
-  margin: -8px;
+  margin: -7px;
   display: flex;
   flex-wrap: wrap;
 

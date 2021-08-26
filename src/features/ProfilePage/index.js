@@ -1,20 +1,20 @@
+import { useSelector, useDispatch } from "react-redux";
+import { useParams } from "react-router-dom";
+import { useEffect } from "react";
 import { Container } from "../../common/Container";
+import { StatusChecker } from "./../../common/StatusChecker/index";
+import ProfileDetails from "./ProfileDetails";
 import {
   selectLoading,
   selectError,
   resetState,
   fetchItem,
 } from "../../features/itemSlice";
-import { useSelector, useDispatch } from "react-redux";
-import { useParams } from "react-router-dom";
-import { useEffect } from "react";
-import { StatusChecker } from "./../../common/StatusChecker/index";
-import ProfileDetails from "./ProfileDetails";
 
 const ProfilePage = () => {
+  const dispatch = useDispatch();
   const isLoading = useSelector(selectLoading);
   const isError = useSelector(selectError);
-  const dispatch = useDispatch();
   const { id } = useParams();
 
   useEffect(() => {
