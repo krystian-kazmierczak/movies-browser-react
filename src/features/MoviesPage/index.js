@@ -7,7 +7,6 @@ import { Container } from "./../../common/Container/index";
 import { Header } from "./../../common/Header/index";
 import { NoResult } from "./../../common/NoResult";
 import { pageState } from "./../../common/pageState";
-import { selectGenerateList } from "./../../common/commonSlice";
 import { usePageParameter } from "./../usePageParameters";
 import {
   selectList,
@@ -27,13 +26,12 @@ const MoviesPage = () => {
   const resultsPage = useSelector(selectList);
   const isLoading = useSelector(selectLoading);
   const isError = useSelector(selectError);
-  const generateList = useSelector(selectGenerateList);
 
   useEffect(() => {
     dispatch(fetchList({ page, urlQuery, type: "movies" }));
 
     return () => resetState();
-  }, [urlQuery, dispatch, generateList, page]);
+  }, [urlQuery, dispatch, page]);
 
   return (
     <Container>
