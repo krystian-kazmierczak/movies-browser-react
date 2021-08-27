@@ -15,7 +15,7 @@ export const Section = styled.section`
   flex-wrap: wrap;
   gap: 12px;
   width: 100%;
-  justify-content: flex-start;
+  justify-content: center;
   align-items: stretch;
 `;
 
