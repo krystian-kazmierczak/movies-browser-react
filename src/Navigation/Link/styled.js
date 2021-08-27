@@ -9,7 +9,7 @@ export const List = styled.ul`
   padding: 0;
   list-style: none;
   gap: 16px;
-
+  
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     gap: 12px;
   }
@@ -17,7 +17,7 @@ export const List = styled.ul`
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
     padding: 0;
     gap: 8px;
-  } 
+  }
 `;
 
 export const Item = styled.li`

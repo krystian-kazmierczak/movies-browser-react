@@ -5,7 +5,6 @@ export const LogoWrapper = styled.div`
   align-items: center;
   justify-content: space-around;
   flex-wrap: nowrap;
-  margin: 0;
   gap: 16px;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
@@ -13,7 +12,7 @@ export const LogoWrapper = styled.div`
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
-    gap: 0;
+    gap: 8px;
   }
 `;
 
