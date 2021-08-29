@@ -10,9 +10,9 @@ export const NavigationContainer = styled.div`
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     padding: 18px 12px;
   }
-  
+
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
-    padding: 12px 8px;;
+    padding: 12px 8px;
   }
 `;
 
@@ -20,12 +20,12 @@ export const NavigationWrapper = styled.nav`
   max-width: 1368px;
   margin: 0 auto;
   display: flex;
-  flex-wrap: wrap;
   align-items: center;
-  justify-content: space-around;
+  justify-content: space-between;
   gap: 8px;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
+    flex-wrap: wrap;
     gap: 16px;
   }
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
@@ -37,14 +37,12 @@ export const HeaderWrapper = styled.div`
   display: flex;
   flex-wrap: nowrap;
   align-items: center;
-  min-width: 432px;
-  justify-content: space-between;
+  justify-content: flex-start;
   gap: 16px;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
-    min-width: unset;
     width: 100%;
-    max-width: 432px;
+    justify-content: space-between;
     gap: 12px;
   }
 
@@ -55,6 +53,7 @@ export const HeaderWrapper = styled.div`
 
 export const SearchWrapper = styled.div`
   display: flex;
+  width: 100%;
   align-items: center;
   justify-content: flex-end;
   padding: 0;
