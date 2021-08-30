@@ -7,8 +7,8 @@ export const Wrapper = styled.div`
   justify-content: center;
   margin: 40px 16px 104px 16px;
 
-  @media(max-width: ${({theme}) => theme.breakpoints.tabletLandscape}px){
-    margin-bottom:32px;
+  @media(max-width: ${({ theme }) => theme.breakpoints.tabletLandscape}px){
+    margin: 12px;
   }
 `;
 

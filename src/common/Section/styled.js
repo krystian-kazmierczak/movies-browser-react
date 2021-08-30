@@ -5,6 +5,10 @@ export const Wrapper = styled.div`
   flex-direction: column;
   align-items: center;
   margin-bottom: 54px;
+
+  @media(max-width: ${({ theme }) => theme.breakpoints.tabletLandscape}px){
+    margin-bottom: 12px;
+  }
 `;
 
 export const StyledSection = styled.section`
