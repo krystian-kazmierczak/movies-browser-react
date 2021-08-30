@@ -3,11 +3,13 @@ import searchIcon from "../../assets/searchIcon.svg";
 
 export const SearchWrapper = styled.form`
   position: relative;
+  width: 100%;
+  max-width: 432px;
 `;
 
 export const Input = styled.input`
   min-height: 48px;
-  width: 90vw;
+  width: 100%;
   max-width: 432px;
   padding: 0 0 0 64px;
   border: 1px solid ${({ theme }) => theme.colors.cornsilk};
