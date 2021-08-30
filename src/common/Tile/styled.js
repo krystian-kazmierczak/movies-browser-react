@@ -8,6 +8,12 @@ export const Tile = styled.div`
   grid-template-rows: auto 1fr;
   grid-template-columns: min-content 1fr;
   height: 100%;
+  transition: 1s;
+
+  &:hover {
+    background-color: ${({ theme }) => theme.colors.whitePointer};
+    transform: scale(1.1);
+  }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     grid-column-gap: 16px;
@@ -22,6 +28,11 @@ export const Tile = styled.div`
         "image content"
         "image description";
       grid-column-gap: 40px;
+
+      &:hover {
+        background-color: ${({ theme }) => theme.colors.white};
+        transform: scale(1);
+      }
 
       @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
         margin-top: 24px;
@@ -67,7 +78,7 @@ export const Tile = styled.div`
       grid-template-areas:
         "image"
         "content";
-        @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
+      @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
         width: 100%;
         max-width: 136px;
         min-height: 245px;
@@ -238,11 +249,11 @@ export const InfoTitle = styled(InfoDetails)`
     display: none;
 
     ${({ profile }) =>
-    profile &&
-    css`
-      display: unset;
-      margin-right: 4px;
-    `}
+      profile &&
+      css`
+        display: unset;
+        margin-right: 4px;
+      `}
   }
 `;
 
