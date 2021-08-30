@@ -1,8 +1,11 @@
 # Movie Browser
 
 This project was created in a group.
-It's a website where you can find popular movies and people, you can search them.
+It's a website where you can find popular movies and people, you can search them. We get our data from api.
+We divide it into two subpages: movies and people. it reurns us a lof of informations like rating, votes, actors, crew.
 
+## External source
+Wet got api from https://developers.themoviedb.org/3
 
 ## Demo 
 Click here to see app demo => [click!](https://izabelanowak.github.io/movies-browser/#/movies)
@@ -15,15 +18,13 @@ Click here to see app demo => [click!](https://izabelanowak.github.io/movies-bro
 - Semantic HTML
 - CSS
 - ES6+ features
-- React, create-react-app, react-hooks
+- React, create-react-app, react-hooks, 
 - Webpack
 - Babel
-- React Router
-- Redux, redux-toolkit, redux-saga
-- Styled Components (ThemeProvider)
+- React Router,
+- Redux, redux-toolkit, redux-saga,
+- Styled Components (ThemeProvider),
 - Axios
-- Figma
-- Team work: team calls, slack, trello
 
 ## Authors
 - Izabela Nowak
