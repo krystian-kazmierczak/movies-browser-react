@@ -1,7 +1,8 @@
 # Movie Browser
 
-This project was created in a group: Izabela Nowak, Kinga Parasiewicz and Krystian.
+This project was created in a group.
 It's a website where you can find popular movies and people, you can search them.
+
 
 ## Demo 
 
@@ -12,6 +13,11 @@ It's a website where you can find popular movies and people, you can search them
 - Redux, redux-toolkit, redux-saga,
 - Styled Components ( ThemeProvider ),
 - Axios
+
+## Authors
+- Izabela Nowak
+- Kinga Parasiewicz
+-  Krystian
 
 
 
