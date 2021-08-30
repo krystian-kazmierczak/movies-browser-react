@@ -18,13 +18,15 @@ Click here to see app demo => [click!](https://izabelanowak.github.io/movies-bro
 - Semantic HTML
 - CSS
 - ES6+ features
-- React, create-react-app, react-hooks, 
+- React, create-react-app, react-hooks 
 - Webpack
 - Babel
-- React Router,
-- Redux, redux-toolkit, redux-saga,
-- Styled Components (ThemeProvider),
+- React Router
+- Redux, redux-toolkit, redux-saga
+- Styled Components (ThemeProvider)
 - Axios
+- Figma
+- Team work: team calls, slack, trello
 
 ## Authors
 - Izabela Nowak
