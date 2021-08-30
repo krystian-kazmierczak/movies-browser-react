@@ -5,20 +5,29 @@ It's a website where you can find popular movies and people, you can search them
 
 
 ## Demo 
+Click here to see app demo => [click!](https://izabelanowak.github.io/movies-browser/#/movies)
+
+
+![demo gif](src/demo.gif)
 
 
 ## Technologies : 
-- React, react-hooks,
+- Semantic HTML
+- CSS
+- ES6+ features
+- React, create-react-app, react-hooks, 
+- Webpack
+- Babel
 - React Router,
 - Redux, redux-toolkit, redux-saga,
-- Styled Components ( ThemeProvider ),
+- Styled Components (ThemeProvider),
 - Axios
 
 ## Authors
 - Izabela Nowak
 - Kinga Parasiewicz
--  Krystian
--  Szymon Rojek
+- Krystian Kaźmierczak
+- Szymon Rojek
 
 
 
