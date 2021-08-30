@@ -18,6 +18,7 @@ It's a website where you can find popular movies and people, you can search them
 - Izabela Nowak
 - Kinga Parasiewicz
 -  Krystian
+-  Szymon Rojek
 
 
 
