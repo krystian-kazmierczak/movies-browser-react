@@ -8,7 +8,7 @@ export const Wrapper = styled.div`
   justify-content: start;
   align-items: center;
   grid-gap: 8px;
-  margin: 23px 0 0 0;
+  margin: 24px 0 0 0;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
     margin: 10px 0 0 0;
@@ -37,7 +37,7 @@ export const Wrapper = styled.div`
 
 export const Star = styled.img`
   grid-area: star;
-  margin-top:-5px;
+  margin-top:-4px;
   width: 24px;
   height: 24px;
 

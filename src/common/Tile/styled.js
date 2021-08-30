@@ -249,7 +249,7 @@ export const InfoTitle = styled(InfoDetails)`
 export const Tags = styled.ul`
   list-style: none;
   padding-left: 0;
-  margin: -7px;
+  margin: -8px;
   display: flex;
   flex-wrap: wrap;
 
