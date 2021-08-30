@@ -22,6 +22,8 @@ Click here to see app demo => [click!](https://izabelanowak.github.io/movies-bro
 - Redux, redux-toolkit, redux-saga,
 - Styled Components (ThemeProvider),
 - Axios
+- Figma
+- Team work: team calls, slack, trello
 
 ## Authors
 - Izabela Nowak
