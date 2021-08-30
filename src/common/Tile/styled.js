@@ -99,6 +99,7 @@ export const Image = styled.img`
   height: auto;
   border-radius: 5px;
   margin-bottom: 16px;
+  aspect-ratio: 2 / 3;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
     margin-bottom: 0;
@@ -249,8 +250,8 @@ export const InfoTitle = styled(InfoDetails)`
     display: none;
 
     ${({ profile }) =>
-      profile &&
-      css`
+    profile &&
+    css`
         display: unset;
         margin-right: 4px;
       `}
