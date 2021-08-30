@@ -2,7 +2,7 @@
 
 This project was created in a group.
 It's a website where you can find popular movies and people, you can search them. We get our data from api.
-We divide it into two subpages: movies and people. it reurns us a lof of informations like rating, votes, actors, crew.
+We divide it into two subpages: movies and people. It returns a lof of information like rating, votes, actors, crew.
 
 ## External source
 Wet got api from https://developers.themoviedb.org/3
