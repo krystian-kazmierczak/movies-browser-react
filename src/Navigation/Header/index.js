@@ -1,11 +1,14 @@
-import { Logo, LogoWrapper, Title } from "./styled"
+import { Logo, LogoWrapper, StyledLink, Title } from "./styled";
 import logo from "../../assets/logo.svg";
+import { toMovies } from "../../common/routes";
 
 export const Header = () => {
-    return (
-        <LogoWrapper>
-          <Logo src={logo} alt="" />
-          <Title>movies&nbsp;browser</Title>
-        </LogoWrapper>
-    )
+  return (
+    <StyledLink to={toMovies()}>
+      <LogoWrapper>
+        <Logo src={logo} alt="" />
+        <Title>movies&nbsp;browser</Title>
+      </LogoWrapper>
+    </StyledLink>
+  );
 };

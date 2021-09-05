@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 import styled from "styled-components";
 
-const activeClassName = "link-active";
+const activeClassName = "active";
 
 export const List = styled.ul`
   display: flex;
