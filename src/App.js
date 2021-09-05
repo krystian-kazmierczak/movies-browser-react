@@ -1,3 +1,5 @@
+import { useEffect } from "react";
+import { useDispatch } from "react-redux";
 import { HashRouter, Redirect, Route, Switch } from "react-router-dom";
 import { Navigation } from "./Navigation";
 import MoviesPage from "./features/MoviesPage";
@@ -13,11 +15,13 @@ import {
   toProfile,
 } from "./common/routes";
 import { fetchCommon } from "./common/commonSlice";
-import { useDispatch } from "react-redux";
 
 export const App = () => {
   const dispatch = useDispatch();
-  dispatch(fetchCommon());
+
+  useEffect(() => {
+    dispatch(fetchCommon());
+  }, [dispatch]);
 
   return (
     <HashRouter>
