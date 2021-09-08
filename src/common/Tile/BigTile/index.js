@@ -34,10 +34,10 @@ export const BigTile = ({
     const mediaWatcher = window.matchMedia("(max-width: 767px)");
     setMobileScreen(mediaWatcher.matches);
 
-    const updateIsMobileScrenn = (e) => setMobileScreen(e.matches);
-    mediaWatcher.addEventListener("change", updateIsMobileScrenn);
+    const updateIsMobileScreen = (e) => setMobileScreen(e.matches);
+    mediaWatcher.addEventListener("change", updateIsMobileScreen);
     
-    return () => mediaWatcher.removeEventListener("change", updateIsMobileScrenn);
+    return () => mediaWatcher.removeEventListener("change", updateIsMobileScreen);
   }, [isMobileScreen]);
 
   return (
