@@ -11,7 +11,7 @@ Wet got api from https://developers.themoviedb.org/3
 Click here to see app demo => [click!](https://izabelanowak.github.io/movies-browser/#/movies)
 
 
-![demo gif](src/demo.gif)
+![demo gif](readme/demo.gif)
 
 
 ## Technologies : 
