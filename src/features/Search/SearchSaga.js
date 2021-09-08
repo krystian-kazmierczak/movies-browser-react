@@ -1,6 +1,6 @@
 import { call, put, debounce } from "redux-saga/effects";
-import { getApiData } from "./../../getApiData";
-import store from "./../../store";
+import { getApiData } from "../../core/App/getApiData";
+import store from "../../core/store";
 import {
   fetchSearchError,
   fetchSearchSuccess,

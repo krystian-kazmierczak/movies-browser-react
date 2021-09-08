@@ -1,4 +1,4 @@
-import { toMovies, toPeople } from "../../common/routes";
+import { toMovies, toPeople } from "../../../../common/routes";
 import { Item, List, StyledNavLink } from "./styled";
 
 export const Link = () => {

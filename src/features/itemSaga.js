@@ -1,5 +1,5 @@
 import { all, call, takeLatest, put, delay } from "redux-saga/effects";
-import { getApiData } from "./../getApiData";
+import { getApiData } from "../core/App/getApiData";
 import { apiKey, apiBase, language } from "./../common/commonValues";
 import { fetchItem, fetchItemSuccess, fetchItemError } from "./itemSlice";
 
