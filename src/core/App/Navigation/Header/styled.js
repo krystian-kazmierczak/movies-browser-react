@@ -57,6 +57,4 @@ export const Title = styled.h1`
 export const StyledLink = styled(Link)`
   color: inherit;
   text-decoration: none;
-  //display: flex;
-  //align-items: center;
 `;
