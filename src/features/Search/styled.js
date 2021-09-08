@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import searchIcon from "../../assets/searchIcon.svg";
+import searchIcon from "./searchIcon.svg";
 
 export const SearchWrapper = styled.form`
   position: relative;

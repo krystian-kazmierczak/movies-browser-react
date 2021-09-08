@@ -1,5 +1,5 @@
 import { Logo, LogoWrapper, StyledLink, Title } from "./styled";
-import logo from "../../../../assets/logo.svg";
+import logo from "./logo.svg";
 import { toMovies } from "../../../../common/routes";
 
 export const Header = () => {

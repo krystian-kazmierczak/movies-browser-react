@@ -1,4 +1,4 @@
-import star from "../../assets/star.svg";
+import star from "./star.svg";
 import { Rate, Scale, Star, Vote, Wrapper } from "./styled";
 
 export const Rating = ({ rating, votes, cover }) => {
