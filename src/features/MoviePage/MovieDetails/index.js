@@ -7,7 +7,7 @@ import { selectItemData } from "../../itemSlice";
 import { getYearFromDate } from "../../getYearFromDate";
 import Cover from "../../../common/Cover";
 import Section from "../../../common/Section";
-import noPoster from "../../../assets/noPoster.svg";
+import noPoster from "../../../noPoster.svg";
 
 const MovieDetails = () => {
   const movie = useSelector(selectItemData);

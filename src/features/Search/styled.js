@@ -1,17 +1,21 @@
 import styled from "styled-components";
-import searchIcon from "../../assets/searchIcon.svg";
+import searchIcon from "./searchIcon.svg";
 
 export const SearchWrapper = styled.form`
   position: relative;
   width: 100%;
   max-width: 432px;
+
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
+    max-width: unset;
+  }
 `;
 
 export const Input = styled.input`
   min-height: 48px;
   width: 100%;
   max-width: 432px;
-  padding: 0 0 0 64px;
+  padding: 4px 64px;
   border: 1px solid ${({ theme }) => theme.colors.cornsilk};
   border-radius: 24px;
   background: ${({ theme }) => theme.colors.white};
@@ -20,9 +24,14 @@ export const Input = styled.input`
     outline: none;
   }
 
-  @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
-    min-height: 44px;
+  @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
+    max-width: unset;
+    min-height: unset;
   }
+
+  // @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
+  //   min-height: 44px;
+  // }
 `;
 
 export const StyledButtonSearch = styled.button`

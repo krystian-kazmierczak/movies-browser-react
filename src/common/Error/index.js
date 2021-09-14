@@ -1,5 +1,5 @@
 import { Header, Paragraph, ErrorWrapper } from "./styled";
-import { ReactComponent as WarningIcon } from "../../assets/error.svg";
+import { ReactComponent as WarningIcon } from "./error.svg";
 import { ButtonLink } from "./ButtonLink";
 
 export const Error = () => (

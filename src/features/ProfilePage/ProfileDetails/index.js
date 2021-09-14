@@ -4,7 +4,7 @@ import { Header } from "../../../common/Header";
 import { BigTile } from "../../../common/Tile/BigTile";
 import { selectAdditionalData, selectItemData } from "../../../features/itemSlice";
 import Section from "../../../common/Section";
-import noProfile from "../../../assets/noProfile.svg";
+import noProfile from "../../../noProfile.svg";
 
 const ProfileDetails = () => {
   const movieAdditionalData = useSelector(selectAdditionalData);

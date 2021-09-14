@@ -1,5 +1,5 @@
 import { takeEvery, call, put } from "redux-saga/effects";
-import { getApiData } from "../getApiData";
+import { getApiData } from "../core/App/getApiData";
 import {
   fetchCommonError,
   fetchCommon,

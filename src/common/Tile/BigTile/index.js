@@ -1,3 +1,4 @@
+import { useState, useEffect } from "react";
 import { Rating } from "../../Rating";
 import {
   AdditionalInfo,
@@ -27,6 +28,18 @@ export const BigTile = ({
   birthDay,
   placeOfBirth,
 }) => {
+  const [isMobileScreen, setMobileScreen] = useState(false);
+
+  useEffect(() => {
+    const mediaWatcher = window.matchMedia("(max-width: 767px)");
+    setMobileScreen(mediaWatcher.matches);
+
+    const updateIsMobileScreen = (e) => setMobileScreen(e.matches);
+    mediaWatcher.addEventListener("change", updateIsMobileScreen);
+    
+    return () => mediaWatcher.removeEventListener("change", updateIsMobileScreen);
+  }, [isMobileScreen]);
+
   return (
     <Tile big>
       <Image src={src} />
@@ -40,7 +53,7 @@ export const BigTile = ({
             <InfoDetails>
               <InfoTitle profile={profile}>
                 {profile
-                  ? window.innerWidth > 766
+                  ? !isMobileScreen
                     ? "Date of birth:"
                     : "Birth:"
                   : "Production:"}
@@ -53,7 +66,7 @@ export const BigTile = ({
           {releaseDate || placeOfBirth ? (
             <InfoDetails>
               {profile ? (
-                window.innerWidth > 766 ? (
+                !isMobileScreen ? (
                   <InfoTitle profile={profile}>Place of birth:</InfoTitle>
                 ) : (
                   <></>

@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import { ReactComponent as PlaneImage } from "./../../assets/planeNoResult.svg";
+import { ReactComponent as PlaneImage } from "./planeNoResult.svg";
 
 export const HeaderText = styled.header`
   margin: 56px 0 24px;

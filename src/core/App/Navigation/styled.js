@@ -4,15 +4,14 @@ export const NavigationContainer = styled.div`
   color: ${({ theme }) => theme.colors.white};
   background: ${({ theme }) => theme.colors.black};
   margin: 0;
-  padding: 24px 16px;
-  min-height: 94px;
+  padding: 12px 16px;
 
   @media (max-width: ${({ theme }) => theme.breakpoints.tablet}px) {
-    padding: 18px 12px;
+    padding: 8px 12px;
   }
 
   @media (max-width: ${({ theme }) => theme.breakpoints.mobile}px) {
-    padding: 12px 8px;
+    padding: 8px 8px;
   }
 `;
 

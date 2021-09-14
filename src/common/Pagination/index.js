@@ -13,10 +13,10 @@ import {
   PageNumberContainer,
 } from "./styled";
 import { Arrow, Button, Label } from "../Button";
-import leftArrowBlue from "../../assets/leftArrowBlue.svg";
-import rightArrowBlue from "../../assets/rightArrowBlue.svg";
-import leftArrowGray from "../../assets/leftArrowGray.svg";
-import rightArrowGray from "../../assets/rightArrowGray.svg";
+import leftArrowBlue from "./leftArrowBlue.svg";
+import rightArrowBlue from "./rightArrowBlue.svg";
+import leftArrowGray from "./leftArrowGray.svg";
+import rightArrowGray from "./rightArrowGray.svg";
 
 const Pagination = () => {
   const pageNumber = +usePageParameter("page");

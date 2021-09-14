@@ -12,10 +12,10 @@ import { selectAdditionalData } from "../../features/itemSlice";
 import { selectList } from "../../features/listSlice";
 import { getYearFromDate } from "../../features/getYearFromDate";
 import { getGenresNames } from "../../features/getGenresNames";
-import noProfile from "../../assets/noProfile.svg";
-import noPoster from "../../assets/noPoster.svg";
-import downArrowBlue from "../../assets/downArrowBlue.svg";
-import upArrowBlue from "../../assets/upArrowBlue.svg";
+import noProfile from "../../noProfile.svg";
+import noPoster from "../../noPoster.svg";
+import downArrowBlue from "./downArrowBlue.svg";
+import upArrowBlue from "./upArrowBlue.svg";
 import { selectGenresList } from "../commonSlice";
 
 const Section = ({ type, crew }) => {
