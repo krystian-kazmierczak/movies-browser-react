@@ -15,7 +15,7 @@ function* fetchItemHandler({ payload: { id, type } }) {
       : `${apiBase}person/${id}/movie_credits?api_key=${apiKey}${language}`;
 
   try {
-    yield delay(1000);
+    yield delay(300);
     const [itemData, additionalData] = yield all([
       call(getApiData, activeItemPath),
       call(getApiData, activeAdditionalPath),
