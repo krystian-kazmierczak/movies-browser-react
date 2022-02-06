@@ -1,33 +1,26 @@
 {
   "files": {
-    "main.js": "/movies-browser/static/js/main.80cda86a.chunk.js",
-    "main.js.map": "/movies-browser/static/js/main.80cda86a.chunk.js.map",
-    "runtime-main.js": "/movies-browser/static/js/runtime-main.a35a9232.js",
-    "runtime-main.js.map": "/movies-browser/static/js/runtime-main.a35a9232.js.map",
-    "static/js/2.c97a07d8.chunk.js": "/movies-browser/static/js/2.c97a07d8.chunk.js",
-    "static/js/2.c97a07d8.chunk.js.map": "/movies-browser/static/js/2.c97a07d8.chunk.js.map",
-    "static/js/3.6ff5f2fc.chunk.js": "/movies-browser/static/js/3.6ff5f2fc.chunk.js",
-    "static/js/3.6ff5f2fc.chunk.js.map": "/movies-browser/static/js/3.6ff5f2fc.chunk.js.map",
-    "index.html": "/movies-browser/index.html",
-    "static/js/2.c97a07d8.chunk.js.LICENSE.txt": "/movies-browser/static/js/2.c97a07d8.chunk.js.LICENSE.txt",
-    "static/media/downArrowBlue.0f67d686.svg": "/movies-browser/static/media/downArrowBlue.0f67d686.svg",
-    "static/media/error.fb129407.svg": "/movies-browser/static/media/error.fb129407.svg",
-    "static/media/leftArrowBlue.7c0352b8.svg": "/movies-browser/static/media/leftArrowBlue.7c0352b8.svg",
-    "static/media/leftArrowGray.801cea39.svg": "/movies-browser/static/media/leftArrowGray.801cea39.svg",
-    "static/media/loadingSpinner.c5f29646.svg": "/movies-browser/static/media/loadingSpinner.c5f29646.svg",
-    "static/media/logo.64519bac.svg": "/movies-browser/static/media/logo.64519bac.svg",
-    "static/media/noPoster.62711f31.svg": "/movies-browser/static/media/noPoster.62711f31.svg",
-    "static/media/noProfile.8089f30c.svg": "/movies-browser/static/media/noProfile.8089f30c.svg",
-    "static/media/planeNoResult.1c908993.svg": "/movies-browser/static/media/planeNoResult.1c908993.svg",
-    "static/media/rightArrowBlue.25ed93a4.svg": "/movies-browser/static/media/rightArrowBlue.25ed93a4.svg",
-    "static/media/rightArrowGray.46ab45c6.svg": "/movies-browser/static/media/rightArrowGray.46ab45c6.svg",
-    "static/media/searchIcon.d40a7fee.svg": "/movies-browser/static/media/searchIcon.d40a7fee.svg",
-    "static/media/star.8663155c.svg": "/movies-browser/static/media/star.8663155c.svg",
-    "static/media/upArrowBlue.6764c7fc.svg": "/movies-browser/static/media/upArrowBlue.6764c7fc.svg"
+    "main.js": "/movies-browser-react/static/js/main.ee1e1036.js",
+    "static/js/787.cbf59cd9.chunk.js": "/movies-browser-react/static/js/787.cbf59cd9.chunk.js",
+    "static/media/downArrowBlue.svg": "/movies-browser-react/static/media/downArrowBlue.0f67d686dec53177c622d4f6dd7f0860.svg",
+    "static/media/upArrowBlue.svg": "/movies-browser-react/static/media/upArrowBlue.6764c7fc5c0aa725031e5111183ae020.svg",
+    "static/media/planeNoResult.svg": "/movies-browser-react/static/media/planeNoResult.1c908993afc5985832db04c4ae0e0834.svg",
+    "static/media/noProfile.svg": "/movies-browser-react/static/media/noProfile.8089f30ce18baea0a2d17eeef8eb5d1b.svg",
+    "static/media/star.svg": "/movies-browser-react/static/media/star.8663155c38d2739a01d98dddbf5d2ae1.svg",
+    "static/media/error.svg": "/movies-browser-react/static/media/error.fb129407d300c6caaa160f50f94be2ce.svg",
+    "index.html": "/movies-browser-react/index.html",
+    "static/media/rightArrowGray.svg": "/movies-browser-react/static/media/rightArrowGray.2a89e23d5a16e7047b7a198a4e1604ba.svg",
+    "static/media/leftArrowBlue.svg": "/movies-browser-react/static/media/leftArrowBlue.3666cb1ad235ea3f467892c891e2f4e8.svg",
+    "static/media/noPoster.svg": "/movies-browser-react/static/media/noPoster.62711f31d86ff71076c96dcf4aca8da3.svg",
+    "static/media/rightArrowBlue.svg": "/movies-browser-react/static/media/rightArrowBlue.25ed93a44f7e0e56a43a58d97ca8e341.svg",
+    "static/media/logo.svg": "/movies-browser-react/static/media/logo.64519bacc48e8f0f2a39675e55643d9b.svg",
+    "static/media/leftArrowGray.svg": "/movies-browser-react/static/media/leftArrowGray.801cea39daa098736eba81d70c5d732b.svg",
+    "static/media/searchIcon.svg": "/movies-browser-react/static/media/searchIcon.d40a7feee5c3a5e5c584a2f898642765.svg",
+    "static/media/loadingSpinner.svg": "/movies-browser-react/static/media/loadingSpinner.c5f29646f52eed97faa98a9f6f43ce08.svg",
+    "main.ee1e1036.js.map": "/movies-browser-react/static/js/main.ee1e1036.js.map",
+    "787.cbf59cd9.chunk.js.map": "/movies-browser-react/static/js/787.cbf59cd9.chunk.js.map"
   },
   "entrypoints": [
-    "static/js/runtime-main.a35a9232.js",
-    "static/js/2.c97a07d8.chunk.js",
-    "static/js/main.80cda86a.chunk.js"
+    "static/js/main.ee1e1036.js"
   ]
 }
