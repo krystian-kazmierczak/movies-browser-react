@@ -5,20 +5,21 @@ It's a website where you can find popular movies and people, you can search them
 We divide it into two subpages: movies and people. It returns a lot of information like rating, votes, actors, crew.
 
 ## External source
+
 Wet got api from https://developers.themoviedb.org/3
 
-## Demo 
-Click here to see app demo => [click!](https://izabelanowak.github.io/movies-browser/#/movies)
+## Demo
 
+Click here to see app demo => [click!](https://krystian-kazmierczak.github.io/movies-browser-react/#/movies)
 
 ![demo gif](readme/demo.gif)
 
+## Technologies :
 
-## Technologies : 
 - Semantic HTML
 - CSS
 - ES6+ features
-- React, create-react-app, react-hooks 
+- React, create-react-app, react-hooks
 - Webpack
 - Babel
 - React Router
@@ -29,12 +30,13 @@ Click here to see app demo => [click!](https://izabelanowak.github.io/movies-bro
 - Team work: team calls, slack, trello
 
 ## Authors
+
 - Izabela Nowak
 - Kinga Parasiewicz
 - Krystian Kaźmierczak
 - Szymon Rojek
 
-
+Contact: contact.me@kazmierczak.one
 
 ## Available Scripts
 
